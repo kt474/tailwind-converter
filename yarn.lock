@@ -60,6 +60,19 @@
     "@codemirror/state" "^0.20.0"
     "@lezer/css" "^0.16.0"
 
+"@codemirror/lang-html@^0.20.0":
+  "integrity" "sha512-hh/vii8Hw0eoPQy6vacqrrt4FMeLn9cNOG7zPFFOyc+oTl66+FYHgOtWH8b6HysTx0pdTMtpNbBF4tTLMbmP1w=="
+  "resolved" "https://registry.npmjs.org/@codemirror/lang-html/-/lang-html-0.20.0.tgz"
+  "version" "0.20.0"
+  dependencies:
+    "@codemirror/autocomplete" "^0.20.0"
+    "@codemirror/lang-css" "^0.20.0"
+    "@codemirror/lang-javascript" "^0.20.0"
+    "@codemirror/language" "^0.20.0"
+    "@codemirror/state" "^0.20.0"
+    "@lezer/common" "^0.16.0"
+    "@lezer/html" "^0.16.0"
+
 "@codemirror/lang-javascript@^0.20.0":
   "integrity" "sha512-Wawq5+o1DlWtsqAyaa9NkiSXNT7geFcfdUael0hIQdM7P23gkQaD+xgZcyQP6QvPxVAdnY4VIWHFzFAqBti+WQ=="
   "resolved" "https://registry.npmjs.org/@codemirror/lang-javascript/-/lang-javascript-0.20.0.tgz"
@@ -173,6 +186,14 @@
   "version" "0.16.0"
   dependencies:
     "@lezer/common" "^0.16.0"
+
+"@lezer/html@^0.16.0":
+  "integrity" "sha512-3T7xJhNeETZpX+xzI7rO7Ba8ozhb8+raNVJKxKLZv/ARsMnhH5uhVqV3GQ8wwU4bjCmaF3q22+RWf/08GqF/Uw=="
+  "resolved" "https://registry.npmjs.org/@lezer/html/-/html-0.16.1.tgz"
+  "version" "0.16.1"
+  dependencies:
+    "@lezer/highlight" "^0.16.0"
+    "@lezer/lr" "^0.16.0"
 
 "@lezer/javascript@^0.16.0":
   "integrity" "sha512-kDcwX3QMFKVd7VJwlYTeTNtcj3/gXQEDa7cQzXXsFMvTGV/RTDq0r8agTpZu0zBc1RUZkVILusd1Cluz3STRqw=="
