@@ -23,17 +23,6 @@ export const initialHTML = `<!-- Edit HTML here -->
   </body>
 </html>`;
 
-export const initialTailwind = `<!-- HTML with Tailwind -->
-<html lang="">
-  <body class="margin 1rem padding 1rem">
-    <div class="font-size 1rem color #fff">
-      <p>
-        Lorem Ipsum
-      </p>
-    </div>  
-  </body>
-</html>`;
-
 export const cssToJson = (plainText: string) => {
   const cssJson = toJSON(trim(plainText));
   let result = [];
