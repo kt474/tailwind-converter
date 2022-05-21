@@ -23,6 +23,17 @@ export const initialHTML = `<!-- Edit HTML here -->
   </body>
 </html>`;
 
+export const initialTailwind = `<!-- HTML with Tailwind -->
+<html lang="">
+  <body class="margin 1rem padding 1rem">
+    <div class="font-size 1rem color #fff">
+      <p>
+        Lorem Ipsum
+      </p>
+    </div>  
+  </body>
+</html>`;
+
 export const cssToJson = (plainText: string) => {
   const cssJson = toJSON(trim(plainText));
   let result = [];
@@ -52,13 +63,13 @@ export const injectClass = (htmlText: string, attribute: object) => {
       htmlText.slice(firstIndex + key.length)
     );
   } else {
-    let firstIndex = htmlText.indexOf(key);
+    let firstIndex = htmlText.indexOf("<" + key);
     return (
-      htmlText.slice(0, firstIndex + key.length) +
+      htmlText.slice(0, firstIndex + key.length + 1) +
       ` class="` +
       tailwindString +
       `"` +
-      htmlText.slice(firstIndex + key.length)
+      htmlText.slice(firstIndex + key.length + 1)
     );
   }
 };
