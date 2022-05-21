@@ -4,14 +4,15 @@ import CodeMirror from "@uiw/react-codemirror";
 import { css } from "@codemirror/lang-css";
 import { html } from "@codemirror/lang-html";
 import { oneDark } from "@codemirror/theme-one-dark";
-import { injectClass } from "../src/helper";
+import { injectClass, cssToJson, initialCSS, initialHTML } from "../src/helper";
 
 const Home: NextPage = () => {
-  const initialCSS = `/* Edit CSS here */ \nbody {\n  margin: 1rem;  \n  padding: 1rem; \n  font-size: 1rem; \n}`;
-  const initialHTML = `<!-- Edit HTML here --> \n<html lang="">\n  <body>\n  </body>\n</html>`;
   const [cssText, setCssText] = useState(initialCSS);
   const [htmlText, setHtmlText] = useState(initialHTML);
-  const result = injectClass(htmlText, "body", ["margin", "padding", "border"]);
+  const cssObj = cssToJson(cssText);
+  let result = injectClass(htmlText, cssObj[0]);
+  result = injectClass(result, cssObj[1]);
+
   return (
     <div className="flex">
       <div className="w-1/2 h-screen">
