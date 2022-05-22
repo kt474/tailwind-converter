@@ -7,35 +7,32 @@ import { oneDark } from "@codemirror/theme-one-dark";
 import { injectClass, cssToJson, initialCSS, initialHTML } from "../src/helper";
 
 const Home: NextPage = () => {
-  const [cssText, setCssText] = useState(() => {
-    if (
-      typeof window !== "undefined" &&
-      typeof localStorage.css !== "undefined"
-    ) {
-      return localStorage.css;
-    } else {
-      return initialCSS;
-    }
-  });
-  const [htmlText, setHtmlText] = useState(() => {
-    if (
-      typeof window !== "undefined" &&
-      typeof localStorage.html !== "undefined"
-    ) {
-      return localStorage.html;
-    } else {
-      return initialHTML;
-    }
-  });
-  const cssAttributes = cssToJson(cssText);
+  const [darkMode, setDarkMode] = useState(true);
+  const [cssText, setCssText] = useState("");
+  const [htmlText, setHtmlText] = useState("");
+
   const [tailwindText, setTailwindText] = useState("");
   const updateTailwind = () => {
-    let result = htmlText;
+    const cssAttributes = cssToJson(
+      localStorage.css ? localStorage.css : initialCSS
+    );
+    let result = localStorage.html ? localStorage.html : initialHTML;
     cssAttributes.forEach((attr) => {
       result = injectClass(result, attr);
     });
     setTailwindText(result);
   };
+  useEffect(
+    () => setCssText(localStorage.css ? localStorage.css : initialCSS),
+    []
+  );
+  useEffect(() => {
+    setHtmlText(localStorage.html ? localStorage.html : initialHTML);
+    updateTailwind();
+  }, []);
+  useEffect(() => {
+    setDarkMode(JSON.parse(localStorage.darkMode));
+  }, []);
   useEffect(() => {
     if (cssText) {
       localStorage.css = cssText;
@@ -46,10 +43,6 @@ const Home: NextPage = () => {
       localStorage.html = htmlText;
     }
   }, [htmlText]);
-  useEffect(() => {
-    updateTailwind();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <>
@@ -59,7 +52,7 @@ const Home: NextPage = () => {
             className="h-1/2 text-base"
             value={htmlText}
             height="100%"
-            theme={oneDark}
+            theme={darkMode ? oneDark : "light"}
             extensions={[html()]}
             onChange={(value) => {
               setHtmlText(value);
@@ -69,12 +62,23 @@ const Home: NextPage = () => {
             className="h-1/2 text-base"
             value={cssText}
             height="100%"
-            theme={oneDark}
+            theme={darkMode ? oneDark : "light"}
             extensions={[css()]}
             onChange={(value) => {
               setCssText(value);
             }}
           />
+          <div className="absolute bottom-2 left-2">
+            <input
+              type="checkbox"
+              className="toggle toggle-md toggle-accent"
+              checked={darkMode}
+              onChange={() => {
+                setDarkMode(!darkMode);
+                localStorage.darkMode = !darkMode;
+              }}
+            />
+          </div>
           <div className="absolute bottom-4 right-4">
             <button className="btn btn-sm btn-info" onClick={updateTailwind}>
               Sync
@@ -87,7 +91,7 @@ const Home: NextPage = () => {
             value={tailwindText}
             readOnly={true}
             height="100%"
-            theme={oneDark}
+            theme={darkMode ? oneDark : "light"}
             extensions={[html()]}
           />
         </div>
@@ -97,9 +101,9 @@ const Home: NextPage = () => {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-6 h-6 mx-4"
-                fill="#f0f6f9"
+                fill={darkMode ? "#f0f6f9" : "#000"}
                 viewBox="4 4 16 16"
-                stroke="#282c34"
+                stroke={darkMode ? "#282c34" : "#fff"}
                 strokeWidth={2}
               >
                 <path
@@ -136,7 +140,7 @@ const Home: NextPage = () => {
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
-              fill="#f0f6f9"
+              fill={darkMode ? "#f0f6f9" : "#000"}
               className="bi bi-github"
               viewBox="0 0 16 16"
             >
