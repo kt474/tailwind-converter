@@ -7,8 +7,26 @@ import { oneDark } from "@codemirror/theme-one-dark";
 import { injectClass, cssToJson, initialCSS, initialHTML } from "../src/helper";
 
 const Home: NextPage = () => {
-  const [cssText, setCssText] = useState(initialCSS);
-  const [htmlText, setHtmlText] = useState(initialHTML);
+  const [cssText, setCssText] = useState(() => {
+    if (
+      typeof window !== "undefined" &&
+      typeof localStorage.css !== "undefined"
+    ) {
+      return localStorage.css;
+    } else {
+      return initialCSS;
+    }
+  });
+  const [htmlText, setHtmlText] = useState(() => {
+    if (
+      typeof window !== "undefined" &&
+      typeof localStorage.html !== "undefined"
+    ) {
+      return localStorage.html;
+    } else {
+      return initialHTML;
+    }
+  });
   const cssAttributes = cssToJson(cssText);
   const [tailwindText, setTailwindText] = useState("");
   const updateTailwind = () => {
@@ -18,7 +36,16 @@ const Home: NextPage = () => {
     });
     setTailwindText(result);
   };
-
+  useEffect(() => {
+    if (cssText) {
+      localStorage.css = cssText;
+    }
+  }, [cssText]);
+  useEffect(() => {
+    if (htmlText) {
+      localStorage.html = htmlText;
+    }
+  }, [htmlText]);
   useEffect(() => {
     updateTailwind();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -72,7 +99,7 @@ const Home: NextPage = () => {
                 className="w-6 h-6 mx-4"
                 fill="#f0f6f9"
                 viewBox="4 4 16 16"
-                stroke="currentColor"
+                stroke="#282c34"
                 strokeWidth={2}
               >
                 <path
