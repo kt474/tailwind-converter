@@ -43,22 +43,11 @@ export const injectClass = (htmlText: string, attribute: object) => {
   let tailwindString = "";
   let styles = Object.entries(value).flat().join(" ");
   tailwindString += styles;
-  if (key.includes(".")) {
-    let firstIndex = htmlText.indexOf(key.slice(1));
-    return (
-      htmlText.slice(0, firstIndex) +
-      tailwindString +
-      `"` +
-      htmlText.slice(firstIndex + key.length)
-    );
+  if (key.includes(".") || key.includes("#")) {
+    return htmlText.replaceAll(key.slice(1), tailwindString);
   } else {
-    let firstIndex = htmlText.indexOf("<" + key);
-    return (
-      htmlText.slice(0, firstIndex + key.length + 1) +
-      ` class="` +
-      tailwindString +
-      `"` +
-      htmlText.slice(firstIndex + key.length + 1)
-    );
+    let keyString = "<" + key;
+    let replaceString = keyString + " class=" + `"` + tailwindString + `"`;
+    return htmlText.replaceAll(keyString, replaceString);
   }
 };
