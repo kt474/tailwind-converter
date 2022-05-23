@@ -1,6 +1,7 @@
 import { trim } from "lodash";
 //@ts-ignore
 import { toJSON } from "cssjson";
+import { sizes } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
  body {
@@ -22,6 +23,29 @@ export const initialHTML = `<!-- Edit HTML here -->
     </div>  
   </body>
 </html>`;
+
+const spacing = ["padding", "margin"];
+
+const getClosestValue = (sizes: Array<any>, value: number) => {
+  return sizes.reduce((prev: number, curr: number) =>
+    Math.abs(curr - value) < Math.abs(prev - value) ? curr : prev
+  );
+};
+
+const convertAttributes = (attributes: object) => {
+  for (let style in attributes) {
+    if (spacing.includes(style)) {
+      // @ts-ignore
+      let styleValue = attributes[style];
+      let styleNumber = styleValue.replace(/\D/g, "");
+      if (styleValue.includes("px")) {
+        styleNumber = styleNumber / 16;
+      }
+      let tailwindValue = getClosestValue(sizes, styleNumber * 4);
+      return (style += "-" + tailwindValue);
+    }
+  }
+};
 
 export const cssToJson = (plainText: string) => {
   const cssJson = toJSON(trim(plainText));
