@@ -4,6 +4,7 @@ import CodeMirror from "@uiw/react-codemirror";
 import { css } from "@codemirror/lang-css";
 import { html } from "@codemirror/lang-html";
 import { oneDark } from "@codemirror/theme-one-dark";
+import { css_beautify, html_beautify } from "js-beautify";
 import { injectClass, cssToJson, initialCSS, initialHTML } from "../src/helper";
 
 const Home: NextPage = () => {
@@ -12,6 +13,10 @@ const Home: NextPage = () => {
   const [htmlText, setHtmlText] = useState("");
 
   const [tailwindText, setTailwindText] = useState("");
+  const formatCode = () => {
+    setCssText(css_beautify(cssText, { indent_size: 2 }));
+    setHtmlText(html_beautify(htmlText, { indent_size: 2 }));
+  };
   const updateTailwind = () => {
     const cssAttributes = cssToJson(
       localStorage.css ? localStorage.css : initialCSS
@@ -80,6 +85,9 @@ const Home: NextPage = () => {
             />
           </div>
           <div className="absolute bottom-4 right-4">
+            <button className="btn btn-sm btn-info mr-2" onClick={formatCode}>
+              Beautify
+            </button>
             <button className="btn btn-sm btn-info" onClick={updateTailwind}>
               Sync
             </button>

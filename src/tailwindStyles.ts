@@ -3,6 +3,21 @@ export const sizes = [
   28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96
 ];
 
+export const spacing = [
+  "padding",
+  "padding-left",
+  "padding-right",
+  "padding-top",
+  "padding-bottom",
+  "margin",
+  "margin-left",
+  "margin-right",
+  "margin-top",
+  "margin-bottom",
+  "width",
+  "height"
+];
+
 const directions = {
   left: "l",
   right: "r",

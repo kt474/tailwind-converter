@@ -1,7 +1,7 @@
 import { trim } from "lodash";
 //@ts-ignore
 import { toJSON } from "cssjson";
-import { sizes } from "./tailwindStyles";
+import { sizes, spacing } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
  body {
@@ -24,8 +24,6 @@ export const initialHTML = `<!-- Edit HTML here -->
   </body>
 </html>`;
 
-const spacing = ["padding", "margin"];
-
 const getClosestValue = (sizes: Array<any>, value: number) => {
   return sizes.reduce((prev: number, curr: number) =>
     Math.abs(curr - value) < Math.abs(prev - value) ? curr : prev
@@ -36,14 +34,22 @@ const convertAttributes = (attributes: object) => {
   let result = [];
   for (let style in attributes) {
     if (spacing.includes(style)) {
+      let abbreviation = style.charAt(0);
+      if (style.includes("-")) {
+        let direction = style.split("-")[1].charAt(0);
+        abbreviation += direction;
+      }
       // @ts-ignore
       let styleValue = attributes[style];
       let styleNumber = styleValue.replace(/\D/g, "");
+      let tailwindValue = "";
       if (styleValue.includes("px")) {
         styleNumber = styleNumber / 16;
+        tailwindValue = getClosestValue(sizes, styleNumber * 4);
+      } else if (styleValue.includes("rem")) {
+        tailwindValue = getClosestValue(sizes, styleNumber * 4);
       }
-      let tailwindValue = getClosestValue(sizes, styleNumber * 4);
-      result.push((style += "-" + tailwindValue));
+      result.push((abbreviation += "-" + tailwindValue));
     }
   }
   return result;
