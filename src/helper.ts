@@ -33,6 +33,7 @@ const getClosestValue = (sizes: Array<any>, value: number) => {
 };
 
 const convertAttributes = (attributes: object) => {
+  let result = [];
   for (let style in attributes) {
     if (spacing.includes(style)) {
       // @ts-ignore
@@ -42,9 +43,10 @@ const convertAttributes = (attributes: object) => {
         styleNumber = styleNumber / 16;
       }
       let tailwindValue = getClosestValue(sizes, styleNumber * 4);
-      return (style += "-" + tailwindValue);
+      result.push((style += "-" + tailwindValue));
     }
   }
+  return result;
 };
 
 export const cssToJson = (plainText: string) => {
@@ -52,7 +54,9 @@ export const cssToJson = (plainText: string) => {
   let result = [];
   for (const className in cssJson.children) {
     let obj: { [index: string]: any } = {};
-    obj[className] = cssJson.children[className].attributes;
+    obj[className] = convertAttributes(
+      cssJson.children[className].attributes
+    ).join(" ");
     result.push(obj);
   }
   return result;
@@ -64,14 +68,11 @@ export const injectClass = (htmlText: string, attribute: object) => {
     "<!-- HTML with Tailwind -->"
   );
   const [key, value] = Object.entries(attribute)[0];
-  let tailwindString = "";
-  let styles = Object.entries(value).flat().join(" ");
-  tailwindString += styles;
   if (key.includes(".") || key.includes("#")) {
-    return htmlText.replaceAll(key.slice(1), tailwindString);
+    return htmlText.replaceAll(key.slice(1), value);
   } else {
     let keyString = "<" + key;
-    let replaceString = keyString + " class=" + `"` + tailwindString + `"`;
+    let replaceString = keyString + " class=" + `"` + value + `"`;
     return htmlText.replaceAll(keyString, replaceString);
   }
 };
