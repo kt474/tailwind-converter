@@ -14,8 +14,17 @@ const Home: NextPage = () => {
 
   const [tailwindText, setTailwindText] = useState("");
   const formatCode = () => {
-    setCssText(css_beautify(cssText, { indent_size: 2 }));
-    setHtmlText(html_beautify(htmlText, { indent_size: 2 }));
+    setCssText(
+      css_beautify(cssText, { indent_size: 2, max_preserve_newlines: 0 })
+    );
+    setHtmlText(
+      html_beautify(htmlText, {
+        indent_size: 2,
+        extra_liners: [],
+        wrap_line_length: 40,
+        max_preserve_newlines: 0
+      })
+    );
   };
   const updateTailwind = () => {
     const cssAttributes = cssToJson(
