@@ -82,23 +82,66 @@ const Home: NextPage = () => {
               setCssText(value);
             }}
           />
-          <div className="absolute bottom-2 left-2">
+          <div className="absolute bottom-2 left-2 flex">
             <input
               type="checkbox"
-              className="toggle toggle-md toggle-accent"
+              className="toggle toggle-md"
               checked={darkMode}
               onChange={() => {
                 setDarkMode(!darkMode);
                 localStorage.darkMode = !darkMode;
               }}
             />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 ml-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke={darkMode ? "#f0f6f9" : "#000"}
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
           </div>
-          <div className="absolute bottom-4 right-4">
-            <button className="btn btn-sm btn-info mr-2" onClick={formatCode}>
-              Beautify
+          <div className="absolute bottom-2 right-4">
+            <button
+              className="btn btn-sm btn-primary mr-2"
+              onClick={formatCode}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                />
+              </svg>
             </button>
-            <button className="btn btn-sm btn-info" onClick={updateTailwind}>
-              Sync
+            <button className="btn btn-sm btn-primary" onClick={updateTailwind}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                />
+              </svg>
             </button>
           </div>
         </div>
