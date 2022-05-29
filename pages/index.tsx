@@ -36,6 +36,10 @@ const Home: NextPage = () => {
     });
     setTailwindText(result);
   };
+  const syncButton = () => {
+    formatCode();
+    updateTailwind();
+  };
   useEffect(
     () => setCssText(localStorage.css ? localStorage.css : initialCSS),
     []
@@ -127,7 +131,7 @@ const Home: NextPage = () => {
                 />
               </svg>
             </button>
-            <button className="btn btn-sm btn-primary" onClick={updateTailwind}>
+            <button className="btn btn-sm btn-primary" onClick={syncButton}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"

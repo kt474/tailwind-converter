@@ -1,7 +1,7 @@
-import { trim } from "lodash";
+import { trim, get } from "lodash";
 //@ts-ignore
 import { toJSON } from "cssjson";
-import { sizes, spacing } from "./tailwindStyles";
+import { sizes, spacing, percentages, spacingCustom } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
  body {
@@ -48,6 +48,14 @@ const convertAttributes = (attributes: object) => {
         tailwindValue = getClosestValue(sizes, styleNumber * 4);
       } else if (styleValue.includes("rem")) {
         tailwindValue = getClosestValue(sizes, styleNumber * 4);
+      } else if (styleValue.includes("%")) {
+        let tailwindDecimal = getClosestValue(
+          Object.keys(percentages),
+          styleNumber / 100
+        );
+        tailwindValue = percentages[tailwindDecimal as keyof object];
+      } else if (style === "width" || style === "height") {
+        tailwindValue = get(spacingCustom, styleValue, "");
       }
       result.push((abbreviation += "-" + tailwindValue));
     }
