@@ -1,7 +1,13 @@
 import { trim, get } from "lodash";
 //@ts-ignore
 import { toJSON } from "cssjson";
-import { sizes, spacing, percentages, spacingCustom } from "./tailwindStyles";
+import {
+  sizes,
+  spacing,
+  percentages,
+  spacingCustom,
+  fontSize
+} from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
  body {
@@ -33,16 +39,17 @@ const getClosestValue = (sizes: Array<any>, value: number) => {
 const convertAttributes = (attributes: object) => {
   let result = [];
   for (let style in attributes) {
+    // @ts-ignore
+    let styleValue = attributes[style];
+    let styleNumber = styleValue.replace(/\D/g, "");
+    let tailwindValue = "";
+    let abbreviation = "";
     if (spacing.includes(style)) {
-      let abbreviation = style.charAt(0);
+      abbreviation = style.charAt(0);
       if (style.includes("-")) {
         let direction = style.split("-")[1].charAt(0);
         abbreviation += direction;
       }
-      // @ts-ignore
-      let styleValue = attributes[style];
-      let styleNumber = styleValue.replace(/\D/g, "");
-      let tailwindValue = "";
       if (styleValue.includes("px")) {
         styleNumber = styleNumber / 16;
         tailwindValue = getClosestValue(sizes, styleNumber * 4);
@@ -57,8 +64,18 @@ const convertAttributes = (attributes: object) => {
       } else if (style === "width" || style === "height") {
         tailwindValue = get(spacingCustom, styleValue, "");
       }
-      result.push((abbreviation += "-" + tailwindValue));
+    } else if (style === "font-size") {
+      abbreviation = "text";
+      let size = "";
+      if (styleValue.includes("px")) {
+        styleNumber = styleNumber / 16;
+        size = getClosestValue(Object.keys(fontSize), styleNumber);
+      } else if (styleValue.includes("rem")) {
+        size = getClosestValue(Object.keys(fontSize), styleNumber);
+      }
+      tailwindValue = get(fontSize, size, "");
     }
+    result.push((abbreviation += "-" + tailwindValue));
   }
   return result;
 };
