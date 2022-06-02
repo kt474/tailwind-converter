@@ -300,11 +300,16 @@ const Home: NextPage = () => {
               theme={darkMode ? oneDark : "light"}
               extensions={[html()]}
             />
-            <div className="bottom-2 right-6 absolute">
+            <div className="bottom-2 right-4 absolute">
               {copied ? (
-                <button className="btn btn-xs">Copied!</button>
+                <button className="btn btn-xs bg-gray-100 text-black hover:bg-gray-200 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600 border-none mb-0.5">
+                  Copied!
+                </button>
               ) : (
-                <button className="btn btn-xs" onClick={copyToClipboard}>
+                <button
+                  className="btn btn-xs bg-gray-100 text-black hover:bg-gray-200 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600 border-none "
+                  onClick={copyToClipboard}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-4 w-4 mr-1"
