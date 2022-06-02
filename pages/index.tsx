@@ -71,7 +71,9 @@ const Home: NextPage = () => {
     updateTailwind();
   }, []);
   useEffect(() => {
-    setDarkMode(JSON.parse(localStorage.darkMode));
+    if (localStorage.darkMode) {
+      setDarkMode(JSON.parse(localStorage.darkMode));
+    }
   }, []);
   useEffect(() => {
     if (cssText) {
