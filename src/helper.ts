@@ -56,6 +56,9 @@ const convertAttributes = (attributes: object) => {
       } else if (styleValue.includes("rem")) {
         tailwindValue = getClosestValue(sizes, styleNumber * 4);
       } else if (styleValue.includes("%")) {
+        if (style === "margin" || style === "padding") {
+          continue;
+        }
         let tailwindDecimal = getClosestValue(
           Object.keys(percentages),
           styleNumber / 100
