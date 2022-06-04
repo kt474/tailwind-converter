@@ -56,6 +56,17 @@ export const fontSize = {
   6: "8xl",
   8: "9xl"
 };
+export const fontWeight = {
+  100: "thin",
+  200: "extralight",
+  300: "light",
+  400: "normal",
+  500: "medium",
+  600: "semibold",
+  700: "bold",
+  800: "extrabold",
+  900: "black"
+};
 //
 // const directions = {
 //   left: "l",

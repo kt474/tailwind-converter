@@ -6,7 +6,8 @@ import {
   spacing,
   percentages,
   spacingCustom,
-  fontSize
+  fontSize,
+  fontWeight
 } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
@@ -77,6 +78,9 @@ const convertAttributes = (attributes: object) => {
         size = getClosestValue(Object.keys(fontSize), styleNumber);
       }
       tailwindValue = get(fontSize, size, "");
+    } else if (style === "font-weight") {
+      abbreviation = "font";
+      tailwindValue = get(fontWeight, styleNumber, "");
     }
     result.push((abbreviation += "-" + tailwindValue));
   }
