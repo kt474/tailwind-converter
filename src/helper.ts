@@ -83,8 +83,9 @@ const convertAttributes = (attributes: object) => {
       tailwindValue = get(fontWeight, styleNumber, "");
     } else if (style === "font-style") {
       tailwindValue = styleValue === "italic" ? "italic" : "non-italic";
+    } else if (style === "display") {
+      tailwindValue = styleValue === "none" ? "hidden" : styleValue;
     }
-
     result.push(
       abbreviation ? (abbreviation += "-" + tailwindValue) : tailwindValue
     );
