@@ -81,8 +81,13 @@ const convertAttributes = (attributes: object) => {
     } else if (style === "font-weight") {
       abbreviation = "font";
       tailwindValue = get(fontWeight, styleNumber, "");
+    } else if (style === "font-style") {
+      tailwindValue = styleValue === "italic" ? "italic" : "non-italic";
     }
-    result.push((abbreviation += "-" + tailwindValue));
+
+    result.push(
+      abbreviation ? (abbreviation += "-" + tailwindValue) : tailwindValue
+    );
   }
   return result;
 };
