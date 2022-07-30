@@ -1,5 +1,4 @@
-## Supported Tailwind Classes: 
-`0/150`
+## Supported Tailwind Classes: 5/151
 
 ### Layout
 
@@ -50,9 +49,9 @@
 
 ### Spacing
 
-- [ ] Padding
-- [ ] Margin
-- [ ] Space Between
+- [x] Padding
+- [x] Margin
+- [x] Space Between
 
 ### Sizing
 
@@ -66,9 +65,10 @@
 ### Typography
 
 - [ ] Font Family
-- [ ] Font Size
+- [x] Font Size
 - [ ] Font Smoothing
 - [ ] Font Style
+- [x] Font Weight
 - [ ] Font Variant Numeric
 - [ ] Letter Spacing
 - [ ] Line Height
