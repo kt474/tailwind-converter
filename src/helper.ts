@@ -7,7 +7,8 @@ import {
   percentages,
   spacingCustom,
   fontSize,
-  fontWeight
+  fontWeight,
+  mainDict
 } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
@@ -45,6 +46,7 @@ const convertAttributes = (attributes: object) => {
     let styleNumber = styleValue.replace(/\D/g, "");
     let tailwindValue = "";
     let abbreviation = "";
+    // margin, padding, width, height
     if (spacing.includes(style)) {
       abbreviation = style.charAt(0);
       if (style.includes("-")) {
@@ -69,6 +71,7 @@ const convertAttributes = (attributes: object) => {
         tailwindValue = get(spacingCustom, styleValue, "");
       }
     } else if (style === "font-size") {
+      // font-size
       abbreviation = "text";
       let size = "";
       if (styleValue.includes("px")) {
@@ -78,13 +81,18 @@ const convertAttributes = (attributes: object) => {
         size = getClosestValue(Object.keys(fontSize), styleNumber);
       }
       tailwindValue = get(fontSize, size, "");
-    } else if (style === "font-weight") {
+    } // font-weight
+    else if (style === "font-weight") {
       abbreviation = "font";
       tailwindValue = get(fontWeight, styleNumber, "");
-    } else if (style === "font-style") {
+    } // font-style
+    else if (style === "font-style") {
       tailwindValue = styleValue === "italic" ? "italic" : "non-italic";
-    } else if (style === "display") {
+    } // display
+    else if (style === "display") {
       tailwindValue = styleValue === "none" ? "hidden" : styleValue;
+    } else {
+      tailwindValue = mainDict[style][styleValue];
     }
     result.push(
       abbreviation ? (abbreviation += "-" + tailwindValue) : tailwindValue

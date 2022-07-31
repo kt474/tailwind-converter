@@ -1,17 +1,17 @@
-## Supported Tailwind Classes: 5/151
+## Supported Tailwind Classes: 10/151
 
 ### Layout
 
-- [ ]  Aspect Ratio
+- [x]  Aspect Ratio
 - [ ]  Container
 - [ ]  Columns
 - [ ]  Break After
 - [ ]  Break Before
 - [ ]  Break Inside
 - [ ]  Box Decoration Break
-- [ ]  Box Sizing
-- [ ]  Display
-- [ ]  Floats
+- [x]  Box Sizing
+- [x]  Display
+- [x]  Floats
 - [ ]  Clear
 - [ ]  Isolation
 - [ ]  Object Fit
@@ -67,7 +67,7 @@
 - [ ] Font Family
 - [x] Font Size
 - [ ] Font Smoothing
-- [ ] Font Style
+- [x] Font Style
 - [x] Font Weight
 - [ ] Font Variant Numeric
 - [ ] Letter Spacing

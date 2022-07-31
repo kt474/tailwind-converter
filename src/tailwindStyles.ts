@@ -1,3 +1,20 @@
+export const mainDict: any = {
+  "aspect-ratio": {
+    auto: "aspect-auto",
+    "1/1": "aspect-square",
+    "16/9": "aspect-video"
+  },
+  "box-sizing": {
+    "border-box": "box-border",
+    "content-box": "box-content"
+  },
+  float: {
+    right: "float-right",
+    left: "float-left",
+    none: "float-none"
+  }
+};
+
 export const sizes = [
   0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24,
   28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96
