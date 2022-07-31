@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 10/151
+## Supported Tailwind Classes: 20/151
 
 ### Layout
 
@@ -12,22 +12,22 @@
 - [x]  Box Sizing
 - [x]  Display
 - [x]  Floats
-- [ ]  Clear
-- [ ]  Isolation
-- [ ]  Object Fit
-- [ ]  Object Position
-- [ ]  Overflow
-- [ ]  Overscroll Behavior
-- [ ]  Position
+- [x]  Clear
+- [x]  Isolation
+- [x]  Object Fit
+- [x]  Object Position
+- [x]  Overflow
+- [x]  Overscroll Behavior
+- [x]  Position
 - [ ]  Top/Right/Bottom/Left
-- [ ]  Visibility
+- [x]  Visibility
 - [ ]  Z-Index
 
 ### Flexbox & Grid
 
 - [ ] Flex Basis
-- [ ] Flex Direction
-- [ ] Flex Wrap
+- [x] Flex Direction
+- [x] Flex Wrap
 - [ ] Flex
 - [ ] Flex Grow
 - [ ] Flex Shrink

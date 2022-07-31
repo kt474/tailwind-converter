@@ -12,6 +12,85 @@ export const mainDict: any = {
     right: "float-right",
     left: "float-left",
     none: "float-none"
+  },
+  clear: {
+    left: "clear-left",
+    right: "clear-right",
+    both: "clear-both",
+    none: "clear-none"
+  },
+  isolation: {
+    isolate: "isolate",
+    auto: "isolation-auto"
+  },
+  "object-fit": {
+    contain: "object-contain",
+    cover: "object-cover",
+    fill: "object-fill",
+    none: "object-none",
+    "scale-down": "object-scale-down"
+  },
+  "object-position": {
+    bottom: "object-bottom",
+    center: "object-position",
+    left: "object-left",
+    "left bottom": "object-left-bottom",
+    "left top": "object-left-top",
+    right: "object-right",
+    "right bottom": "object-right-bottom",
+    "right top": "object-right-top",
+    top: "object-top"
+  },
+  overflow: {
+    auto: "overflow-auto",
+    hidden: "overflow-hidden",
+    clip: "overflow-clip",
+    visible: "overflow-visible",
+    scroll: "overflow-scroll"
+  },
+  "overflow-x": {
+    auto: "overflow-x-auto",
+    hidden: "overflow-x-hidden",
+    clip: "overflow-x-clip",
+    visible: "overflow-x-visible",
+    scroll: "overflow-x-scroll"
+  },
+  "overflow-y": {
+    auto: "overflow-y-auto",
+    hidden: "overflow-y-hidden",
+    clip: "overflow-y-clip",
+    visible: "overflow-y-visible",
+    scroll: "overflow-y-scroll"
+  },
+  "overscroll-behavior": {
+    auto: "overscroll-auto",
+    contain: "overscroll-contain",
+    none: "overscroll-none"
+  },
+  "overscroll-behavior-x": {
+    auto: "overscroll-x-auto",
+    contain: "overscroll-x-contain",
+    none: "overscroll-x-none"
+  },
+  "overscroll-behavior-y": {
+    auto: "overscroll-y-auto",
+    contain: "overscroll-y-contain",
+    none: "overscroll-y-none"
+  },
+  visibility: {
+    visible: "visible",
+    hidden: "invisible"
+  },
+  "flex-direction": {
+    row: "flex-row",
+    "row-reverse": "flex-row-reverse",
+    column: "flex-col",
+    "column-reverse": "flex-col-reverse"
+  },
+  "flex-wrap": {
+    wrap: "flex-wrap",
+    "wrap-reverse": "flex-wrap-reverse",
+    nowrap: "flex-nowrap"
   }
 };
 
