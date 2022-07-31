@@ -164,26 +164,6 @@ const Home: NextPage = () => {
                 />
               </svg>
             </button>
-            <button
-              className="btn btn-sm btn-primary bg-sky-500 hover:bg-sky-400 border-none -mt-0.5"
-              title="convert code"
-              onClick={syncButton}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                />
-              </svg>
-            </button>
           </div>
           <div className="flex right-4 top-2 absolute">
             <form
@@ -271,7 +251,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div className="flex" style={customHeight}>
-          <div className="w-1/2">
+          <div className="w-1/2 relative">
             <CodeMirror
               className="h-1/2 text-base"
               value={htmlText}
@@ -292,6 +272,29 @@ const Home: NextPage = () => {
                 setCssText(value);
               }}
             />
+            <div className="absolute bottom-2 right-4">
+              <button
+                className="btn btn-xs btn-primary bg-sky-500 hover:bg-sky-400 border-none"
+                title="convert code"
+                onClick={syncButton}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 mr-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                  />
+                </svg>
+                Sync
+              </button>
+            </div>
           </div>
           <div className="w-1/2">
             <CodeMirror

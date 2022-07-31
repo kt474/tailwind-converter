@@ -93,7 +93,7 @@ const convertAttributes = (attributes: object) => {
       tailwindValue = styleValue === "none" ? "hidden" : styleValue;
     } else if (style === "position") {
       tailwindValue = styleValue;
-    } else {
+    } else if (style in mainDict) {
       tailwindValue = mainDict[style][styleValue];
     }
     result.push(
