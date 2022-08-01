@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 20/151
+## Supported Tailwind Classes: 31/152
 
 ### Layout
 
@@ -29,8 +29,8 @@
 - [x] Flex Direction
 - [x] Flex Wrap
 - [ ] Flex
-- [ ] Flex Grow
-- [ ] Flex Shrink
+- [x] Flex Grow
+- [x] Flex Shrink
 - [ ] Order
 - [ ] Grid Template Columns
 - [ ] Grid Column Start/End
@@ -38,14 +38,15 @@
 - [ ] Grid Auto Columns
 - [ ] Grid Auto Rows
 - [ ] Gap
-- [ ] Justify Content
-- [ ] Justify Self
-- [ ] Align Content
-- [ ] Align Items
-- [ ] Align Self
-- [ ] Place Content
-- [ ] Place Items
-- [ ] Place Self
+- [x] Justify Content
+- [x] Justify Items
+- [x] Justify Self
+- [x] Align Content
+- [x] Align Items
+- [x] Align Self
+- [x] Place Content
+- [x] Place Items
+- [x] Place Self
 
 ### Spacing
 
