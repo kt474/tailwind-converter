@@ -220,6 +220,61 @@ export const mainDict: any = {
     lowercase: "lowercase",
     capitalize: "capitalize",
     none: "normal-case"
+  },
+  "vertical-align": {
+    baseline: "align-baseline",
+    top: "align-top",
+    middle: "align-middle",
+    bottom: "align-bottom",
+    "text-top": "align-text-top",
+    "text-bottom": "align-text-bottom",
+    sub: "align-sub",
+    super: "align-super"
+  },
+  "white-space": {
+    normal: "whitespace-normal",
+    nowrap: "whitespace-nowrap",
+    pre: "whitespace-pre",
+    "pre-line": "whitespace-pre-line",
+    "pre-wrap": "whitespace-pre-wrap"
+  },
+  content: {
+    none: "content-none"
+  },
+  "background-attachment": {
+    fixed: "bg-fixed",
+    local: "bg-local",
+    scroll: "bg-scroll"
+  },
+  "background-clip": {
+    "border-box": "bg-clip-border",
+    "padding-box": "bg-clip-padding",
+    "content-box": "bg-clip-content",
+    text: "bg-clip-text"
+  },
+  "background-origin": {
+    "border-box": "bg-origin-border",
+    "padding-box": "bg-origin-padding",
+    "content-box": "bg-origin-content"
+  },
+  "background-position": {
+    bottom: "bg-bottom",
+    center: "bg-center",
+    left: "bg-left",
+    "left bottom": "bg-left-bottom",
+    "left top": "bg-left-top",
+    right: "bg-right",
+    "right bottom": "bg-right-bottom",
+    "right top": "bg-right-top",
+    top: "bg-top"
+  },
+  "background-repeat": {
+    repeat: "bg-repeat",
+    "no-repeat": "bg-no-repeat",
+    "repeat-x": "bg-repeat-x",
+    "repeat-y": "bg-repeat-y",
+    round: "bg-repeat-round",
+    space: "bg-repeat-space"
   }
 };
 

@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 39/152
+## Supported Tailwind Classes: 47/153
 
 ### Layout
 
@@ -85,18 +85,19 @@
 - [x] Text Transform
 - [ ] Text Overflow
 - [ ] Text Indent
-- [ ] Vertical Align
-- [ ] Whitespace
+- [x] Vertical Align
+- [x] Whitespace
 - [ ] Word Break
-- [ ] Content
+- [x] Content
 
 ### Backgrounds
 
-- [ ] Background Attachment
-- [ ] Background Clip
-- [ ] Background Origin
-- [ ] Background Position
-- [ ] Background Repeat
+- [x] Background Attachment
+- [x] Background Clip
+- [ ] Background Color
+- [x] Background Origin
+- [x] Background Position
+- [x] Background Repeat
 - [ ] Background Size
 - [ ] Background Image
 - [ ] Gradient Color Stops
