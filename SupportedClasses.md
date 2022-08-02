@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 31/152
+## Supported Tailwind Classes: 39/152
 
 ### Layout
 
@@ -60,7 +60,7 @@
 - [ ] Min-Width
 - [ ] Max-Width
 - [ ] Height
-- [ ] Min-Height
+- [x] Min-Height
 - [ ] Max-Height
 
 ### Typography
@@ -70,19 +70,19 @@
 - [ ] Font Smoothing
 - [x] Font Style
 - [x] Font Weight
-- [ ] Font Variant Numeric
+- [x] Font Variant Numeric
 - [ ] Letter Spacing
 - [ ] Line Height
-- [ ] List Style Type
-- [ ] List Style Position
-- [ ] Text Align
+- [x] List Style Type
+- [x] List Style Position
+- [x] Text Align
 - [ ] Text Color
-- [ ] Text Decoration
+- [x] Text Decoration
 - [ ] Text Decoration Color
-- [ ] Text Decoration Style
+- [x] Text Decoration Style
 - [ ] Text Decoration Thickness
 - [ ] Text Underline Offset
-- [ ] Text Transform
+- [x] Text Transform
 - [ ] Text Overflow
 - [ ] Text Indent
 - [ ] Vertical Align

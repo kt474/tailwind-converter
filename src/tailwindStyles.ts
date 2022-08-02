@@ -165,6 +165,61 @@ export const mainDict: any = {
     end: "place-self-end",
     center: "place-self-center",
     stretch: "place-self-stretch"
+  },
+  "min-height": {
+    "0px": "min-h-0",
+    "100%": "min-h-full",
+    "100vh": "min-h-screen",
+    "min-content": "min-h-min",
+    "max-content": "min-h-max",
+    "fit-content": "min-h-fit"
+  },
+  "font-variant-numeric": {
+    normal: "normal-nums",
+    ordinal: "ordinal",
+    "slashed-zero": "slashed-zero",
+    "lining-nums": "lining-nums",
+    "oldstyle-nums": "oldstyle-nums",
+    "proportional-nums": "proportional-nums",
+    "tabular-nums": "tabular-nums",
+    "diagonal-fractions": "diagonal-fractions",
+    "stacked-fractions": "stacked-fractions"
+  },
+  "list-style-type": {
+    none: "list-none",
+    disc: "list-disc",
+    decimal: "list-decimal"
+  },
+  "list-style-position": {
+    inside: "list-inside",
+    outside: "list-outside"
+  },
+  "text-align": {
+    left: "text-left",
+    center: "text-center",
+    right: "text-right",
+    justify: "text-justify",
+    start: "text-start",
+    end: "text-end"
+  },
+  "text-decoration-line": {
+    underline: "underline",
+    overline: "overline",
+    "line-through": "line-through",
+    none: "no-underline"
+  },
+  "text-decoration-style": {
+    solid: "decoration-solid",
+    double: "decoration-double",
+    dotted: "decoration-dotted",
+    dashed: "decoration-dashed",
+    wavy: "decoration-wavy"
+  },
+  "text-transform": {
+    uppercase: "uppercase",
+    lowercase: "lowercase",
+    capitalize: "capitalize",
+    none: "normal-case"
   }
 };
 
