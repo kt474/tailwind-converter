@@ -272,7 +272,7 @@ const Home: NextPage = () => {
                 setCssText(value);
               }}
             />
-            <div className="absolute bottom-2 right-4">
+            <div className="absolute bottom-0 right-4">
               <button
                 className="btn btn-xs btn-primary bg-sky-500 hover:bg-sky-400 border-none"
                 title="convert code"
