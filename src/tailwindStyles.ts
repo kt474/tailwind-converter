@@ -280,6 +280,58 @@ export const mainDict: any = {
     auto: "bg-auto",
     cover: "bg-cover",
     contain: "bg-contain"
+  },
+  "border-style": {
+    solid: "border-solid",
+    dashed: "border-dashed",
+    dotted: "border-dotted",
+    double: "border-double",
+    hidden: "border-hidden",
+    none: "border-none"
+  },
+  filter: {
+    "grayscale(0)": "grayscale-0",
+    "grayscale(100%)": "grayscale",
+    "invert(0)": "invert-0",
+    "invert(100%)": "invert",
+    "sepia(0)": "sepia-0",
+    "sepia(100%)": "sepia"
+  },
+  "border-collapse": {
+    collapse: "border-collapse",
+    separate: "border-separate"
+  },
+  "table-layout": {
+    auto: "table-auto",
+    fixed: "table-fixed"
+  },
+  "transform-origin": {
+    center: "origin-center",
+    top: "origin-top",
+    "top right": "origin-top-right",
+    right: "origin-right",
+    "bottom right": "origin-bottom-right",
+    bottom: "origin-bottom",
+    "bottom left": "origin-bottom-left",
+    left: "origin-left",
+    "top left": "origin-top-left"
+  },
+  appearance: {
+    none: "appearance-none"
+  },
+  "pointer-events": {
+    none: "pointer-events-none",
+    auto: "pointer-events-auto"
+  },
+  resize: {
+    none: "resize-none",
+    vertical: "resize-y",
+    horizontal: "resize-x",
+    both: "resize"
+  },
+  "scroll-behavior": {
+    auto: "scroll-auto",
+    smooth: "scroll-smooth"
   }
 };
 

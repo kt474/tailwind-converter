@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 48/153
+## Supported Tailwind Classes: 59/152
 
 ### Layout
 
@@ -101,14 +101,13 @@
 - [x] Background Size
 - [ ] Background Image
 - [ ] Gradient Color Stops
-- [ ] Background Attachment
 
 ### Borders
 
 - [ ] Border Radius
 - [ ] Border Width
 - [ ] Border Color
-- [ ] Border Style
+- [x] Border Style
 - [ ] Divide Width
 - [ ] Divide Style
 - [ ] Outline Width
@@ -134,11 +133,11 @@
 - [ ] Brightness
 - [ ] Contrast
 - [ ] Drop Shadow
-- [ ] Grayscale
+- [x] Grayscale
 - [ ] Hue Rotate
-- [ ] Invert
+- [x] Invert
 - [ ] Saturate
-- [ ] Sepia
+- [x] Sepia
 - [ ] Backdrop Blur
 - [ ] Backdrop Brightness
 - [ ] Backdrop Contrast
@@ -151,8 +150,8 @@
 
 ### Tables
 
-- [ ] Border Collapse
-- [ ] Border Spacing
+- [x] Border Collapse
+- [x] Border Spacing
 - [ ] Table Layout
 
 ### Transitions & Animation
@@ -169,17 +168,17 @@
 - [ ] Rotate
 - [ ] Translate
 - [ ] Skew
-- [ ] Transform Origin
+- [x] Transform Origin
 
 ### Interactivity
 
 - [ ] Accent Color
-- [ ] Appearance
+- [x] Appearance
 - [ ] Cursor
 - [ ] Caret Color
-- [ ] Pointer Events
-- [ ] Resize
-- [ ] Scroll Behavior
+- [x] Pointer Events
+- [x] Resize
+- [x] Scroll Behavior
 - [ ] Scroll Margin
 - [ ] Scroll Padding
 - [ ] Scroll Snap Align
