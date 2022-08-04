@@ -275,6 +275,11 @@ export const mainDict: any = {
     "repeat-y": "bg-repeat-y",
     round: "bg-repeat-round",
     space: "bg-repeat-space"
+  },
+  "background-size": {
+    auto: "bg-auto",
+    cover: "bg-cover",
+    contain: "bg-contain"
   }
 };
 

@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 47/153
+## Supported Tailwind Classes: 48/153
 
 ### Layout
 
@@ -98,7 +98,7 @@
 - [x] Background Origin
 - [x] Background Position
 - [x] Background Repeat
-- [ ] Background Size
+- [x] Background Size
 - [ ] Background Image
 - [ ] Gradient Color Stops
 - [ ] Background Attachment
