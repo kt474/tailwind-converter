@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 59/152
+## Supported Tailwind Classes: 65/152
 
 ### Layout
 
@@ -181,18 +181,18 @@
 - [x] Scroll Behavior
 - [ ] Scroll Margin
 - [ ] Scroll Padding
-- [ ] Scroll Snap Align
-- [ ] Scroll Snap Stop
+- [x] Scroll Snap Align
+- [x] Scroll Snap Stop
 - [ ] Scroll Snap Type
-- [ ] Touch Action
-- [ ] User Select
-- [ ] Will Change
+- [x] Touch Action
+- [x] User Select
+- [x] Will Change
 
 ### SVG
 
 - [ ] Fill
 - [ ] Stroke
-- [ ] Width
+- [x] Stroke Width
 
 ### Accessibility
 - [ ] Screen Readers

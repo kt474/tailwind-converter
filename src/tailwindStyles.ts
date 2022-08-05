@@ -332,6 +332,45 @@ export const mainDict: any = {
   "scroll-behavior": {
     auto: "scroll-auto",
     smooth: "scroll-smooth"
+  },
+  "scroll-snap-align": {
+    start: "snap-start",
+    end: "snap-end",
+    center: "snap-center",
+    none: "snap-align-none"
+  },
+  "scroll-snap-stop": {
+    normal: "snap-normal",
+    always: "snap-always"
+  },
+  "touch-action": {
+    auto: "touch-auto",
+    none: "touch-none",
+    "pan-x": "touch-pan-x",
+    "pan-left": "touch-pan-left",
+    "pan-right": "touch-pan-right",
+    "pan-y": "touch-pan-y",
+    "pan-up": "touch-pan-up",
+    "pan-down": "touch-pan-down",
+    "pinch-zoom": "touch-pinch-zoom",
+    manipulation: "touch-manipulation"
+  },
+  "user-select": {
+    none: "select-none",
+    text: "select-text",
+    all: "select-all",
+    auto: "select-auto"
+  },
+  "will-change": {
+    auto: "will-change-auto",
+    "scroll-position": "will-change-scroll",
+    contents: "will-change-contents",
+    transform: "will-change-transform"
+  },
+  "stroke-width": {
+    0: "stroke-0",
+    1: "stroke-1",
+    2: "stroke-2"
   }
 };
 
