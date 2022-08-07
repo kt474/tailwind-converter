@@ -1,14 +1,14 @@
-## Supported Tailwind Classes: 65/152
+## Supported Tailwind Classes: 69/152
 
 ### Layout
 
 - [x]  Aspect Ratio
 - [ ]  Container
 - [ ]  Columns
-- [ ]  Break After
-- [ ]  Break Before
-- [ ]  Break Inside
-- [ ]  Box Decoration Break
+- [x]  Break After
+- [x]  Break Before
+- [x]  Break Inside
+- [x]  Box Decoration Break
 - [x]  Box Sizing
 - [x]  Display
 - [x]  Floats

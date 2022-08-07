@@ -371,6 +371,36 @@ export const mainDict: any = {
     0: "stroke-0",
     1: "stroke-1",
     2: "stroke-2"
+  },
+  "break-after": {
+    auto: "break-after-auto",
+    avoid: "break-after-avoid",
+    all: "break-after-all",
+    "avoid-page": "break-after-avoid-page",
+    page: "break-after-page",
+    left: "break-after-left",
+    right: "break-after-right",
+    column: "break-after-column"
+  },
+  "break-before": {
+    auto: "break-before-auto",
+    avoid: "break-before-avoid",
+    all: "break-before-all",
+    "avoid-page": "break-before-avoid-page",
+    page: "break-before-page",
+    left: "break-before-left",
+    right: "break-before-right",
+    column: "break-before-column"
+  },
+  "break-inside": {
+    auto: "break-inside-auto",
+    avoid: "break-inside-avoid",
+    "avoid-page": "break-inside-avoid-page",
+    "avoid-column": "break-inside-avoid-column"
+  },
+  "box-decoration-break": {
+    clone: "box-decoration-clone",
+    slice: "box-decoration-slice"
   }
 };
 
