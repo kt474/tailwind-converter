@@ -401,8 +401,40 @@ export const mainDict: any = {
   "box-decoration-break": {
     clone: "box-decoration-clone",
     slice: "box-decoration-slice"
+  },
+  "grid-auto-rows": {
+    auto: "auto-rows-auto",
+    "min-content": "auto-rows-min",
+    "max-content": "auto-rows-max",
+    "minmax(0, 1fr)": "auto-rows-fr"
+  },
+  "grid-auto-columns": {
+    auto: "auto-cols-auto",
+    "min-content": "auto-cols-min",
+    "max-content": "auto-cols-max",
+    "minmax(0, 1fr)": "auto-cols-fr"
+  },
+  "grid-auto-flow": {
+    row: "grid-flow-row",
+    column: "grid-flow-col",
+    dense: "grid-flow-dense",
+    "row dense": "grid-flow-row-dense",
+    "column dense": "grid-flow-col-dense"
   }
 };
+
+export const zIndex = [0, 10, 20, 30, 40, 50];
+
+export const letterSpacing = [-0.05, -0.025, 0, 0.025, 0.05, 0.1];
+
+export const spacingValues = [
+  "tighter",
+  "tight",
+  "normal",
+  "wide",
+  "wider",
+  "widest"
+];
 
 export const sizes = [
   0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24,

@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 69/152
+## Supported Tailwind Classes: 74/152
 
 ### Layout
 
@@ -21,7 +21,7 @@
 - [x]  Position
 - [ ]  Top/Right/Bottom/Left
 - [x]  Visibility
-- [ ]  Z-Index
+- [x]  Z-Index
 
 ### Flexbox & Grid
 
@@ -34,9 +34,9 @@
 - [ ] Order
 - [ ] Grid Template Columns
 - [ ] Grid Column Start/End
-- [ ] Grid Auto Flow
-- [ ] Grid Auto Columns
-- [ ] Grid Auto Rows
+- [x] Grid Auto Flow
+- [x] Grid Auto Columns
+- [x] Grid Auto Rows
 - [ ] Gap
 - [x] Justify Content
 - [x] Justify Items
@@ -71,7 +71,7 @@
 - [x] Font Style
 - [x] Font Weight
 - [x] Font Variant Numeric
-- [ ] Letter Spacing
+- [x] Letter Spacing
 - [ ] Line Height
 - [x] List Style Type
 - [x] List Style Position

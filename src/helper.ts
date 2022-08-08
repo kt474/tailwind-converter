@@ -2,6 +2,9 @@ import { trim, get } from "lodash";
 //@ts-ignore
 import { toJSON } from "cssjson";
 import {
+  zIndex,
+  letterSpacing,
+  spacingValues,
   sizes,
   spacing,
   percentages,
@@ -43,7 +46,7 @@ const convertAttributes = (attributes: object) => {
   for (let style in attributes) {
     // @ts-ignore
     let styleValue = attributes[style];
-    let styleNumber = styleValue.replace(/\D/g, "");
+    let styleNumber = styleValue.replace(/[^-.\d]/g, "");
     let tailwindValue = "";
     let abbreviation = "";
     // margin, padding, width, height
@@ -93,6 +96,14 @@ const convertAttributes = (attributes: object) => {
       tailwindValue = styleValue === "none" ? "hidden" : styleValue;
     } else if (style === "position") {
       tailwindValue = styleValue;
+    } else if (style === "z-index") {
+      abbreviation = "z-index";
+      tailwindValue =
+        styleValue === "auto" ? "auto" : getClosestValue(zIndex, styleValue);
+    } else if (style === "letter-spacing") {
+      abbreviation = "tracking";
+      let spacingNumber = getClosestValue(letterSpacing, styleNumber);
+      tailwindValue = spacingValues[letterSpacing.indexOf(spacingNumber)];
     } else if (style in mainDict) {
       tailwindValue = mainDict[style][styleValue];
     }
