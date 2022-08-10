@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 74/152
+## Supported Tailwind Classes: 76/152
 
 ### Layout
 
@@ -80,8 +80,8 @@
 - [x] Text Decoration
 - [ ] Text Decoration Color
 - [x] Text Decoration Style
-- [ ] Text Decoration Thickness
-- [ ] Text Underline Offset
+- [x] Text Decoration Thickness
+- [x] Text Underline Offset
 - [x] Text Transform
 - [ ] Text Overflow
 - [ ] Text Indent

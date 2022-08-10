@@ -2,6 +2,7 @@ import { trim, get } from "lodash";
 //@ts-ignore
 import { toJSON } from "cssjson";
 import {
+  textDecorationValues,
   zIndex,
   letterSpacing,
   spacingValues,
@@ -104,6 +105,20 @@ const convertAttributes = (attributes: object) => {
       abbreviation = "tracking";
       let spacingNumber = getClosestValue(letterSpacing, styleNumber);
       tailwindValue = spacingValues[letterSpacing.indexOf(spacingNumber)];
+    } else if (style === "text-decoration-thickness") {
+      abbreviation = "decoration";
+      if (styleValue === "auto" || styleValue === "from-font") {
+        tailwindValue = styleValue;
+      } else if (styleNumber) {
+        tailwindValue = getClosestValue(textDecorationValues, styleNumber);
+      } else break;
+    } else if (style === "text-underline-offset") {
+      abbreviation = "underline-offset";
+      if (styleValue === "auto") {
+        tailwindValue = styleValue;
+      } else if (styleNumber) {
+        tailwindValue = getClosestValue(textDecorationValues, styleNumber);
+      } else break;
     } else if (style in mainDict) {
       tailwindValue = mainDict[style][styleValue];
     }
