@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 76/152
+## Supported Tailwind Classes: 79/152
 
 ### Layout
 
@@ -84,7 +84,7 @@
 - [x] Text Underline Offset
 - [x] Text Transform
 - [ ] Text Overflow
-- [ ] Text Indent
+- [x] Text Indent
 - [x] Vertical Align
 - [x] Whitespace
 - [ ] Word Break
@@ -110,10 +110,10 @@
 - [x] Border Style
 - [ ] Divide Width
 - [ ] Divide Style
-- [ ] Outline Width
+- [x] Outline Width
 - [ ] Outline Color
 - [ ] Outline Style
-- [ ] Outline Offset
+- [x] Outline Offset
 - [ ] Ring Width
 - [ ] Ring Color
 - [ ] Ring Offset Width

@@ -119,6 +119,20 @@ const convertAttributes = (attributes: object) => {
       } else if (styleNumber) {
         tailwindValue = getClosestValue(textDecorationValues, styleNumber);
       } else break;
+    } else if (style === "text-indent") {
+      abbreviation = "indent";
+      if (styleValue === "1px") {
+        tailwindValue = "px";
+      } else if (styleValue.includes("px")) {
+        styleNumber = styleNumber / 16;
+        tailwindValue = getClosestValue(sizes, styleNumber * 4);
+      }
+    } else if (style === "outline-width") {
+      abbreviation = "outline";
+      tailwindValue = getClosestValue(textDecorationValues, styleNumber);
+    } else if (style === "outline-offset") {
+      abbreviation = "outline-offset";
+      tailwindValue = getClosestValue(textDecorationValues, styleNumber);
     } else if (style in mainDict) {
       tailwindValue = mainDict[style][styleValue];
     }
