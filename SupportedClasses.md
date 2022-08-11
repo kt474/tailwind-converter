@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 79/152
+## Supported Tailwind Classes: 85/152
 
 ### Layout
 
@@ -123,9 +123,9 @@
 
 - [ ] Box Shadow
 - [ ] Box Shadow Color
-- [ ] Opacity
-- [ ] Mix Blend Mode
-- [ ] Background Blend Mode
+- [x] Opacity
+- [x] Mix Blend Mode
+- [x] Background Blend Mode
 
 ### Filters
 
@@ -141,12 +141,12 @@
 - [ ] Backdrop Blur
 - [ ] Backdrop Brightness
 - [ ] Backdrop Contrast
-- [ ] Backdrop Grayscale
+- [x] Backdrop Grayscale
 - [ ] Backdrop Hue Rotate
-- [ ] Backdrop Invert
+- [x] Backdrop Invert
 - [ ] Backdrop Opacity
 - [ ] Backdrop Saturate
-- [ ] Backdrop Sepia
+- [x] Backdrop Sepia
 
 ### Tables
 

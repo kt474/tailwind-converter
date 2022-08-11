@@ -2,6 +2,7 @@ import { trim, get } from "lodash";
 //@ts-ignore
 import { toJSON } from "cssjson";
 import {
+  opacity,
   textDecorationValues,
   zIndex,
   letterSpacing,
@@ -133,6 +134,9 @@ const convertAttributes = (attributes: object) => {
     } else if (style === "outline-offset") {
       abbreviation = "outline-offset";
       tailwindValue = getClosestValue(textDecorationValues, styleNumber);
+    } else if (style === "opacity") {
+      abbreviation = "opacity";
+      tailwindValue = getClosestValue(opacity, styleNumber * 100);
     } else if (style in mainDict) {
       tailwindValue = mainDict[style][styleValue];
     }

@@ -420,6 +420,51 @@ export const mainDict: any = {
     dense: "grid-flow-dense",
     "row dense": "grid-flow-row-dense",
     "column dense": "grid-flow-col-dense"
+  },
+  "mix-blend-mode": {
+    normal: "mix-blend-normal",
+    multiply: "mix-blend-multiply",
+    screen: "mix-blend-screen",
+    overlay: "mix-blend-overlay",
+    darken: "mix-blend-darken",
+    lighten: "mix-blend-lighten",
+    "color-dodge": "mix-blend-color-dodge",
+    "color-burn": "mix-blend-color-burn",
+    "hard-light": "mix-blend-hard-light",
+    "soft-light": "mix-blend-soft-light",
+    difference: "mix-blend-difference",
+    exclusion: "mix-blend-exclusion",
+    hue: "mix-blend-hue",
+    saturation: "mix-blend-saturation",
+    color: "mix-blend-color",
+    luminosity: "mix-blend-luminosity",
+    "plus-lighter": "mix-blend-plus-lighter"
+  },
+  "background-blend-mode": {
+    normal: "bg-blend-normal",
+    multiply: "bg-blend-multiply",
+    screen: "bg-blend-screen",
+    overlay: "bg-blend-overlay",
+    darken: "bg-blend-darken",
+    lighten: "bg-blend-lighten",
+    "color-dodge": "bg-blend-color-dodge",
+    "color-burn": "bg-blend-color-burn",
+    "hard-light": "bg-blend-hard-light",
+    "soft-light": "bg-blend-soft-light",
+    difference: "bg-blend-difference",
+    exclusion: "bg-blend-exclusion",
+    hue: "bg-blend-hue",
+    saturation: "bg-blend-saturation",
+    color: "bg-blend-color",
+    luminosity: "bg-blend-luminosity"
+  },
+  "backdrop-filter": {
+    "grayscale(0)": "backdrop-grayscale(0)",
+    "grayscale(100%)": "backdrop-grayscale",
+    "invert(0)": "backdrop-invert-0",
+    "invert(100%)": "backdrop-invert",
+    "sepia(0)": "backdrop-sepia-0",
+    "sepia(100%)": "backdrop-sepia"
   }
 };
 
@@ -437,6 +482,10 @@ export const spacingValues = [
 ];
 
 export const textDecorationValues = [0, 1, 2, 4, 8];
+
+export const opacity = [
+  0, 5, 10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 95, 100
+];
 
 export const sizes = [
   0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24,
