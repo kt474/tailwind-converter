@@ -556,6 +556,8 @@ export const fontWeight = {
   800: "extrabold",
   900: "black"
 };
+
+export const duration = [75, 100, 150, 200, 300, 500, 700, 1000];
 //
 // const directions = {
 //   left: "l",

@@ -2,6 +2,7 @@ import { trim, get } from "lodash";
 //@ts-ignore
 import { toJSON } from "cssjson";
 import {
+  duration,
   opacity,
   textDecorationValues,
   zIndex,
@@ -140,6 +141,14 @@ const convertAttributes = (attributes: object) => {
     } else if (style === "cursor") {
       abbreviation = "cursor";
       tailwindValue = styleValue;
+    } else if (style === "transition-duration") {
+      abbreviation = "duration";
+      if (!styleValue.includes("ms")) styleNumber = styleNumber * 1000;
+      tailwindValue = getClosestValue(duration, styleNumber);
+    } else if (style === "transition-delay") {
+      abbreviation = "delay";
+      if (!styleValue.includes("ms")) styleNumber = styleNumber * 1000;
+      tailwindValue = getClosestValue(duration, styleNumber);
     } else if (style in mainDict) {
       tailwindValue = mainDict[style][styleValue];
     }

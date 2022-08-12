@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 87/152
+## Supported Tailwind Classes: 89/152
 
 ### Layout
 
@@ -157,9 +157,9 @@
 ### Transitions & Animation
 
 - [ ] Transition Property
-- [ ] Transition Duration
+- [x] Transition Duration
 - [ ] Transition Timing Function
-- [ ] Transition Delay
+- [x] Transition Delay
 - [ ] Animation
 
 ### Transforms
