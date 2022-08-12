@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 85/152
+## Supported Tailwind Classes: 87/152
 
 ### Layout
 
@@ -152,7 +152,7 @@
 
 - [x] Border Collapse
 - [x] Border Spacing
-- [ ] Table Layout
+- [x] Table Layout
 
 ### Transitions & Animation
 
@@ -174,7 +174,7 @@
 
 - [ ] Accent Color
 - [x] Appearance
-- [ ] Cursor
+- [x] Cursor
 - [ ] Caret Color
 - [x] Pointer Events
 - [x] Resize

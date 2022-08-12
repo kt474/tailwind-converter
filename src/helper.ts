@@ -137,6 +137,9 @@ const convertAttributes = (attributes: object) => {
     } else if (style === "opacity") {
       abbreviation = "opacity";
       tailwindValue = getClosestValue(opacity, styleNumber * 100);
+    } else if (style === "cursor") {
+      abbreviation = "cursor";
+      tailwindValue = styleValue;
     } else if (style in mainDict) {
       tailwindValue = mainDict[style][styleValue];
     }
