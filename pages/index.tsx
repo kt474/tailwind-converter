@@ -11,12 +11,22 @@ const syncButtonPosition = {
   left: "calc(50% - 5rem)"
 };
 
+const customFontSize = {
+  fontSize: "0.65rem"
+};
+
+const formatButtonPosition = {
+  left: "calc(50% - 11rem)"
+};
+
 const Home: NextPage = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [cssText, setCssText] = useState("");
   const [htmlText, setHtmlText] = useState("");
   const [tailwindText, setTailwindText] = useState("");
   const [copied, setCopied] = useState(false);
+  const [synced, setSynced] = useState(false);
+  const [tidy, setTidy] = useState(false);
   const copyToClipboard = () => {
     setCopied(true);
     navigator.clipboard.writeText(tailwindText);
@@ -35,7 +45,8 @@ const Home: NextPage = () => {
     css_external:
       "https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
   });
-  const formatCode = () => {
+
+  const formatHtmlCss = () => {
     setCssText(
       css_beautify(cssText, { indent_size: 2, max_preserve_newlines: 0 })
     );
@@ -48,6 +59,14 @@ const Home: NextPage = () => {
       })
     );
   };
+
+  const formatCode = () => {
+    setTidy(true);
+    formatHtmlCss();
+    setTimeout(() => {
+      setTidy(false);
+    }, 1000);
+  };
   const updateTailwind = () => {
     const cssAttributes = cssToJson(
       localStorage.css ? localStorage.css : initialCSS
@@ -59,8 +78,12 @@ const Home: NextPage = () => {
     setTailwindText(result);
   };
   const syncButton = () => {
-    formatCode();
+    setSynced(true);
+    formatHtmlCss();
     updateTailwind();
+    setTimeout(() => {
+      setSynced(false);
+    }, 1000);
   };
   useEffect(
     () => setCssText(localStorage.css ? localStorage.css : initialCSS),
@@ -144,26 +167,6 @@ const Home: NextPage = () => {
                 </svg>
               </button>
             </form>
-            <button
-              className="btn btn-sm btn-primary bg-sky-500 hover:bg-sky-400 border-none mr-2 -mt-0.5"
-              title="format code"
-              onClick={formatCode}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-                />
-              </svg>
-            </button>
           </div>
           <div className="flex right-4 top-2 absolute">
             <form
@@ -272,28 +275,66 @@ const Home: NextPage = () => {
                 setCssText(value);
               }}
             />
-            <div className="absolute bottom-2" style={syncButtonPosition}>
-              <button
-                className="btn btn-xs btn-primary bg-sky-500 hover:bg-sky-400 border-none"
-                title="convert code"
-                onClick={syncButton}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 mr-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
+            <div className="absolute bottom-2" style={formatButtonPosition}>
+              {tidy ? (
+                <button
+                  className="btn btn-xs btn-primary bg-sky-500 hover:bg-sky-400 border-none mb-0.5"
+                  style={customFontSize}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                  />
-                </svg>
-                Sync
-              </button>
+                  Formatted!
+                </button>
+              ) : (
+                <button
+                  className="btn btn-xs btn-primary bg-sky-500 hover:bg-sky-400 border-none"
+                  title="format code"
+                  onClick={formatCode}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 mr-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                    />
+                  </svg>
+                  Format
+                </button>
+              )}
+            </div>
+            <div className="absolute bottom-2" style={syncButtonPosition}>
+              {synced ? (
+                <button className="btn btn-xs btn-primary bg-sky-500 hover:bg-sky-400 border-none mb-0.5">
+                  Synced!
+                </button>
+              ) : (
+                <button
+                  className="btn btn-xs btn-primary bg-sky-500 hover:bg-sky-400 border-none"
+                  title="convert code"
+                  onClick={syncButton}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 mr-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                    />
+                  </svg>
+                  Sync
+                </button>
+              )}
             </div>
           </div>
           <div className="w-1/2">
