@@ -175,6 +175,9 @@ const convertAttributes = (attributes: object) => {
         styleNumber = styleNumber / 16;
       }
       tailwindValue = getClosestValue(sizes, styleNumber * 4);
+    } else if (style === "-webkit-font-smoothing") {
+      if (styleValue === "antialiased") tailwindValue = "antialiased";
+      else if (styleValue === "auto") tailwindValue = "subpixel-antialiased";
     } else if (style in mainDict) {
       tailwindValue = mainDict[style][styleValue];
     }

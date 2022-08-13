@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 95/152
+## Supported Tailwind Classes: 96/152
 
 ### Layout
 
@@ -67,7 +67,7 @@
 
 - [ ] Font Family
 - [x] Font Size
-- [ ] Font Smoothing
+- [x] Font Smoothing
 - [x] Font Style
 - [x] Font Weight
 - [x] Font Variant Numeric
