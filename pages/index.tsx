@@ -7,8 +7,8 @@ import { oneDark } from "@codemirror/theme-one-dark";
 import { css_beautify, html_beautify } from "js-beautify";
 import { injectClass, cssToJson, initialCSS, initialHTML } from "../src/helper";
 
-const customHeight = {
-  height: "95%"
+const syncButtonPosition = {
+  left: "calc(50% - 5rem)"
 };
 
 const Home: NextPage = () => {
@@ -250,8 +250,8 @@ const Home: NextPage = () => {
             </a>
           </div>
         </div>
-        <div className="flex" style={customHeight}>
-          <div className="w-1/2 relative">
+        <div className="flex h-screen">
+          <div className="w-1/2">
             <CodeMirror
               className="h-1/2 text-base"
               value={htmlText}
@@ -272,7 +272,7 @@ const Home: NextPage = () => {
                 setCssText(value);
               }}
             />
-            <div className="absolute bottom-2 right-4">
+            <div className="absolute bottom-2" style={syncButtonPosition}>
               <button
                 className="btn btn-xs btn-primary bg-sky-500 hover:bg-sky-400 border-none"
                 title="convert code"
