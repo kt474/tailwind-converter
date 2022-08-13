@@ -149,6 +149,32 @@ const convertAttributes = (attributes: object) => {
       abbreviation = "delay";
       if (!styleValue.includes("ms")) styleNumber = styleNumber * 1000;
       tailwindValue = getClosestValue(duration, styleNumber);
+    } else if (style === "order") {
+      abbreviation = "order";
+      if (styleNumber === "-9999") tailwindValue = "first";
+      else if (styleNumber === "9999") tailwindValue = "last";
+      else if (styleNumber === "0") tailwindValue = "none";
+      else if (Number(styleNumber) <= 12) {
+        tailwindValue = styleNumber;
+      }
+    } else if (style === "gap") {
+      abbreviation = "gap";
+      if (styleValue.includes("px")) {
+        styleNumber = styleNumber / 16;
+      }
+      tailwindValue = getClosestValue(sizes, styleNumber * 4);
+    } else if (style === "column-gap") {
+      abbreviation = "gap-x";
+      if (styleValue.includes("px")) {
+        styleNumber = styleNumber / 16;
+      }
+      tailwindValue = getClosestValue(sizes, styleNumber * 4);
+    } else if (style === "row-gap") {
+      abbreviation = "gap-y";
+      if (styleValue.includes("px")) {
+        styleNumber = styleNumber / 16;
+      }
+      tailwindValue = getClosestValue(sizes, styleNumber * 4);
     } else if (style in mainDict) {
       tailwindValue = mainDict[style][styleValue];
     }

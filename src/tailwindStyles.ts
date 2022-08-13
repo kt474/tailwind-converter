@@ -465,6 +465,12 @@ export const mainDict: any = {
     "invert(100%)": "backdrop-invert",
     "sepia(0)": "backdrop-sepia-0",
     "sepia(100%)": "backdrop-sepia"
+  },
+  flex: {
+    "1 1 0%": "flex-1",
+    "1 1 auto": "flex-auto",
+    "0 1 auto": "flex-initial",
+    none: "flex-none"
   }
 };
 
