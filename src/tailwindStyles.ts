@@ -166,6 +166,13 @@ export const mainDict: any = {
     center: "place-self-center",
     stretch: "place-self-stretch"
   },
+  "min-width": {
+    "0px": "min-w-0",
+    "100%": "min-w-full",
+    "min-content": "min-w-min",
+    "max-content": "min-w-max",
+    "fit-content": "min-w-fit"
+  },
   "min-height": {
     "0px": "min-h-0",
     "100%": "min-h-full",

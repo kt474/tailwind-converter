@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 92/152
+## Supported Tailwind Classes: 95/152
 
 ### Layout
 
@@ -56,10 +56,10 @@
 
 ### Sizing
 
-- [ ] Width
-- [ ] Min-Width
+- [x] Width
+- [x] Min-Width
 - [ ] Max-Width
-- [ ] Height
+- [x] Height
 - [x] Min-Height
 - [ ] Max-Height
 
