@@ -146,25 +146,12 @@ const Home: NextPage = () => {
             >
               <input type="hidden" name="data" value={codepenOriginal} />
               <button
-                className="btn btn-sm btn-primary bg-sky-500 hover:bg-sky-400 border-none mr-2 -mt-0.5"
+                className="btn btn-xs border-none text-xs mb-1"
                 type="submit"
                 title="codepen preview"
                 value=""
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                  />
-                </svg>
+                Codepen
               </button>
             </form>
           </div>
@@ -176,25 +163,12 @@ const Home: NextPage = () => {
             >
               <input type="hidden" name="data" value={codepenTailwind} />
               <button
-                className="btn btn-sm btn-primary bg-sky-500 hover:bg-sky-400 border-none -mt-0.5"
+                className="btn btn-xs border-none text-xs mb-1"
                 type="submit"
                 title="codepen preview"
                 value=""
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                  />
-                </svg>
+                Codepen
               </button>
             </form>
             <div>
