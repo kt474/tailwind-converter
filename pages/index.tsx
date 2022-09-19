@@ -146,7 +146,7 @@ const Home: NextPage = () => {
             >
               <input type="hidden" name="data" value={codepenOriginal} />
               <button
-                className="btn btn-xs border-none text-xs mb-1"
+                className="btn btn-xs border-none text-xs mb-1 text-white"
                 type="submit"
                 title="codepen preview"
                 value=""
@@ -163,7 +163,7 @@ const Home: NextPage = () => {
             >
               <input type="hidden" name="data" value={codepenTailwind} />
               <button
-                className="btn btn-xs border-none text-xs mb-1"
+                className="btn btn-xs border-none text-xs mb-1 text-white"
                 type="submit"
                 title="codepen preview"
                 value=""
@@ -194,7 +194,7 @@ const Home: NextPage = () => {
                 </svg>
               </label>
               <input type="checkbox" id="my-modal-4" className="modal-toggle" />
-              <label htmlFor="my-modal-4" className="modal cursor-pointer">
+              <label htmlFor="my-modal-4" className="modal cursor-pointer text-white">
                 <label className="modal-box relative" htmlFor="">
                   <label
                     htmlFor="my-modal-4"
@@ -225,7 +225,7 @@ const Home: NextPage = () => {
                     </a>
                     .
                   </p>
-                  <h3 className="text-lg font-bold mt-2">Note:</h3>
+                  <h3 className="text-lg font-bold mt-4">Note:</h3>
                   <p>Currently not supported:</p>
                 </label>
               </label>
