@@ -44,7 +44,7 @@ const getClosestValue = (sizes: Array<any>, value: number) => {
   );
 };
 
-const convertAttributes = (attributes: object) => {
+export const convertAttributes = (attributes: object) => {
   let result = [];
   for (let style in attributes) {
     // @ts-ignore
