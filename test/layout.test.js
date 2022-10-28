@@ -33,4 +33,40 @@ describe("Layout classes", () => {
     const attr = { "box-decoration-break": "clone" };
     expect(convertAttributes(attr)).toEqual(["box-decoration-clone"]);
   });
+  test("box sizing", () => {
+    const attr = { "box-sizing": "border-box" };
+    expect(convertAttributes(attr)).toEqual(["box-border"]);
+  });
+  test("display", () => {
+    const values = ["block", "flex"];
+    const results = ["block", "flex"];
+    values.forEach((value, index) => {
+      let attr = { "display": value };
+      expect(convertAttributes(attr)).toEqual([results[index]]);
+    });
+  });
+  test("floats", () => {
+    const attr = { "float": "right" };
+    expect(convertAttributes(attr)).toEqual(["float-right"]);
+  });
+  test("clear", () => {
+    const attr = { "clear": "both" };
+    expect(convertAttributes(attr)).toEqual(["clear-both"]);
+  });
+  test("isolation", () => {
+    const attr = { "isolation": "isolate" };
+    expect(convertAttributes(attr)).toEqual(["isolate"]);
+  });
+  test("object fit", () => {
+    const attr = { "object-fit": "contain" };
+    expect(convertAttributes(attr)).toEqual(["object-contain"]);
+  });
+  test("object position", () => {
+    const attr = { "object-position": "bottom" };
+    expect(convertAttributes(attr)).toEqual(["object-bottom"]);
+  });
+  test("object position", () => {
+    const attr = { "overflow": "auto" };
+    expect(convertAttributes(attr)).toEqual(["overflow-auto"]);
+  });
 });
