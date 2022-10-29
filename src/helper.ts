@@ -100,7 +100,7 @@ export const convertAttributes = (attributes: object) => {
     } else if (style === "position") {
       tailwindValue = styleValue;
     } else if (style === "z-index") {
-      abbreviation = "z-index";
+      abbreviation = "z";
       tailwindValue =
         styleValue === "auto" ? "auto" : getClosestValue(zIndex, styleValue);
     } else if (style === "letter-spacing") {

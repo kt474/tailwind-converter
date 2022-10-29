@@ -65,8 +65,24 @@ describe("Layout classes", () => {
     const attr = { "object-position": "bottom" };
     expect(convertAttributes(attr)).toEqual(["object-bottom"]);
   });
-  test("object position", () => {
+  test("overflow", () => {
     const attr = { "overflow": "auto" };
     expect(convertAttributes(attr)).toEqual(["overflow-auto"]);
+  });
+  test("overscroll behavior", () => {
+    const attr = { "overscroll-behavior": "auto" };
+    expect(convertAttributes(attr)).toEqual(["overscroll-auto"]);
+  });
+  test("position", () => {
+    const attr = { "position": "static" };
+    expect(convertAttributes(attr)).toEqual(["static"]);
+  });
+  test("visibility", () => {
+    const attr = { "visibility": "visible" };
+    expect(convertAttributes(attr)).toEqual(["visible"]);
+  });
+  test("z-index", () => {
+    const attr = { "z-index": "40" };
+    expect(convertAttributes(attr)).toEqual(["z-40"]);
   });
 });
