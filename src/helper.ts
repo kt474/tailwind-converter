@@ -127,8 +127,8 @@ export const convertAttributes = (attributes: object) => {
         tailwindValue = "px";
       } else if (styleValue.includes("px")) {
         styleNumber = styleNumber / 16;
-        tailwindValue = getClosestValue(sizes, styleNumber * 4);
       }
+      tailwindValue = getClosestValue(sizes, styleNumber * 4);
     } else if (style === "outline-width") {
       abbreviation = "outline";
       tailwindValue = getClosestValue(textDecorationValues, styleNumber);
