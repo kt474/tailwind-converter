@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 96/152
+## Supported Tailwind Classes: 95/152
 
 ### Layout
 
@@ -52,7 +52,7 @@
 
 - [x] Padding
 - [x] Margin
-- [x] Space Between
+- [ ] Space Between
 
 ### Sizing
 
