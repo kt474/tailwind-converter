@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 95/152
+## Supported Tailwind Classes: 94/152
 
 ### Layout
 
@@ -151,7 +151,7 @@
 ### Tables
 
 - [x] Border Collapse
-- [x] Border Spacing
+- [ ] Border Spacing
 - [x] Table Layout
 
 ### Transitions & Animation

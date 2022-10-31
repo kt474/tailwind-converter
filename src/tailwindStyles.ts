@@ -466,7 +466,7 @@ export const mainDict: any = {
     luminosity: "bg-blend-luminosity"
   },
   "backdrop-filter": {
-    "grayscale(0)": "backdrop-grayscale(0)",
+    "grayscale(0)": "backdrop-grayscale-0",
     "grayscale(100%)": "backdrop-grayscale",
     "invert(0)": "backdrop-invert-0",
     "invert(100%)": "backdrop-invert",
