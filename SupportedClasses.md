@@ -1,6 +1,6 @@
 ## Supported Tailwind Classes: 94/152
 
-### Layout
+### Layout 17/20
 
 - [x]  Aspect Ratio
 - [ ]  Container
@@ -23,7 +23,7 @@
 - [x]  Visibility
 - [x]  Z-Index
 
-### Flexbox & Grid
+### Flexbox & Grid 19/22
 
 - [ ] Flex Basis
 - [x] Flex Direction
@@ -48,13 +48,13 @@
 - [x] Place Items
 - [x] Place Self
 
-### Spacing
+### Spacing 2/3
 
 - [x] Padding
 - [x] Margin
 - [ ] Space Between
 
-### Sizing
+### Sizing 4/6
 
 - [x] Width
 - [x] Min-Width
@@ -63,7 +63,7 @@
 - [x] Min-Height
 - [ ] Max-Height
 
-### Typography
+### Typography 18/24
 
 - [ ] Font Family
 - [x] Font Size
@@ -90,7 +90,7 @@
 - [ ] Word Break
 - [x] Content
 
-### Backgrounds
+### Backgrounds 6/9
 
 - [x] Background Attachment
 - [x] Background Clip
@@ -102,7 +102,7 @@
 - [ ] Background Image
 - [ ] Gradient Color Stops
 
-### Borders
+### Borders 3/14
 
 - [ ] Border Radius
 - [ ] Border Width
@@ -119,7 +119,7 @@
 - [ ] Ring Offset Width
 - [ ] Ring Offset Color
 
-### Effects
+### Effects 3/5
 
 - [ ] Box Shadow
 - [ ] Box Shadow Color
@@ -127,7 +127,7 @@
 - [x] Mix Blend Mode
 - [x] Background Blend Mode
 
-### Filters
+### Filters 6/18
 
 - [ ] Blur
 - [ ] Brightness
@@ -148,13 +148,13 @@
 - [ ] Backdrop Saturate
 - [x] Backdrop Sepia
 
-### Tables
+### Tables 2/3
 
 - [x] Border Collapse
 - [ ] Border Spacing
 - [x] Table Layout
 
-### Transitions & Animation
+### Transitions & Animation 2/5
 
 - [ ] Transition Property
 - [x] Transition Duration
@@ -162,7 +162,7 @@
 - [x] Transition Delay
 - [ ] Animation
 
-### Transforms
+### Transforms 1/5
 
 - [ ] Scale
 - [ ] Rotate
@@ -170,7 +170,7 @@
 - [ ] Skew
 - [x] Transform Origin
 
-### Interactivity
+### Interactivity 10/15
 
 - [ ] Accent Color
 - [x] Appearance
@@ -188,11 +188,11 @@
 - [x] User Select
 - [x] Will Change
 
-### SVG
+### SVG 1/3
 
 - [ ] Fill
 - [ ] Stroke
 - [x] Stroke Width
 
-### Accessibility
+### Accessibility 0/1
 - [ ] Screen Readers
