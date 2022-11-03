@@ -4,6 +4,8 @@ The goal of this project is to take plain HTML/CSS and convert it to a
 single HTML file with [Tailwind](https://tailwindcss.com/) classes. Tracking supported 
 Tailwind classes [here](SupportedClasses.md).
 
+Note: this is a work in progress and not well tested - most css classes are not yet supported.
+
 
 ## Run Locally
 
