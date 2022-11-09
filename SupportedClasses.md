@@ -1,10 +1,10 @@
-## Supported Tailwind Classes: 94/152
+## Supported Tailwind Classes: 95/152
 
 ### Layout 17/20
 
 - [x]  Aspect Ratio
-- [ ]  Container
-- [ ]  Columns
+- [ ]  Container: covered by width and max-width
+- [x]  Columns
 - [x]  Break After
 - [x]  Break Before
 - [x]  Break Inside

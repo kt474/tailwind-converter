@@ -9,6 +9,14 @@ describe("Layout classes", () => {
       expect(convertAttributes(attr)).toEqual([results[index]]);
     });
   });
+  test("columns", () => {
+    const values = ["3", "500px", "auto"];
+    const results = ["columns-3", "columns-lg", "columns-auto"];
+    values.forEach((value, index) => {
+      let attr = { "columns": value };
+      expect(convertAttributes(attr)).toEqual([results[index]]);
+    });
+  });
   test("break after", () => {
     const values = ["auto", "avoid"];
     const results = ["break-after-auto", "break-after-avoid"];

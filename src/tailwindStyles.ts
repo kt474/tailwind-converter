@@ -522,6 +522,22 @@ export const percentages = {
   0.916: "11/12",
   1: "full"
 };
+
+export const columnSizes: any = {
+  16: "3xs",
+  18: "2xs",
+  20: "xs",
+  24: "sm",
+  28: "md",
+  32: "lg",
+  36: "xl",
+  42: "2xl",
+  48: "3xl",
+  56: "4xl",
+  64: "5xl",
+  72: "6xl",
+  80: "7xl"
+};
 export const spacingCustom = {
   "100vh": "screen",
   "min-content": "min",

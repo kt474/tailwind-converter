@@ -14,7 +14,8 @@ import {
   spacingCustom,
   fontSize,
   fontWeight,
-  mainDict
+  mainDict,
+  columnSizes
 } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
@@ -180,10 +181,26 @@ export const convertAttributes = (attributes: object) => {
       else if (styleValue === "auto") tailwindValue = "subpixel-antialiased";
     } else if (style in mainDict) {
       tailwindValue = mainDict[style][styleValue];
+    } else if (style === "columns") {
+      abbreviation = "columns";
+      let size = 0;
+      if ((styleValue <= 12 && styleValue > 0) || styleValue === "auto") {
+        tailwindValue = styleValue;
+      } else if (styleValue.includes("px")) {
+        styleNumber = styleNumber / 16;
+        size = getClosestValue(Object.keys(columnSizes), styleNumber);
+      } else if (styleValue.includes("rem")) {
+        size = getClosestValue(Object.keys(columnSizes), styleNumber);
+      }
+      if (size) {
+        tailwindValue = columnSizes[size];
+      }
     }
-    result.push(
-      abbreviation ? (abbreviation += "-" + tailwindValue) : tailwindValue
-    );
+    if (tailwindValue !== "") {
+      result.push(
+        abbreviation ? (abbreviation += "-" + tailwindValue) : tailwindValue
+      );
+    }
   }
   return result;
 };
