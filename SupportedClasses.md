@@ -1,9 +1,10 @@
-## Supported Tailwind Classes: 95/152
-
+## Supported Tailwind Classes: 95/155
+### * class will likely not supported due to complexity and/or lack of use
+### + class will be supported, work in progress
 ### Layout 17/20
 
 - [x]  Aspect Ratio
-- [ ]  Container: covered by width and max-width
+- [ ]  Container *
 - [x]  Columns
 - [x]  Break After
 - [x]  Break Before
@@ -19,21 +20,23 @@
 - [x]  Overflow
 - [x]  Overscroll Behavior
 - [x]  Position
-- [ ]  Top/Right/Bottom/Left
+- [ ]  Top/Right/Bottom/Left +
 - [x]  Visibility
 - [x]  Z-Index
 
-### Flexbox & Grid 19/22
+### Flexbox & Grid 19/24
 
-- [ ] Flex Basis
+- [ ] Flex Basis +
 - [x] Flex Direction
 - [x] Flex Wrap
 - [x] Flex
 - [x] Flex Grow
 - [x] Flex Shrink
 - [x] Order
-- [ ] Grid Template Columns
-- [ ] Grid Column Start/End
+- [ ] Grid Template Columns *
+- [ ] Grid Column Start/End *
+- [ ] Grid Template Rows *
+- [ ] Grid Rows Start/End *
 - [x] Grid Auto Flow
 - [x] Grid Auto Columns
 - [x] Grid Auto Rows
@@ -52,146 +55,147 @@
 
 - [x] Padding
 - [x] Margin
-- [ ] Space Between
+- [ ] Space Between * 
 
 ### Sizing 4/6
 
 - [x] Width
 - [x] Min-Width
-- [ ] Max-Width
+- [ ] Max-Width + 
 - [x] Height
 - [x] Min-Height
-- [ ] Max-Height
+- [ ] Max-Height + 
 
 ### Typography 18/24
 
-- [ ] Font Family
+- [ ] Font Family * 
 - [x] Font Size
 - [x] Font Smoothing
 - [x] Font Style
 - [x] Font Weight
 - [x] Font Variant Numeric
 - [x] Letter Spacing
-- [ ] Line Height
+- [ ] Line Height +
 - [x] List Style Type
 - [x] List Style Position
 - [x] Text Align
-- [ ] Text Color
+- [ ] Text Color +
 - [x] Text Decoration
-- [ ] Text Decoration Color
+- [ ] Text Decoration Color +
 - [x] Text Decoration Style
 - [x] Text Decoration Thickness
 - [x] Text Underline Offset
 - [x] Text Transform
-- [ ] Text Overflow
+- [ ] Text Overflow +
 - [x] Text Indent
 - [x] Vertical Align
 - [x] Whitespace
-- [ ] Word Break
+- [ ] Word Break +
 - [x] Content
 
 ### Backgrounds 6/9
 
 - [x] Background Attachment
 - [x] Background Clip
-- [ ] Background Color
+- [ ] Background Color +
 - [x] Background Origin
 - [x] Background Position
 - [x] Background Repeat
 - [x] Background Size
-- [ ] Background Image
-- [ ] Gradient Color Stops
+- [ ] Background Image *
+- [ ] Gradient Color Stops *
 
-### Borders 3/14
+### Borders 3/15
 
-- [ ] Border Radius
-- [ ] Border Width
-- [ ] Border Color
+- [ ] Border Radius +
+- [ ] Border Width +
+- [ ] Border Color +
 - [x] Border Style
-- [ ] Divide Width
-- [ ] Divide Style
+- [ ] Divide Width *
+- [ ] Divide Color * 
+- [ ] Divide Style *
 - [x] Outline Width
-- [ ] Outline Color
-- [ ] Outline Style
+- [ ] Outline Color +
+- [ ] Outline Style +
 - [x] Outline Offset
-- [ ] Ring Width
-- [ ] Ring Color
-- [ ] Ring Offset Width
-- [ ] Ring Offset Color
+- [ ] Ring Width *
+- [ ] Ring Color *
+- [ ] Ring Offset Width *
+- [ ] Ring Offset Color *
 
 ### Effects 3/5
 
-- [ ] Box Shadow
-- [ ] Box Shadow Color
+- [ ] Box Shadow *
+- [ ] Box Shadow Color *
 - [x] Opacity
 - [x] Mix Blend Mode
 - [x] Background Blend Mode
 
 ### Filters 6/18
 
-- [ ] Blur
-- [ ] Brightness
-- [ ] Contrast
-- [ ] Drop Shadow
+- [ ] Blur +
+- [ ] Brightness +
+- [ ] Contrast +
+- [ ] Drop Shadow *
 - [x] Grayscale
-- [ ] Hue Rotate
+- [ ] Hue Rotate +
 - [x] Invert
-- [ ] Saturate
+- [ ] Saturate +
 - [x] Sepia
-- [ ] Backdrop Blur
-- [ ] Backdrop Brightness
-- [ ] Backdrop Contrast
+- [ ] Backdrop Blur +
+- [ ] Backdrop Brightness +
+- [ ] Backdrop Contrast +
 - [x] Backdrop Grayscale
-- [ ] Backdrop Hue Rotate
+- [ ] Backdrop Hue Rotate +
 - [x] Backdrop Invert
-- [ ] Backdrop Opacity
-- [ ] Backdrop Saturate
+- [ ] Backdrop Opacity +
+- [ ] Backdrop Saturate +
 - [x] Backdrop Sepia
 
 ### Tables 2/3
 
 - [x] Border Collapse
-- [ ] Border Spacing
+- [ ] Border Spacing *
 - [x] Table Layout
 
 ### Transitions & Animation 2/5
 
-- [ ] Transition Property
+- [ ] Transition Property *
 - [x] Transition Duration
-- [ ] Transition Timing Function
+- [ ] Transition Timing Function *
 - [x] Transition Delay
-- [ ] Animation
+- [ ] Animation *
 
 ### Transforms 1/5
 
-- [ ] Scale
-- [ ] Rotate
-- [ ] Translate
-- [ ] Skew
+- [ ] Scale +
+- [ ] Rotate +
+- [ ] Translate +
+- [ ] Skew +
 - [x] Transform Origin
 
 ### Interactivity 10/15
 
-- [ ] Accent Color
+- [ ] Accent Color +
 - [x] Appearance
 - [x] Cursor
-- [ ] Caret Color
+- [ ] Caret Color +
 - [x] Pointer Events
 - [x] Resize
 - [x] Scroll Behavior
-- [ ] Scroll Margin
-- [ ] Scroll Padding
+- [ ] Scroll Margin +
+- [ ] Scroll Padding +
 - [x] Scroll Snap Align
 - [x] Scroll Snap Stop
-- [ ] Scroll Snap Type
+- [ ] Scroll Snap Type +
 - [x] Touch Action
 - [x] User Select
 - [x] Will Change
 
 ### SVG 1/3
 
-- [ ] Fill
-- [ ] Stroke
+- [ ] Fill +
+- [ ] Stroke +
 - [x] Stroke Width
 
 ### Accessibility 0/1
