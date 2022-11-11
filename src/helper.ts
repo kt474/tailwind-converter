@@ -19,24 +19,24 @@ import {
 } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
- body {
+body {
   margin: 1rem;
   padding: 1rem;
 }
-.main{
+
+.main {
   font-size: 1rem;
   color: #fff;
-}
-`;
+}`;
 export const initialHTML = `<!-- Edit HTML here -->
 <html lang="">
-  <body>
-    <div class="main">
-      <p>
-        Lorem Ipsum
-      </p>
-    </div>  
-  </body>
+<body>
+  <div class="main">
+    <p>
+      Lorem Ipsum
+    </p>
+  </div>  
+</body>
 </html>`;
 
 const getClosestValue = (sizes: Array<any>, value: number) => {

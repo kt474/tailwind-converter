@@ -19,6 +19,10 @@ const formatButtonPosition = {
   left: "calc(50% - 11rem)"
 };
 
+const resetButtonPosition = {
+  left: "calc(50% - 16rem)"
+};
+
 const maxHeight = {
   maxHeight: "calc(50% - 1.25rem)"
 };
@@ -62,6 +66,11 @@ const Home: NextPage = () => {
         max_preserve_newlines: 0
       })
     );
+  };
+
+  const resetButton = () => {
+    setCssText(initialCSS);
+    setHtmlText(initialHTML);
   };
 
   const formatCode = () => {
@@ -284,6 +293,31 @@ const Home: NextPage = () => {
                 setCssText(value);
               }}
             />
+            <div
+              className="absolute bottom-2 -ml-1"
+              style={resetButtonPosition}
+            >
+              <button
+                className="btn btn-xs btn-primary bg-sky-500 hover:bg-sky-400 border-none mb-0.5"
+                onClick={resetButton}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="h-4 w-4 mr-1"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
+                  />
+                </svg>
+                Reset
+              </button>
+            </div>
             <div className="absolute bottom-2" style={formatButtonPosition}>
               {tidy ? (
                 <button
