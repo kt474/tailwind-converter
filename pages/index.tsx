@@ -19,6 +19,10 @@ const formatButtonPosition = {
   left: "calc(50% - 11rem)"
 };
 
+const maxHeight = {
+  maxHeight: "calc(50% - 1.25rem)"
+};
+
 const Home: NextPage = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [cssText, setCssText] = useState("");
@@ -111,7 +115,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <div className="w-full h-screen flex-col overflow-hidden dark:bg-gray-800 bg-white">
+      <div className="w-full h-screen flex-col overflow-hidden dark:bg-gray-800 bg-slate-100">
         <div className="w-screen">
           <div className="flex absolute left-2">
             <input
@@ -178,7 +182,7 @@ const Home: NextPage = () => {
                   className="w-6 h-6 mx-4"
                   fill={darkMode ? "#f0f6f9" : "#000"}
                   viewBox="4 4 16 16"
-                  stroke={darkMode ? "#282c34" : "#fff"}
+                  stroke={darkMode ? "#282c34" : "#f1f5f9"}
                   strokeWidth={2}
                 >
                   <path
@@ -195,7 +199,10 @@ const Home: NextPage = () => {
               </label>
               <input type="checkbox" id="my-modal-4" className="modal-toggle" />
               <label htmlFor="my-modal-4" className="modal cursor-pointer">
-                <label className="modal-box relative bg-white dark:bg-gray-700 text-black dark:text-white" htmlFor="">
+                <label
+                  className="modal-box relative bg-white dark:bg-gray-700 text-black dark:text-white"
+                  htmlFor=""
+                >
                   <label
                     htmlFor="my-modal-4"
                     className="btn btn-sm btn-circle absolute right-2 top-2 bg-gray-700 dark:bg-gray-800 border-none"
@@ -226,7 +233,9 @@ const Home: NextPage = () => {
                     .
                   </p>
                   <h3 className="text-lg font-bold mt-4">Note:</h3>
-                  <p>This is still a work in progress and not fully functional.</p>
+                  <p>
+                    This is still a work in progress and not fully functional.
+                  </p>
                 </label>
               </label>
             </div>
@@ -259,6 +268,7 @@ const Home: NextPage = () => {
               height="100%"
               theme={darkMode ? oneDark : "light"}
               extensions={[html()]}
+              style={maxHeight}
               onChange={(value) => {
                 setHtmlText(value);
               }}
@@ -267,6 +277,7 @@ const Home: NextPage = () => {
               className="h-1/2 text-base"
               value={cssText}
               height="100%"
+              style={maxHeight}
               theme={darkMode ? oneDark : "light"}
               extensions={[css()]}
               onChange={(value) => {
@@ -346,12 +357,12 @@ const Home: NextPage = () => {
             />
             <div className="bottom-2 right-4 absolute">
               {copied ? (
-                <button className="btn btn-xs bg-gray-100 text-black hover:bg-gray-200 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600 border-none mb-0.5">
+                <button className="btn btn-xs bg-slate-300 text-black hover:bg-slate-400 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600 border-none mb-0.5">
                   Copied!
                 </button>
               ) : (
                 <button
-                  className="btn btn-xs bg-gray-100 text-black hover:bg-gray-200 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600 border-none "
+                  className="btn btn-xs bg-slate-300 text-black hover:bg-slate-400 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600 border-none "
                   onClick={copyToClipboard}
                 >
                   <svg
