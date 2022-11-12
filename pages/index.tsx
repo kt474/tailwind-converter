@@ -227,6 +227,7 @@ const Home: NextPage = () => {
                       href="https://github.com/kt474/tailwind-converter/blob/main/SupportedClasses.md"
                       className="text-blue-500"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       here
                     </a>
@@ -237,6 +238,7 @@ const Home: NextPage = () => {
                     <a
                       className="text-blue-500"
                       target="_blank"
+                      rel="noreferrer"
                       href="https://github.com/kt474/tailwind-converter/issues"
                     >
                       here
