@@ -62,7 +62,7 @@ const Home: NextPage = () => {
       html_beautify(htmlText, {
         indent_size: 2,
         extra_liners: [],
-        wrap_line_length: 40,
+        wrap_line_length: 50,
         max_preserve_newlines: 0
       })
     );

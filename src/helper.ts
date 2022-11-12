@@ -25,17 +25,22 @@ body {
 }
 
 .main {
-  font-size: 1rem;
-  color: #fff;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }`;
 export const initialHTML = `<!-- Edit HTML here -->
 <html lang="">
 <body>
   <div class="main">
-    <p>
-      Lorem Ipsum
+    <h2>Welcome to Tailwind Converter!</h2>
+    <p>Please paste your HTML here and CSS into
+      the editor below
     </p>
-  </div>  
+  </div>
 </body>
 </html>`;
 
