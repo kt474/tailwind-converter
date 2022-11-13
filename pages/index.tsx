@@ -50,8 +50,7 @@ const Home: NextPage = () => {
   const codepenTailwind = JSON.stringify({
     title: "Tailwind version",
     html: tailwindText,
-    css_external:
-      "https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+    head: '<script src="https://cdn.tailwindcss.com"></script>'
   });
 
   const formatHtmlCss = () => {

@@ -1,6 +1,9 @@
 import { trim, get } from "lodash";
 //@ts-ignore
 import { toJSON } from "cssjson";
+//@ts-ignore
+import NearestColor from "nearest-color";
+import { colorCodes } from "./tailwindColors";
 import {
   duration,
   opacity,
@@ -33,7 +36,7 @@ h2 {
   margin-bottom: 0.5rem;
 }`;
 export const initialHTML = `<!-- Edit HTML here -->
-<html lang="">
+<html lang="en">
 <body>
   <div class="main">
     <h2>Welcome to Tailwind Converter!</h2>
@@ -199,6 +202,13 @@ export const convertAttributes = (attributes: object) => {
       }
       if (size) {
         tailwindValue = columnSizes[size];
+      }
+    } else if (style === "color") {
+      try {
+        abbreviation = "text";
+        tailwindValue = NearestColor.from(colorCodes)(styleValue).name;
+      } catch (e) {
+        alert(`Invalid Color: ${e}`);
       }
     }
     if (tailwindValue !== "") {

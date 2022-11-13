@@ -1,28 +1,31 @@
 ## Supported Tailwind Classes: 95/155
-### * class will likely not supported due to complexity and/or lack of use
-### + class will be supported, work in progress
+
+#### \* class will likely not supported due to complexity and/or lack of use
+
+#### + class will be supported, work in progress
+
 ### Layout 17/20
 
-- [x]  Aspect Ratio
-- [ ]  Container *
-- [x]  Columns
-- [x]  Break After
-- [x]  Break Before
-- [x]  Break Inside
-- [x]  Box Decoration Break
-- [x]  Box Sizing
-- [x]  Display
-- [x]  Floats
-- [x]  Clear
-- [x]  Isolation
-- [x]  Object Fit
-- [x]  Object Position
-- [x]  Overflow
-- [x]  Overscroll Behavior
-- [x]  Position
-- [ ]  Top/Right/Bottom/Left +
-- [x]  Visibility
-- [x]  Z-Index
+- [x] Aspect Ratio
+- [ ] Container \*
+- [x] Columns
+- [x] Break After
+- [x] Break Before
+- [x] Break Inside
+- [x] Box Decoration Break
+- [x] Box Sizing
+- [x] Display
+- [x] Floats
+- [x] Clear
+- [x] Isolation
+- [x] Object Fit
+- [x] Object Position
+- [x] Overflow
+- [x] Overscroll Behavior
+- [x] Position
+- [ ] Top/Right/Bottom/Left +
+- [x] Visibility
+- [x] Z-Index
 
 ### Flexbox & Grid 19/24
 
@@ -33,10 +36,10 @@
 - [x] Flex Grow
 - [x] Flex Shrink
 - [x] Order
-- [ ] Grid Template Columns *
-- [ ] Grid Column Start/End *
-- [ ] Grid Template Rows *
-- [ ] Grid Rows Start/End *
+- [ ] Grid Template Columns \*
+- [ ] Grid Column Start/End \*
+- [ ] Grid Template Rows \*
+- [ ] Grid Rows Start/End \*
 - [x] Grid Auto Flow
 - [x] Grid Auto Columns
 - [x] Grid Auto Rows
@@ -55,20 +58,20 @@
 
 - [x] Padding
 - [x] Margin
-- [ ] Space Between * 
+- [ ] Space Between \*
 
 ### Sizing 4/6
 
 - [x] Width
 - [x] Min-Width
-- [ ] Max-Width + 
+- [ ] Max-Width +
 - [x] Height
 - [x] Min-Height
-- [ ] Max-Height + 
+- [ ] Max-Height +
 
 ### Typography 18/24
 
-- [ ] Font Family * 
+- [ ] Font Family \*
 - [x] Font Size
 - [x] Font Smoothing
 - [x] Font Style
@@ -102,8 +105,8 @@
 - [x] Background Position
 - [x] Background Repeat
 - [x] Background Size
-- [ ] Background Image *
-- [ ] Gradient Color Stops *
+- [ ] Background Image \*
+- [ ] Gradient Color Stops \*
 
 ### Borders 3/15
 
@@ -111,22 +114,22 @@
 - [ ] Border Width +
 - [ ] Border Color +
 - [x] Border Style
-- [ ] Divide Width *
-- [ ] Divide Color * 
-- [ ] Divide Style *
+- [ ] Divide Width \*
+- [ ] Divide Color \*
+- [ ] Divide Style \*
 - [x] Outline Width
 - [ ] Outline Color +
 - [ ] Outline Style +
 - [x] Outline Offset
-- [ ] Ring Width *
-- [ ] Ring Color *
-- [ ] Ring Offset Width *
-- [ ] Ring Offset Color *
+- [ ] Ring Width \*
+- [ ] Ring Color \*
+- [ ] Ring Offset Width \*
+- [ ] Ring Offset Color \*
 
 ### Effects 3/5
 
-- [ ] Box Shadow *
-- [ ] Box Shadow Color *
+- [ ] Box Shadow \*
+- [ ] Box Shadow Color \*
 - [x] Opacity
 - [x] Mix Blend Mode
 - [x] Background Blend Mode
@@ -136,7 +139,7 @@
 - [ ] Blur +
 - [ ] Brightness +
 - [ ] Contrast +
-- [ ] Drop Shadow *
+- [ ] Drop Shadow \*
 - [x] Grayscale
 - [ ] Hue Rotate +
 - [x] Invert
@@ -155,16 +158,16 @@
 ### Tables 2/3
 
 - [x] Border Collapse
-- [ ] Border Spacing *
+- [ ] Border Spacing \*
 - [x] Table Layout
 
 ### Transitions & Animation 2/5
 
-- [ ] Transition Property *
+- [ ] Transition Property \*
 - [x] Transition Duration
-- [ ] Transition Timing Function *
+- [ ] Transition Timing Function \*
 - [x] Transition Delay
-- [ ] Animation *
+- [ ] Animation \*
 
 ### Transforms 1/5
 
@@ -199,4 +202,5 @@
 - [x] Stroke Width
 
 ### Accessibility 0/1
+
 - [ ] Screen Readers
