@@ -220,8 +220,8 @@ const Home: NextPage = () => {
                   </label>
                   <h3 className="text-lg font-bold">About & Settings</h3>
                   <p className="mt-4">
-                    This web app takes plain html/css and converts it into a
-                    single html file with tailwind classes. Documentation
+                    This web app takes plain HTML/CSS and converts it into a
+                    single HTML file with tailwind classes. Documentation
                     regarding the currently supported classes can be found&nbsp;
                     <a
                       href="https://github.com/kt474/tailwind-converter/blob/main/SupportedClasses.md"
@@ -231,19 +231,8 @@ const Home: NextPage = () => {
                     >
                       here
                     </a>
-                    .
-                  </p>
-                  <p className="mt-2">
-                    For any bugs/feature requests, please create an issue&nbsp;
-                    <a
-                      className="text-blue-500"
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://github.com/kt474/tailwind-converter/issues"
-                    >
-                      here
-                    </a>
-                    .
+                    . Use the codepen buttons in the nav bar to view the HTML
+                    output.
                   </p>
                   <h3 className="text-lg font-bold mt-4">Note:</h3>
                   <p>
