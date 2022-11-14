@@ -204,9 +204,9 @@ export const convertAttributes = (attributes: object) => {
       if (size) {
         tailwindValue = columnSizes[size];
       }
-    } else if (style === "color") {
+    } else if (["color", "background-color"].includes(style)) {
       try {
-        abbreviation = "text";
+        abbreviation = style === "color" ? "text" : "bg";
         if (styleValue === "inherit") tailwindValue = "inherit";
         else if (styleValue === "currentcolor") tailwindValue = "current";
         else if (styleValue === "transparent") tailwindValue = "transparent";

@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 96/155
+## Supported Tailwind Classes: 97/155
 
 #### \* class will likely not supported due to complexity and/or lack of use
 
@@ -96,11 +96,11 @@
 - [ ] Word Break +
 - [x] Content
 
-### Backgrounds 6/9
+### Backgrounds 7/9
 
 - [x] Background Attachment
 - [x] Background Clip
-- [ ] Background Color +
+- [x] Background Color
 - [x] Background Origin
 - [x] Background Position
 - [x] Background Repeat

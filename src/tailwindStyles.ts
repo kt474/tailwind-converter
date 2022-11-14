@@ -587,13 +587,3 @@ export const fontWeight = {
 };
 
 export const duration = [75, 100, 150, 200, 300, 500, 700, 1000];
-//
-// const directions = {
-//   left: "l",
-//   right: "r",
-//   bottom: "b",
-//   top: "t"
-// };
-// export const masterStyles = {
-//   padding: {}
-// };
