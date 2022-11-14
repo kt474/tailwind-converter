@@ -18,7 +18,8 @@ import {
   fontSize,
   fontWeight,
   mainDict,
-  columnSizes
+  columnSizes,
+  colorDict
 } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
@@ -204,9 +205,9 @@ export const convertAttributes = (attributes: object) => {
       if (size) {
         tailwindValue = columnSizes[size];
       }
-    } else if (["color", "background-color"].includes(style)) {
+    } else if (Object.keys(colorDict).includes(style)) {
       try {
-        abbreviation = style === "color" ? "text" : "bg";
+        abbreviation = colorDict[style];
         if (styleValue === "inherit") tailwindValue = "inherit";
         else if (styleValue === "currentcolor") tailwindValue = "current";
         else if (styleValue === "transparent") tailwindValue = "transparent";

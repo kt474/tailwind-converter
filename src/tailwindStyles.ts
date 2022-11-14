@@ -481,6 +481,12 @@ export const mainDict: any = {
   }
 };
 
+export const colorDict: any = {
+  color: "text",
+  "background-color": "bg",
+  "outline-color": "outline"
+};
+
 export const zIndex = [0, 10, 20, 30, 40, 50];
 
 export const letterSpacing = [-0.05, -0.025, 0, 0.025, 0.05, 0.1];
