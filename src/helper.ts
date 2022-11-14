@@ -35,13 +35,14 @@ body {
 h2 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  color: blue;
 }`;
 export const initialHTML = `<!-- Edit HTML here -->
 <html lang="en">
 <body>
   <div class="main">
     <h2>Welcome to Tailwind Converter!</h2>
-    <p>Please paste your HTML here and CSS into
+    <p>Edit/paste HTML here and CSS into
       the editor below
     </p>
   </div>
