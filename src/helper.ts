@@ -58,6 +58,7 @@ export const convertAttributes = (attributes: object) => {
   for (let style in attributes) {
     // @ts-ignore
     let styleValue = attributes[style];
+    styleValue = styleValue.toLowerCase();
     let styleNumber = styleValue.replace(/[^-.\d]/g, "");
     let tailwindValue = "";
     let abbreviation = "";
@@ -206,7 +207,12 @@ export const convertAttributes = (attributes: object) => {
     } else if (style === "color") {
       try {
         abbreviation = "text";
-        tailwindValue = NearestColor.from(colorCodes)(styleValue).name;
+        if (styleValue === "inherit") tailwindValue = "inherit";
+        else if (styleValue === "currentcolor") tailwindValue = "current";
+        else if (styleValue === "transparent") tailwindValue = "transparent";
+        else {
+          tailwindValue = NearestColor.from(colorCodes)(styleValue).name;
+        }
       } catch (e) {
         alert(`Invalid Color: ${e}`);
       }
