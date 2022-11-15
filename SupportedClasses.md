@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 100/155
+## Supported Tailwind Classes: 103/155
 
 #### \* class will likely not supported due to complexity and/or lack of use
 
@@ -69,7 +69,7 @@
 - [x] Min-Height
 - [ ] Max-Height +
 
-### Typography 19/24
+### Typography 20/24
 
 - [ ] Font Family \*
 - [x] Font Size
@@ -84,7 +84,7 @@
 - [x] Text Align
 - [x] Text Color
 - [x] Text Decoration
-- [ ] Text Decoration Color +
+- [x] Text Decoration Color +
 - [x] Text Decoration Style
 - [x] Text Decoration Thickness
 - [x] Text Underline Offset
@@ -177,12 +177,12 @@
 - [ ] Skew +
 - [x] Transform Origin
 
-### Interactivity 10/15
+### Interactivity 12/15
 
-- [ ] Accent Color +
+- [x] Accent Color
 - [x] Appearance
 - [x] Cursor
-- [ ] Caret Color +
+- [x] Caret Color
 - [x] Pointer Events
 - [x] Resize
 - [x] Scroll Behavior
@@ -203,4 +203,4 @@
 
 ### Accessibility 0/1
 
-- [ ] Screen Readers
+- [ ] Screen Readers \*

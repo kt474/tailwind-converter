@@ -486,7 +486,10 @@ export const colorDict: any = {
   "background-color": "bg",
   "outline-color": "outline",
   fill: "fill",
-  stroke: "stroke"
+  stroke: "stroke",
+  "text-decoration-color": "decoration",
+  "accent-color": "accent",
+  "caret-color": "caret"
 };
 
 export const zIndex = [0, 10, 20, 30, 40, 50];

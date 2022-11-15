@@ -77,4 +77,12 @@ describe("Sizing Classes", () => {
       expect(convertAttributes(attr)).toEqual([result]);
     });
   });
+  test("text decoration color", () => {
+    const values = ["rgb(240, 0, 0)", "red", "#ff0000"];
+    const result = "decoration-red-600";
+    values.forEach((value) => {
+      let attr = { "text-decoration-color": value };
+      expect(convertAttributes(attr)).toEqual([result]);
+    });
+  });
 });
