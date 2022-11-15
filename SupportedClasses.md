@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 98/155
+## Supported Tailwind Classes: 100/155
 
 #### \* class will likely not supported due to complexity and/or lack of use
 
@@ -195,10 +195,10 @@
 - [x] User Select
 - [x] Will Change
 
-### SVG 1/3
+### SVG 3/3
 
-- [ ] Fill +
-- [ ] Stroke +
+- [x] Fill
+- [x] Stroke
 - [x] Stroke Width
 
 ### Accessibility 0/1

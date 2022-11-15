@@ -484,7 +484,9 @@ export const mainDict: any = {
 export const colorDict: any = {
   color: "text",
   "background-color": "bg",
-  "outline-color": "outline"
+  "outline-color": "outline",
+  fill: "fill",
+  stroke: "stroke"
 };
 
 export const zIndex = [0, 10, 20, 30, 40, 50];

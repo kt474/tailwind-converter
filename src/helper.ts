@@ -212,6 +212,7 @@ export const convertAttributes = (attributes: object) => {
         if (styleValue === "inherit") tailwindValue = "inherit";
         else if (styleValue === "currentcolor") tailwindValue = "current";
         else if (styleValue === "transparent") tailwindValue = "transparent";
+        else if (styleValue === "none") tailwindValue = "none";
         else {
           tailwindValue = NearestColor.from(colorCodes)(styleValue).name;
         }
