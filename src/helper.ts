@@ -1,4 +1,4 @@
-import { trim, get } from "lodash";
+import { trim, get, tail } from "lodash";
 //@ts-ignore
 import { toJSON } from "cssjson";
 //@ts-ignore
@@ -219,6 +219,11 @@ export const convertAttributes = (attributes: object) => {
       } catch (e) {
         alert(`Invalid Color: ${e}`);
       }
+    } else if (style === "font-family") {
+      abbreviation = "font";
+      if (styleValue.includes("sans-serif")) tailwindValue = "sans";
+      else if (styleValue.includes("serif")) tailwindValue = "serif";
+      else if (styleValue.includes("monospace")) tailwindValue = "mono";
     }
     if (tailwindValue !== "") {
       result.push(

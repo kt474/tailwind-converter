@@ -1,10 +1,10 @@
-## Supported Tailwind Classes: 103/155
+## Supported Tailwind Classes: 104/155
 
 #### \* class will likely not supported due to complexity and/or lack of use
 
 #### + class will be supported, work in progress
 
-### Layout 17/20
+### Layout 18/20
 
 - [x] Aspect Ratio
 - [ ] Container \*
@@ -69,9 +69,9 @@
 - [x] Min-Height
 - [ ] Max-Height +
 
-### Typography 20/24
+### Typography 21/24
 
-- [ ] Font Family \*
+- [x] Font Family
 - [x] Font Size
 - [x] Font Smoothing
 - [x] Font Style
@@ -190,7 +190,7 @@
 - [ ] Scroll Padding +
 - [x] Scroll Snap Align
 - [x] Scroll Snap Stop
-- [ ] Scroll Snap Type +
+- [ ] Scroll Snap Type \*
 - [x] Touch Action
 - [x] User Select
 - [x] Will Change

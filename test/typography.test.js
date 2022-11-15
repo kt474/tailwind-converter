@@ -85,4 +85,12 @@ describe("Sizing Classes", () => {
       expect(convertAttributes(attr)).toEqual([result]);
     });
   });
+  test("text font family", () => {
+    const values = ["sans-serif", "serif", "monospace, tahoma"];
+    const results = ["font-sans", "font-serif", "font-mono"];
+    values.forEach((value, index) => {
+      let attr = { "font-family": value };
+      expect(convertAttributes(attr)).toEqual([results[index]]);
+    });
+  });
 });
