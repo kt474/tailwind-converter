@@ -224,6 +224,10 @@ export const convertAttributes = (attributes: object) => {
       if (styleValue.includes("sans-serif")) tailwindValue = "sans";
       else if (styleValue.includes("serif")) tailwindValue = "serif";
       else if (styleValue.includes("monospace")) tailwindValue = "mono";
+    } else if (style === "text-overflow") {
+      abbreviation = "text";
+      if (styleValue === "ellipsis") tailwindValue = "ellipsis";
+      else if (styleValue === "clip") tailwindValue = "clip";
     }
     if (tailwindValue !== "") {
       result.push(

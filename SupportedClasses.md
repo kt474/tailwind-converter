@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 104/155
+## Supported Tailwind Classes: 105/155
 
 #### \* class will likely not supported due to complexity and/or lack of use
 
@@ -89,7 +89,7 @@
 - [x] Text Decoration Thickness
 - [x] Text Underline Offset
 - [x] Text Transform
-- [ ] Text Overflow +
+- [x] Text Overflow
 - [x] Text Indent
 - [x] Vertical Align
 - [x] Whitespace
