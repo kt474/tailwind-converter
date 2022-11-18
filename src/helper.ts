@@ -228,6 +228,14 @@ export const convertAttributes = (attributes: object) => {
       abbreviation = "text";
       if (styleValue === "ellipsis") tailwindValue = "ellipsis";
       else if (styleValue === "clip") tailwindValue = "clip";
+    } else if (style === "overflow-wrap") {
+      abbreviation = "break";
+      if (styleValue === "normal") tailwindValue = "normal";
+      else if (styleValue === "break-word") tailwindValue = "words";
+    } else if (style === "word-break") {
+      abbreviation = "break";
+      if (styleValue === "break-all") tailwindValue = "all";
+      else if (styleValue === "keep-all") tailwindValue = "keep";
     }
     if (tailwindValue !== "") {
       result.push(

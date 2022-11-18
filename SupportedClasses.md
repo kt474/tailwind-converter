@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 105/155
+## Supported Tailwind Classes: 106/155
 
 #### \* class will likely not supported due to complexity and/or lack of use
 
@@ -69,7 +69,7 @@
 - [x] Min-Height
 - [ ] Max-Height +
 
-### Typography 21/24
+### Typography 23/24
 
 - [x] Font Family
 - [x] Font Size
@@ -93,7 +93,7 @@
 - [x] Text Indent
 - [x] Vertical Align
 - [x] Whitespace
-- [ ] Word Break +
+- [x] Word Break
 - [x] Content
 
 ### Backgrounds 7/9

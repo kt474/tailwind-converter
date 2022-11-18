@@ -97,4 +97,8 @@ describe("Sizing Classes", () => {
     const attr = { "text-overflow": "clip" };
     expect(convertAttributes(attr)).toEqual(["text-clip"]);
   });
+  test("word break", () => {
+    const attr = { "word-break": "break-all" };
+    expect(convertAttributes(attr)).toEqual(["break-all"]);
+  });
 });
