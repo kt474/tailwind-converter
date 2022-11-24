@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 106/155
+## Supported Tailwind Classes: 107/155
 
 #### \* class will likely not supported due to complexity and/or lack of use
 
@@ -69,7 +69,7 @@
 - [x] Min-Height
 - [ ] Max-Height +
 
-### Typography 23/24
+### Typography 24/24
 
 - [x] Font Family
 - [x] Font Size
@@ -78,13 +78,13 @@
 - [x] Font Weight
 - [x] Font Variant Numeric
 - [x] Letter Spacing
-- [ ] Line Height +
+- [x] Line Height
 - [x] List Style Type
 - [x] List Style Position
 - [x] Text Align
 - [x] Text Color
 - [x] Text Decoration
-- [x] Text Decoration Color +
+- [x] Text Decoration Color
 - [x] Text Decoration Style
 - [x] Text Decoration Thickness
 - [x] Text Underline Offset

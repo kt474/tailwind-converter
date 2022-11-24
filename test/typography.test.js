@@ -101,4 +101,8 @@ describe("Sizing Classes", () => {
     const attr = { "word-break": "break-all" };
     expect(convertAttributes(attr)).toEqual(["break-all"]);
   });
+  test("line height", () => {
+    const attr = { "line-height": "1rem" };
+    expect(convertAttributes(attr)).toEqual(["leading-none"]);
+  });
 });

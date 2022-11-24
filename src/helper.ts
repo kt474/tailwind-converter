@@ -19,7 +19,8 @@ import {
   fontWeight,
   mainDict,
   columnSizes,
-  colorDict
+  colorDict,
+  lineHeight
 } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
@@ -236,6 +237,13 @@ export const convertAttributes = (attributes: object) => {
       abbreviation = "break";
       if (styleValue === "break-all") tailwindValue = "all";
       else if (styleValue === "keep-all") tailwindValue = "keep";
+    } else if (style === "line-height") {
+      abbreviation = "leading";
+      if (styleValue.includes("px")) {
+        styleNumber = styleNumber / 16;
+      }
+      let height = getClosestValue(Object.keys(lineHeight), styleNumber);
+      tailwindValue = lineHeight[height];
     }
     if (tailwindValue !== "") {
       result.push(
