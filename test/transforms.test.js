@@ -9,4 +9,8 @@ describe("Transforms Classes", () => {
     const attr = { transform: "skewX(6deg);" };
     expect(convertAttributes(attr)).toEqual(["skew-x-6"]);
   });
+  test("rotate", () => {
+    const attr = { transform: "rotate(6deg);" };
+    expect(convertAttributes(attr)).toEqual(["rotate-6"]);
+  });
 });

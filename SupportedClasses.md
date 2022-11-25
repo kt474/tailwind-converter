@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 110/155
+## Supported Tailwind Classes: 111/155
 
 #### \* class will likely not supported due to complexity and/or lack of use
 
@@ -169,10 +169,10 @@
 - [x] Transition Delay
 - [ ] Animation \*
 
-### Transforms 2/5
+### Transforms 3/5
 
 - [ ] Scale +
-- [ ] Rotate +
+- [x] Rotate
 - [ ] Translate +
 - [x] Skew
 - [x] Transform Origin

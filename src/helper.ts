@@ -20,7 +20,9 @@ import {
   mainDict,
   columnSizes,
   colorDict,
-  lineHeight
+  lineHeight,
+  rotate,
+  skew
 } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
@@ -257,7 +259,10 @@ export const convertAttributes = (attributes: object) => {
     } else if (style === "transform") {
       if (styleValue.includes("skew")) {
         abbreviation = styleValue.includes("skewx") ? "skew-x" : "skew-y";
-        tailwindValue = styleNumber;
+        tailwindValue = getClosestValue(skew, styleNumber);
+      } else if (styleValue.includes("rotate")) {
+        abbreviation = "rotate";
+        tailwindValue = getClosestValue(rotate, styleNumber);
       }
     }
     if (tailwindValue !== "") {

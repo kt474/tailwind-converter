@@ -611,3 +611,7 @@ export const lineHeight: any = {
 };
 
 export const duration = [75, 100, 150, 200, 300, 500, 700, 1000];
+
+export const rotate = [0, 1, 2, 3, 6, 12, 45, 90, 180];
+
+export const skew = [0, 1, 2, 3, 6, 12];
