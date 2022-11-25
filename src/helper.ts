@@ -254,6 +254,11 @@ export const convertAttributes = (attributes: object) => {
       if (style.includes("right")) abbreviation += "r";
       if (style.includes("left")) abbreviation += "l";
       if (styleValue === "1px") tailwindValue = "px";
+    } else if (style === "transform") {
+      if (styleValue.includes("skew")) {
+        abbreviation = styleValue.includes("skewx") ? "skew-x" : "skew-y";
+        tailwindValue = styleNumber;
+      }
     }
     if (tailwindValue !== "") {
       result.push(
