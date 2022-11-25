@@ -90,7 +90,6 @@ export const convertAttributes = (attributes: object) => {
         tailwindValue = get(spacingCustom, styleValue, "");
       }
     } else if (style === "font-size") {
-      // font-size
       abbreviation = "text";
       let size = "";
       if (styleValue.includes("px")) {
@@ -100,15 +99,12 @@ export const convertAttributes = (attributes: object) => {
         size = getClosestValue(Object.keys(fontSize), styleNumber);
       }
       tailwindValue = get(fontSize, size, "");
-    } // font-weight
-    else if (style === "font-weight") {
+    } else if (style === "font-weight") {
       abbreviation = "font";
       tailwindValue = get(fontWeight, styleNumber, "");
-    } // font-style
-    else if (style === "font-style") {
+    } else if (style === "font-style") {
       tailwindValue = styleValue === "italic" ? "italic" : "non-italic";
-    } // display
-    else if (style === "display") {
+    } else if (style === "display") {
       tailwindValue = styleValue === "none" ? "hidden" : styleValue;
     } else if (style === "position") {
       tailwindValue = styleValue;
@@ -244,6 +240,20 @@ export const convertAttributes = (attributes: object) => {
       }
       let height = getClosestValue(Object.keys(lineHeight), styleNumber);
       tailwindValue = lineHeight[height];
+    } else if (
+      style.includes("scroll-margin") ||
+      style.includes("scroll-padding")
+    ) {
+      abbreviation = style.includes("scroll-margin") ? "scroll-m" : "scroll-p";
+      if (styleValue.includes("px")) {
+        styleNumber = styleNumber / 16;
+      }
+      tailwindValue = getClosestValue(sizes, styleNumber * 4);
+      if (style.includes("top")) abbreviation += "t";
+      if (style.includes("bottom")) abbreviation += "b";
+      if (style.includes("right")) abbreviation += "r";
+      if (style.includes("left")) abbreviation += "l";
+      if (styleValue === "1px") tailwindValue = "px";
     }
     if (tailwindValue !== "") {
       result.push(

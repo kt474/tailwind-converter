@@ -57,4 +57,12 @@ describe("Interactivity Classes", () => {
       expect(convertAttributes(attr)).toEqual([result]);
     });
   });
+  test("scroll margin", () => {
+    const attr = { "scroll-margin-top": "20px" };
+    expect(convertAttributes(attr)).toEqual(["scroll-mt-5"]);
+  });
+  test("scroll padding", () => {
+    const attr = { "scroll-padding-top": "20px" };
+    expect(convertAttributes(attr)).toEqual(["scroll-pt-5"]);
+  });
 });
