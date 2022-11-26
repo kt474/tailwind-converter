@@ -615,3 +615,5 @@ export const duration = [75, 100, 150, 200, 300, 500, 700, 1000];
 export const rotate = [0, 1, 2, 3, 6, 12, 45, 90, 180];
 
 export const skew = [0, 1, 2, 3, 6, 12];
+
+export const scale = [0, 50, 75, 90, 95, 100, 105, 110, 125, 150];

@@ -13,4 +13,8 @@ describe("Transforms Classes", () => {
     const attr = { transform: "rotate(6deg);" };
     expect(convertAttributes(attr)).toEqual(["rotate-6"]);
   });
+  test("scale", () => {
+    const attr = { transform: "scalex(0.5);" };
+    expect(convertAttributes(attr)).toEqual(["scale-x-50"]);
+  });
 });

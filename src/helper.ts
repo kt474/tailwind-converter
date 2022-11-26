@@ -22,7 +22,8 @@ import {
   colorDict,
   lineHeight,
   rotate,
-  skew
+  skew,
+  scale
 } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
@@ -263,6 +264,11 @@ export const convertAttributes = (attributes: object) => {
       } else if (styleValue.includes("rotate")) {
         abbreviation = "rotate";
         tailwindValue = getClosestValue(rotate, styleNumber);
+      } else if (styleValue.includes("scale")) {
+        abbreviation = "scale";
+        if (styleValue.includes("scalex")) abbreviation += "-x";
+        else if (styleValue.includes("scaley")) abbreviation += "-y";
+        tailwindValue = getClosestValue(scale, styleNumber * 100);
       }
     }
     if (tailwindValue !== "") {
