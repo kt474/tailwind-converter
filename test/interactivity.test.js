@@ -65,4 +65,8 @@ describe("Interactivity Classes", () => {
     const attr = { "scroll-padding-top": "20px" };
     expect(convertAttributes(attr)).toEqual(["scroll-pt-5"]);
   });
+  test("scroll snap type", () => {
+    const attr = { "scroll-snap-type": "none" };
+    expect(convertAttributes(attr)).toEqual(["snap-none"]);
+  });
 });

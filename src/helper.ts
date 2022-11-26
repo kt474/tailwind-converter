@@ -270,6 +270,9 @@ export const convertAttributes = (attributes: object) => {
         else if (styleValue.includes("scaley")) abbreviation += "-y";
         tailwindValue = getClosestValue(scale, styleNumber * 100);
       }
+    } else if (style === "scroll-snap-type") {
+      abbreviation = "snap";
+      if (styleValue === "none") tailwindValue = "none";
     }
     if (tailwindValue !== "") {
       result.push(

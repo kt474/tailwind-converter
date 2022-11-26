@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 112/155
+## Supported Tailwind Classes: 113/155
 
 #### \* class will likely not supported due to complexity and/or lack of use
 
@@ -177,7 +177,7 @@
 - [x] Skew
 - [x] Transform Origin
 
-### Interactivity 14/15
+### Interactivity 15/15
 
 - [x] Accent Color
 - [x] Appearance
@@ -190,7 +190,7 @@
 - [x] Scroll Padding
 - [x] Scroll Snap Align
 - [x] Scroll Snap Stop
-- [ ] Scroll Snap Type \*
+- [x] Scroll Snap Type (partial)
 - [x] Touch Action
 - [x] User Select
 - [x] Will Change
