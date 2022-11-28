@@ -17,4 +17,8 @@ describe("Transforms Classes", () => {
     const attr = { transform: "scalex(0.5);" };
     expect(convertAttributes(attr)).toEqual(["scale-x-50"]);
   });
+  test("translate", () => {
+    const attr = { transform: "translateY(18rem)" };
+    expect(convertAttributes(attr)).toEqual(["translate-y-72"]);
+  });
 });

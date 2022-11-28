@@ -617,3 +617,12 @@ export const rotate = [0, 1, 2, 3, 6, 12, 45, 90, 180];
 export const skew = [0, 1, 2, 3, 6, 12];
 
 export const scale = [0, 50, 75, 90, 95, 100, 105, 110, 125, 150];
+
+export const translate: any = {
+  25: "1/4",
+  33: "1/3",
+  50: "1/2",
+  67: "2/3",
+  75: "3/4",
+  100: "full"
+};

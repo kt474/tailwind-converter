@@ -23,7 +23,8 @@ import {
   lineHeight,
   rotate,
   skew,
-  scale
+  scale,
+  translate
 } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
@@ -269,6 +270,24 @@ export const convertAttributes = (attributes: object) => {
         if (styleValue.includes("scalex")) abbreviation += "-x";
         else if (styleValue.includes("scaley")) abbreviation += "-y";
         tailwindValue = getClosestValue(scale, styleNumber * 100);
+      } else if (styleValue.includes("translate")) {
+        abbreviation = styleValue.includes("translatex")
+          ? "translate-x"
+          : "translate-y";
+        if (styleValue.includes("px")) {
+          if (styleNumber == 1) tailwindValue = "px";
+          styleNumber = styleNumber / 16;
+        }
+        if (tailwindValue != "px") {
+          tailwindValue = getClosestValue(sizes, styleNumber * 4);
+        }
+        if (styleValue.includes("%")) {
+          let translateValue = getClosestValue(
+            Object.keys(translate),
+            styleNumber
+          );
+          tailwindValue = translate[translateValue];
+        }
       }
     } else if (style === "scroll-snap-type") {
       abbreviation = "snap";
