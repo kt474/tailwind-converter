@@ -478,6 +478,12 @@ export const mainDict: any = {
     "1 1 auto": "flex-auto",
     "0 1 auto": "flex-initial",
     none: "flex-none"
+  },
+  "outline-style": {
+    solid: "outline",
+    dashed: "outline-dashed",
+    dotted: "outline-dotted",
+    double: "outline-double"
   }
 };
 
@@ -626,3 +632,5 @@ export const translate: any = {
   75: "3/4",
   100: "full"
 };
+
+export const backdropSaturate = [0, 0.5, 1, 1.5, 2];

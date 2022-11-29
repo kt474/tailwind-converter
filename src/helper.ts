@@ -1,4 +1,4 @@
-import { trim, get, tail } from "lodash";
+import { trim, get } from "lodash";
 //@ts-ignore
 import { toJSON } from "cssjson";
 //@ts-ignore

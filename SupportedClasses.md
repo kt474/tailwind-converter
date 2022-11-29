@@ -1,4 +1,4 @@
-## Supported Tailwind Classes: 114/155
+## Supported Tailwind Classes: 115/155
 
 #### \* class will likely not supported due to complexity and/or lack of use
 
@@ -108,7 +108,7 @@
 - [ ] Background Image \*
 - [ ] Gradient Color Stops \*
 
-### Borders 4/15
+### Borders 5/15
 
 - [ ] Border Radius +
 - [ ] Border Width +
@@ -119,7 +119,7 @@
 - [ ] Divide Style \*
 - [x] Outline Width
 - [x] Outline Color
-- [ ] Outline Style +
+- [x] Outline Style (partial)
 - [x] Outline Offset
 - [ ] Ring Width \*
 - [ ] Ring Color \*
