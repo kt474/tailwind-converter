@@ -1,8 +1,8 @@
-## Supported Tailwind Classes: 115/156
+## Supported Tailwind Classes: 116/156
 
 #### \* class will likely not supported due to complexity and/or lack of use: 23 classes
 
-#### + class will be supported, work in progress: 18 classes
+#### + class will be supported, work in progress: 17 classes
 
 ### Layout 18/20
 
@@ -27,9 +27,9 @@
 - [x] Visibility
 - [x] Z-Index
 
-### Flexbox & Grid 19/24
+### Flexbox & Grid 20/24
 
-- [ ] Flex Basis +
+- [x] Flex Basis
 - [x] Flex Direction
 - [x] Flex Wrap
 - [x] Flex

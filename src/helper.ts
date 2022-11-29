@@ -292,6 +292,25 @@ export const convertAttributes = (attributes: object) => {
     } else if (style === "scroll-snap-type") {
       abbreviation = "snap";
       if (styleValue === "none") tailwindValue = "none";
+    } else if (style === "flex-basis") {
+      abbreviation = "basis";
+      if (styleValue.includes("px")) {
+        if (styleNumber == 1) tailwindValue = "px";
+        styleNumber = styleNumber / 16;
+      }
+      if (tailwindValue != "px" && !styleValue.includes("%")) {
+        tailwindValue = getClosestValue(sizes, styleNumber * 4);
+      }
+      if (styleValue === "auto") {
+        tailwindValue = "auto";
+      }
+      if (styleValue.includes("%")) {
+        let tailwindDecimal = getClosestValue(
+          Object.keys(percentages),
+          styleNumber / 100
+        );
+        tailwindValue = percentages[tailwindDecimal as keyof object];
+      }
     }
     if (tailwindValue !== "") {
       result.push(
