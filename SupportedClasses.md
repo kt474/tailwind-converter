@@ -1,8 +1,8 @@
-## Supported Tailwind Classes: 115/155
+## Supported Tailwind Classes: 115/156
 
-#### \* class will likely not supported due to complexity and/or lack of use
+#### \* class will likely not supported due to complexity and/or lack of use: 23 classes
 
-#### + class will be supported, work in progress
+#### + class will be supported, work in progress: 18 classes
 
 ### Layout 18/20
 
