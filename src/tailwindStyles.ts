@@ -634,3 +634,14 @@ export const translate: any = {
 };
 
 export const backdropSaturate = [0, 0.5, 1, 1.5, 2];
+
+export const blur: any = {
+  0: "none",
+  4: "sm",
+  8: "",
+  12: "md",
+  16: "lg",
+  24: "xl",
+  40: "2xl",
+  64: "3xl"
+};

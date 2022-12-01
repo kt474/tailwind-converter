@@ -24,7 +24,8 @@ import {
   rotate,
   skew,
   scale,
-  translate
+  translate,
+  blur
 } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
@@ -337,6 +338,23 @@ export const convertAttributes = (attributes: object) => {
           styleNumber / 100
         );
         tailwindValue = percentages[tailwindDecimal as keyof object];
+      }
+    }
+    if (style === "filter") {
+      //refactor
+      if (styleValue.includes("blur")) {
+        if (styleValue.includes("rem")) {
+          styleNumber = styleNumber * 16;
+        }
+        if (validValue(styleValue)) {
+          abbreviation = "blur";
+          let size = getClosestValue(Object.keys(blur), styleNumber);
+          tailwindValue = blur[size];
+          if (!tailwindValue) {
+            abbreviation = "";
+            tailwindValue = "blur";
+          }
+        }
       }
     }
     if (tailwindValue !== "") {
