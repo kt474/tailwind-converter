@@ -13,7 +13,7 @@ describe("Layout classes", () => {
     const values = ["3", "500px", "auto"];
     const results = ["columns-3", "columns-lg", "columns-auto"];
     values.forEach((value, index) => {
-      let attr = { "columns": value };
+      let attr = { columns: value };
       expect(convertAttributes(attr)).toEqual([results[index]]);
     });
   });
@@ -49,20 +49,20 @@ describe("Layout classes", () => {
     const values = ["block", "flex"];
     const results = ["block", "flex"];
     values.forEach((value, index) => {
-      let attr = { "display": value };
+      let attr = { display: value };
       expect(convertAttributes(attr)).toEqual([results[index]]);
     });
   });
   test("floats", () => {
-    const attr = { "float": "right" };
+    const attr = { float: "right" };
     expect(convertAttributes(attr)).toEqual(["float-right"]);
   });
   test("clear", () => {
-    const attr = { "clear": "both" };
+    const attr = { clear: "both" };
     expect(convertAttributes(attr)).toEqual(["clear-both"]);
   });
   test("isolation", () => {
-    const attr = { "isolation": "isolate" };
+    const attr = { isolation: "isolate" };
     expect(convertAttributes(attr)).toEqual(["isolate"]);
   });
   test("object fit", () => {
@@ -74,7 +74,7 @@ describe("Layout classes", () => {
     expect(convertAttributes(attr)).toEqual(["object-bottom"]);
   });
   test("overflow", () => {
-    const attr = { "overflow": "auto" };
+    const attr = { overflow: "auto" };
     expect(convertAttributes(attr)).toEqual(["overflow-auto"]);
   });
   test("overscroll behavior", () => {
@@ -82,15 +82,31 @@ describe("Layout classes", () => {
     expect(convertAttributes(attr)).toEqual(["overscroll-auto"]);
   });
   test("position", () => {
-    const attr = { "position": "static" };
+    const attr = { position: "static" };
     expect(convertAttributes(attr)).toEqual(["static"]);
   });
   test("visibility", () => {
-    const attr = { "visibility": "visible" };
+    const attr = { visibility: "visible" };
     expect(convertAttributes(attr)).toEqual(["visible"]);
   });
   test("z-index", () => {
     const attr = { "z-index": "40" };
     expect(convertAttributes(attr)).toEqual(["z-40"]);
+  });
+  test("top", () => {
+    const attr = { top: "4px" };
+    expect(convertAttributes(attr)).toEqual(["top-1"]);
+  });
+  test("bottom", () => {
+    const attr = { bottom: "50%" };
+    expect(convertAttributes(attr)).toEqual(["bottom-1/2"]);
+  });
+  test("right", () => {
+    const attr = { right: "1px" };
+    expect(convertAttributes(attr)).toEqual(["right-px"]);
+  });
+  test("left", () => {
+    const attr = { left: "auto" };
+    expect(convertAttributes(attr)).toEqual(["left-auto"]);
   });
 });

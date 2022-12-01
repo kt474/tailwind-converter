@@ -1,8 +1,8 @@
-## Supported Tailwind Classes: 116/156
+## Supported Tailwind Classes: 117/156
 
 #### \* class will likely not supported due to complexity and/or lack of use: 23 classes
 
-#### + class will be supported, work in progress: 17 classes
+#### + class will be supported, work in progress: 16 classes
 
 ### Layout 18/20
 
@@ -23,7 +23,7 @@
 - [x] Overflow
 - [x] Overscroll Behavior
 - [x] Position
-- [ ] Top/Right/Bottom/Left +
+- [x] Top/Right/Bottom/Left
 - [x] Visibility
 - [x] Z-Index
 

@@ -298,7 +298,34 @@ export const convertAttributes = (attributes: object) => {
         if (styleNumber == 1) tailwindValue = "px";
         styleNumber = styleNumber / 16;
       }
-      if (tailwindValue != "px" && !styleValue.includes("%")) {
+      if (
+        tailwindValue != "px" &&
+        !styleValue.includes("%") &&
+        validValue(styleValue)
+      ) {
+        tailwindValue = getClosestValue(sizes, styleNumber * 4);
+      }
+      if (styleValue === "auto") {
+        tailwindValue = "auto";
+      }
+      if (styleValue.includes("%")) {
+        let tailwindDecimal = getClosestValue(
+          Object.keys(percentages),
+          styleNumber / 100
+        );
+        tailwindValue = percentages[tailwindDecimal as keyof object];
+      }
+    } else if (["top", "bottom", "right", "left"].includes(style)) {
+      abbreviation = style;
+      if (styleValue.includes("px")) {
+        if (styleNumber == 1) tailwindValue = "px";
+        styleNumber = styleNumber / 16;
+      }
+      if (
+        tailwindValue != "px" &&
+        !styleValue.includes("%") &&
+        validValue(styleValue)
+      ) {
         tailwindValue = getClosestValue(sizes, styleNumber * 4);
       }
       if (styleValue === "auto") {
@@ -347,4 +374,11 @@ export const injectClass = (htmlText: string, attribute: object) => {
     let replaceString = keyString + " class=" + `"` + value + `"`;
     return htmlText.replaceAll(keyString, replaceString);
   }
+};
+
+export const validValue = (value: string) => {
+  if (value.includes("px") || value.includes("rem")) {
+    return true;
+  }
+  return false;
 };
