@@ -29,4 +29,8 @@ describe("Filters Classes", () => {
     const attr = { filter: "blur(8px)" };
     expect(convertAttributes(attr)).toEqual(["blur"]);
   });
+  test("brightness", () => {
+    const attr = { filter: "brightness(0.5)" };
+    expect(convertAttributes(attr)).toEqual(["brightness-50"]);
+  });
 });
