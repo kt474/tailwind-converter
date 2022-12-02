@@ -645,3 +645,5 @@ export const blur: any = {
   40: "2xl",
   64: "3xl"
 };
+
+export const brightness = [0, 50, 75, 90, 95, 100, 105, 110, 125, 150, 200];

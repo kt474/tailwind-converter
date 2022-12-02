@@ -25,7 +25,8 @@ import {
   skew,
   scale,
   translate,
-  blur
+  blur,
+  brightness
 } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
@@ -67,9 +68,9 @@ export const convertAttributes = (attributes: object) => {
     // @ts-ignore
     let styleValue = attributes[style];
     styleValue = styleValue.toLowerCase();
-    let styleNumber = styleValue.replace(/[^-.\d]/g, "");
-    let tailwindValue = "";
-    let abbreviation = "";
+    let styleNumber: number = parseFloat(styleValue.replace(/[^-.\d]/g, ""));
+    let tailwindValue: string = "";
+    let abbreviation: string = "";
     // margin, padding, width, height
     if (spacing.includes(style)) {
       abbreviation = style.charAt(0);
@@ -165,11 +166,11 @@ export const convertAttributes = (attributes: object) => {
       tailwindValue = getClosestValue(duration, styleNumber);
     } else if (style === "order") {
       abbreviation = "order";
-      if (styleNumber === "-9999") tailwindValue = "first";
-      else if (styleNumber === "9999") tailwindValue = "last";
-      else if (styleNumber === "0") tailwindValue = "none";
+      if (styleNumber === -9999) tailwindValue = "first";
+      else if (styleNumber === 9999) tailwindValue = "last";
+      else if (styleNumber === 0) tailwindValue = "none";
       else if (Number(styleNumber) <= 12) {
-        tailwindValue = styleNumber;
+        tailwindValue = String(styleNumber);
       }
     } else if (style === "gap") {
       abbreviation = "gap";
@@ -355,6 +356,9 @@ export const convertAttributes = (attributes: object) => {
             tailwindValue = "blur";
           }
         }
+      } else if (styleValue.includes("brightness")) {
+        abbreviation = "brightness";
+        tailwindValue = getClosestValue(brightness, styleNumber * 100);
       }
     }
     if (tailwindValue !== "") {
