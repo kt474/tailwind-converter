@@ -26,7 +26,8 @@ import {
   scale,
   translate,
   blur,
-  brightness
+  brightness,
+  contrast
 } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
@@ -359,6 +360,9 @@ export const convertAttributes = (attributes: object) => {
       } else if (styleValue.includes("brightness")) {
         abbreviation = "brightness";
         tailwindValue = getClosestValue(brightness, styleNumber * 100);
+      } else if (styleValue.includes("contrast")) {
+        abbreviation = "contrast";
+        tailwindValue = getClosestValue(contrast, styleNumber * 100);
       }
     }
     if (tailwindValue !== "") {

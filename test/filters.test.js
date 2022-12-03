@@ -33,4 +33,8 @@ describe("Filters Classes", () => {
     const attr = { filter: "brightness(0.5)" };
     expect(convertAttributes(attr)).toEqual(["brightness-50"]);
   });
+  test("contrast", () => {
+    const attr = { filter: "contrast(0.5)" };
+    expect(convertAttributes(attr)).toEqual(["contrast-50"]);
+  });
 });
