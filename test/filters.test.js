@@ -37,4 +37,8 @@ describe("Filters Classes", () => {
     const attr = { filter: "contrast(0.5)" };
     expect(convertAttributes(attr)).toEqual(["contrast-50"]);
   });
+  test("hue-rotate", () => {
+    const attr = { filter: "hue-rotate(60deg)" };
+    expect(convertAttributes(attr)).toEqual(["hue-rotate-60"]);
+  });
 });

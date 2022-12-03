@@ -649,3 +649,5 @@ export const blur: any = {
 export const brightness = [0, 50, 75, 90, 95, 100, 105, 110, 125, 150, 200];
 
 export const contrast = [0, 50, 75, 100, 125, 150, 200];
+
+export const hueRotate = [0, 15, 30, 60, 90, 180];

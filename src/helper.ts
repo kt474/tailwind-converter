@@ -27,7 +27,8 @@ import {
   translate,
   blur,
   brightness,
-  contrast
+  contrast,
+  hueRotate
 } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
@@ -363,6 +364,9 @@ export const convertAttributes = (attributes: object) => {
       } else if (styleValue.includes("contrast")) {
         abbreviation = "contrast";
         tailwindValue = getClosestValue(contrast, styleNumber * 100);
+      } else if (styleValue.includes("hue-rotate")) {
+        abbreviation = "hue-rotate";
+        tailwindValue = getClosestValue(hueRotate, styleNumber * -1);
       }
     }
     if (tailwindValue !== "") {
