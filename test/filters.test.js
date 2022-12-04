@@ -45,4 +45,24 @@ describe("Filters Classes", () => {
     const attr = { filter: "saturate(1)" };
     expect(convertAttributes(attr)).toEqual(["saturate-100"]);
   });
+  test("backdrop blur", () => {
+    const attr = { "backdrop-filter": "blur(4px)" };
+    expect(convertAttributes(attr)).toEqual(["backdrop-blur-sm"]);
+  });
+  test("backdrop brightness", () => {
+    const attr = { "backdrop-filter": "brightness(.75) " };
+    expect(convertAttributes(attr)).toEqual(["backdrop-brightness-75"]);
+  });
+  test("backdrop contrast", () => {
+    const attr = { "backdrop-filter": "contrast(1) " };
+    expect(convertAttributes(attr)).toEqual(["backdrop-contrast-100"]);
+  });
+  test("backdrop hue rotate", () => {
+    const attr = { "backdrop-filter": "hue-rotate(30deg)" };
+    expect(convertAttributes(attr)).toEqual(["backdrop-hue-rotate-30"]);
+  });
+  test("backdrop saturate", () => {
+    const attr = { "backdrop-filter": "saturate(1)" };
+    expect(convertAttributes(attr)).toEqual(["backdrop-saturate-100"]);
+  });
 });

@@ -346,8 +346,8 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
         tailwindValue = percentages[tailwindDecimal as keyof object];
       }
     }
-    if (style === "filter") {
-      //refactor
+    if (style === "filter" || style === "backdrop-filter") {
+      //TODO Refactor because there can be multiple filters
       if (styleValue.includes("blur")) {
         if (styleValue.includes("rem")) {
           styleNumber = styleNumber * 16;
@@ -373,6 +373,9 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
       } else if (styleValue.includes("saturate")) {
         abbreviation = "saturate";
         tailwindValue = getClosestValue(saturate, styleNumber * 100);
+      }
+      if (style === "backdrop-filter" && abbreviation != "") {
+        abbreviation = "backdrop-" + abbreviation;
       }
     }
     if (tailwindValue !== "") {
