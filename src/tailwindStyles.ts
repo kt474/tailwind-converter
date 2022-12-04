@@ -633,7 +633,7 @@ export const translate: any = {
   100: "full"
 };
 
-export const backdropSaturate = [0, 0.5, 1, 1.5, 2];
+export const saturate = [0, 50, 100, 150, 200];
 
 export const blur: any = {
   0: "none",

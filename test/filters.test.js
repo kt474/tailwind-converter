@@ -41,4 +41,8 @@ describe("Filters Classes", () => {
     const attr = { filter: "hue-rotate(60deg)" };
     expect(convertAttributes(attr)).toEqual(["hue-rotate-60"]);
   });
+  test("saturate", () => {
+    const attr = { filter: "saturate(1)" };
+    expect(convertAttributes(attr)).toEqual(["saturate-100"]);
+  });
 });

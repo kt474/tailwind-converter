@@ -28,7 +28,8 @@ import {
   blur,
   brightness,
   contrast,
-  hueRotate
+  hueRotate,
+  saturate
 } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
@@ -64,11 +65,13 @@ const getClosestValue = (sizes: Array<any>, value: number) => {
   );
 };
 
-export const convertAttributes = (attributes: object) => {
+export const convertAttributes = (attributes: { [index: string]: any }) => {
   let result = [];
-  for (let style in attributes) {
-    // @ts-ignore
-    let styleValue = attributes[style];
+  let style: string;
+  for (style in attributes) {
+    let styleValue: any = attributes[style];
+    // TODO Refactor this
+    if (Array.isArray(styleValue)) styleValue = styleValue[0];
     styleValue = styleValue.toLowerCase();
     let styleNumber: number = parseFloat(styleValue.replace(/[^-.\d]/g, ""));
     let tailwindValue: string = "";
@@ -367,6 +370,9 @@ export const convertAttributes = (attributes: object) => {
       } else if (styleValue.includes("hue-rotate")) {
         abbreviation = "hue-rotate";
         tailwindValue = getClosestValue(hueRotate, styleNumber * -1);
+      } else if (styleValue.includes("saturate")) {
+        abbreviation = "saturate";
+        tailwindValue = getClosestValue(saturate, styleNumber * 100);
       }
     }
     if (tailwindValue !== "") {
