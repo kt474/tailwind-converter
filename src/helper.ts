@@ -30,7 +30,8 @@ import {
   contrast,
   hueRotate,
   saturate,
-  borderRadius
+  borderRadius,
+  maxWidth
 } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
@@ -388,6 +389,24 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
         tailwindValue = getClosestValue(sizes, styleNumber * 4);
       } else if (Object.keys(maxHeightValues).includes(styleValue)) {
         tailwindValue = maxHeightValues[styleValue];
+      }
+    } else if (style === "max-width") {
+      abbreviation = "max-w";
+      const maxWidthValues: { [index: string]: any } = {
+        "100%": "full",
+        "min-content": "min",
+        "max-content": "max",
+        "fit-content": "fit"
+      };
+      if (styleValue === "none") tailwindValue = "none";
+      else if (validValue(styleValue)) {
+        if (styleValue.includes("px")) {
+          styleNumber = styleNumber / 16;
+        }
+        let size = getClosestValue(Object.keys(maxWidth), styleNumber);
+        tailwindValue = maxWidth[size];
+      } else if (Object.keys(maxWidthValues).includes(styleValue)) {
+        tailwindValue = maxWidthValues[styleValue];
       }
     }
     if (style === "filter" || style === "backdrop-filter") {

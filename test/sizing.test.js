@@ -21,4 +21,8 @@ describe("Sizing Classes", () => {
     const attr = { "max-height": "100%" };
     expect(convertAttributes(attr)).toEqual(["max-h-full"]);
   });
+  test("max-width", () => {
+    const attr = { "max-width": "100%" };
+    expect(convertAttributes(attr)).toEqual(["max-w-full"]);
+  });
 });

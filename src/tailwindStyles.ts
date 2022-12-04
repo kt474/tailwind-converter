@@ -667,3 +667,18 @@ export const borderRadius: any = {
   1: "2xl",
   1.5: "3xl"
 };
+
+export const maxWidth: any = {
+  0: "0",
+  20: "xs",
+  24: "sm",
+  28: "md",
+  32: "lg",
+  36: "xl",
+  42: "2xl",
+  48: "3xl",
+  56: "4xl",
+  64: "5xl",
+  72: "6xl",
+  80: "7xl"
+};

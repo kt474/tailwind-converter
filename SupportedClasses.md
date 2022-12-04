@@ -1,8 +1,6 @@
-## Supported Tailwind Classes: 132/156
+## Supported Tailwind Classes: 133/156
 
 #### \* class will likely not supported due to complexity and/or lack of use: 23 classes
-
-#### + class will be supported, work in progress: 1 class
 
 ### Layout 19/20
 
@@ -60,11 +58,11 @@
 - [x] Margin
 - [ ] Space Between \*
 
-### Sizing 5/6
+### Sizing 6/6
 
 - [x] Width
 - [x] Min-Width
-- [ ] Max-Width +
+- [x] Max-Width
 - [x] Height
 - [x] Min-Height
 - [x] Max-Height
