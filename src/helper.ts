@@ -374,8 +374,16 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
         abbreviation = "saturate";
         tailwindValue = getClosestValue(saturate, styleNumber * 100);
       }
-      if (style === "backdrop-filter" && abbreviation != "") {
+      if (
+        (style === "backdrop-filter" && abbreviation != "") ||
+        styleValue.includes("opacity")
+      ) {
         abbreviation = "backdrop-" + abbreviation;
+        if (styleValue.includes("opacity")) {
+          abbreviation += "opacity";
+          console.log(abbreviation);
+          tailwindValue = getClosestValue(opacity, styleNumber * 100);
+        }
       }
     }
     if (tailwindValue !== "") {

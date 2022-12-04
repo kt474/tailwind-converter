@@ -1,8 +1,8 @@
-## Supported Tailwind Classes: 127/156
+## Supported Tailwind Classes: 128/156
 
 #### \* class will likely not supported due to complexity and/or lack of use: 23 classes
 
-#### + class will be supported, work in progress: 6 classes
+#### + class will be supported, work in progress: 5 classes
 
 ### Layout 19/20
 
@@ -134,7 +134,7 @@
 - [x] Mix Blend Mode
 - [x] Background Blend Mode
 
-### Filters 16/18
+### Filters 17/18
 
 - [x] Blur
 - [x] Brightness
@@ -151,7 +151,7 @@
 - [x] Backdrop Grayscale
 - [x] Backdrop Hue Rotate
 - [x] Backdrop Invert
-- [ ] Backdrop Opacity +
+- [x] Backdrop Opacity
 - [x] Backdrop Saturate
 - [x] Backdrop Sepia
 

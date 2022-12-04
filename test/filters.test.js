@@ -65,4 +65,8 @@ describe("Filters Classes", () => {
     const attr = { "backdrop-filter": "saturate(1)" };
     expect(convertAttributes(attr)).toEqual(["backdrop-saturate-100"]);
   });
+  test("backdrop opacity", () => {
+    const attr = { "backdrop-filter": "opacity(1)" };
+    expect(convertAttributes(attr)).toEqual(["backdrop-opacity-100"]);
+  });
 });
