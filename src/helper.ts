@@ -29,7 +29,8 @@ import {
   brightness,
   contrast,
   hueRotate,
-  saturate
+  saturate,
+  borderRadius
 } from "./tailwindStyles";
 
 export const initialCSS = `/* Edit CSS here */
@@ -355,6 +356,19 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
       if (tailwindValue === 1) {
         tailwindValue = abbreviation;
         abbreviation = "";
+      }
+    } else if (style === "border-radius") {
+      if (validValue(styleValue)) {
+        abbreviation = "rounded";
+        if (styleValue.includes("px")) {
+          styleNumber = styleNumber / 16;
+        }
+        let size = getClosestValue(Object.keys(borderRadius), styleNumber);
+        tailwindValue = borderRadius[size];
+        if (tailwindValue === "") {
+          abbreviation = "";
+          tailwindValue = "rounded";
+        }
       }
     }
     if (style === "filter" || style === "backdrop-filter") {

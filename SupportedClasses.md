@@ -1,8 +1,8 @@
-## Supported Tailwind Classes: 130/156
+## Supported Tailwind Classes: 131/156
 
 #### \* class will likely not supported due to complexity and/or lack of use: 23 classes
 
-#### + class will be supported, work in progress: 3 classes
+#### + class will be supported, work in progress: 2 classes
 
 ### Layout 19/20
 
@@ -108,9 +108,9 @@
 - [ ] Background Image \*
 - [ ] Gradient Color Stops \*
 
-### Borders 7/15
+### Borders 8/15
 
-- [ ] Border Radius +
+- [x] Border Radius
 - [x] Border Width
 - [x] Border Color
 - [x] Border Style

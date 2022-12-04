@@ -29,4 +29,8 @@ describe("Borders Classes", () => {
     const attr = { "border-left-color": "rgb(217, 70, 239)" };
     expect(convertAttributes(attr)).toEqual(["border-l-fuchsia-500"]);
   });
+  test("border radius", () => {
+    const attr = { "border-radius": "0.25rem" };
+    expect(convertAttributes(attr)).toEqual(["rounded"]);
+  });
 });

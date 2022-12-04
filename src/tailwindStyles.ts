@@ -656,3 +656,14 @@ export const brightness = [0, 50, 75, 90, 95, 100, 105, 110, 125, 150, 200];
 export const contrast = [0, 50, 75, 100, 125, 150, 200];
 
 export const hueRotate = [0, 15, 30, 60, 90, 180];
+
+export const borderRadius: any = {
+  0: "none",
+  0.125: "sm",
+  0.25: "",
+  0.375: "md",
+  0.5: "lg",
+  0.75: "xl",
+  1: "2xl",
+  1.5: "3xl"
+};
