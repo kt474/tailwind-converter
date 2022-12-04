@@ -7,7 +7,7 @@ import { colorCodes } from "./tailwindColors";
 import {
   duration,
   opacity,
-  textDecorationValues,
+  borderValues,
   zIndex,
   letterSpacing,
   spacingValues,
@@ -74,7 +74,7 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
     if (Array.isArray(styleValue)) styleValue = styleValue[0];
     styleValue = styleValue.toLowerCase();
     let styleNumber: number = parseFloat(styleValue.replace(/[^-.\d]/g, ""));
-    let tailwindValue: string = "";
+    let tailwindValue: string | number = "";
     let abbreviation: string = "";
     // margin, padding, width, height
     if (spacing.includes(style)) {
@@ -132,14 +132,14 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
       if (styleValue === "auto" || styleValue === "from-font") {
         tailwindValue = styleValue;
       } else if (styleNumber) {
-        tailwindValue = getClosestValue(textDecorationValues, styleNumber);
+        tailwindValue = getClosestValue(borderValues, styleNumber);
       } else break;
     } else if (style === "text-underline-offset") {
       abbreviation = "underline-offset";
       if (styleValue === "auto") {
         tailwindValue = styleValue;
       } else if (styleNumber) {
-        tailwindValue = getClosestValue(textDecorationValues, styleNumber);
+        tailwindValue = getClosestValue(borderValues, styleNumber);
       } else break;
     } else if (style === "text-indent") {
       abbreviation = "indent";
@@ -151,10 +151,10 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
       tailwindValue = getClosestValue(sizes, styleNumber * 4);
     } else if (style === "outline-width") {
       abbreviation = "outline";
-      tailwindValue = getClosestValue(textDecorationValues, styleNumber);
+      tailwindValue = getClosestValue(borderValues, styleNumber);
     } else if (style === "outline-offset") {
       abbreviation = "outline-offset";
-      tailwindValue = getClosestValue(textDecorationValues, styleNumber);
+      tailwindValue = getClosestValue(borderValues, styleNumber);
     } else if (style === "opacity") {
       abbreviation = "opacity";
       tailwindValue = getClosestValue(opacity, styleNumber * 100);
@@ -345,6 +345,17 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
         );
         tailwindValue = percentages[tailwindDecimal as keyof object];
       }
+    } else if (style.includes("border") && style.includes("width")) {
+      abbreviation = "border";
+      tailwindValue = getClosestValue(borderValues, styleNumber);
+      if (style.includes("top")) abbreviation += "-t";
+      if (style.includes("bottom")) abbreviation += "-b";
+      if (style.includes("left")) abbreviation += "-l";
+      if (style.includes("right")) abbreviation += "-r";
+      if (tailwindValue === 1) {
+        tailwindValue = abbreviation;
+        abbreviation = "";
+      }
     }
     if (style === "filter" || style === "backdrop-filter") {
       //TODO Refactor because there can be multiple filters
@@ -381,7 +392,6 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
         abbreviation = "backdrop-" + abbreviation;
         if (styleValue.includes("opacity")) {
           abbreviation += "opacity";
-          console.log(abbreviation);
           tailwindValue = getClosestValue(opacity, styleNumber * 100);
         }
       }

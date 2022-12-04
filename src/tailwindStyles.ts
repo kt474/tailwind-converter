@@ -511,7 +511,7 @@ export const spacingValues = [
   "widest"
 ];
 
-export const textDecorationValues = [0, 1, 2, 4, 8];
+export const borderValues = [0, 1, 2, 4, 8];
 
 export const opacity = [
   0, 5, 10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 95, 100

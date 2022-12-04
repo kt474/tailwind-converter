@@ -21,4 +21,8 @@ describe("Borders Classes", () => {
       expect(convertAttributes(attr)).toEqual([result]);
     });
   });
+  test("border width", () => {
+    const attr = { "border-width": "1px" };
+    expect(convertAttributes(attr)).toEqual(["border"]);
+  });
 });
