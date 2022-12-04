@@ -495,7 +495,12 @@ export const colorDict: any = {
   stroke: "stroke",
   "text-decoration-color": "decoration",
   "accent-color": "accent",
-  "caret-color": "caret"
+  "caret-color": "caret",
+  "border-color": "border",
+  "border-top-color": "border-t",
+  "border-bottom-color": "border-b",
+  "border-left-color": "border-l",
+  "border-right-color": "border-r"
 };
 
 export const zIndex = [0, 10, 20, 30, 40, 50];

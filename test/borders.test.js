@@ -25,4 +25,8 @@ describe("Borders Classes", () => {
     const attr = { "border-width": "1px" };
     expect(convertAttributes(attr)).toEqual(["border"]);
   });
+  test("border color", () => {
+    const attr = { "border-left-color": "rgb(217, 70, 239)" };
+    expect(convertAttributes(attr)).toEqual(["border-l-fuchsia-500"]);
+  });
 });
