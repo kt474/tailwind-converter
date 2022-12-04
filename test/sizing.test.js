@@ -6,7 +6,7 @@ describe("Sizing Classes", () => {
     expect(convertAttributes(attr)).toEqual(["w-2.5"]);
   });
   test("min-width", () => {
-    const attr = { 'min-width': "100%" };
+    const attr = { "min-width": "100%" };
     expect(convertAttributes(attr)).toEqual(["min-w-full"]);
   });
   test("height", () => {
@@ -14,7 +14,11 @@ describe("Sizing Classes", () => {
     expect(convertAttributes(attr)).toEqual(["h-2.5"]);
   });
   test("min-height", () => {
-    const attr = { 'min-height': "100%" };
+    const attr = { "min-height": "100%" };
     expect(convertAttributes(attr)).toEqual(["min-h-full"]);
+  });
+  test("max-height", () => {
+    const attr = { "max-height": "100%" };
+    expect(convertAttributes(attr)).toEqual(["max-h-full"]);
   });
 });

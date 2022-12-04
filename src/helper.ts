@@ -370,6 +370,25 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
           tailwindValue = "rounded";
         }
       }
+    } else if (style === "max-height") {
+      abbreviation = "max-h";
+      const maxHeightValues: { [index: string]: any } = {
+        "100%": "full",
+        "100vh": "screen",
+        "min-content": "min",
+        "max-content": "max",
+        "fit-content": "fit"
+      };
+      if (styleValue === "1px") {
+        tailwindValue = "px";
+      } else if (validValue(styleValue)) {
+        if (styleValue.includes("px")) {
+          styleNumber = styleNumber / 16;
+        }
+        tailwindValue = getClosestValue(sizes, styleNumber * 4);
+      } else if (Object.keys(maxHeightValues).includes(styleValue)) {
+        tailwindValue = maxHeightValues[styleValue];
+      }
     }
     if (style === "filter" || style === "backdrop-filter") {
       //TODO Refactor because there can be multiple filters
