@@ -5,7 +5,7 @@
 ### Layout 19/20
 
 - [x] Aspect Ratio
-- [ ] Container 
+- [ ] Container
 - [x] Columns
 - [x] Break After
 - [x] Break Before
@@ -34,10 +34,10 @@
 - [x] Flex Grow
 - [x] Flex Shrink
 - [x] Order
-- [ ] Grid Template Columns 
-- [ ] Grid Column Start/End 
-- [ ] Grid Template Rows 
-- [ ] Grid Rows Start/End 
+- [ ] Grid Template Columns
+- [ ] Grid Column Start/End
+- [ ] Grid Template Rows
+- [ ] Grid Rows Start/End
 - [x] Grid Auto Flow
 - [x] Grid Auto Columns
 - [x] Grid Auto Rows
@@ -56,7 +56,7 @@
 
 - [x] Padding
 - [x] Margin
-- [ ] Space Between 
+- [ ] Space Between
 
 ### Sizing 6/6
 
@@ -103,8 +103,8 @@
 - [x] Background Position
 - [x] Background Repeat
 - [x] Background Size
-- [ ] Background Image 
-- [ ] Gradient Color Stops 
+- [ ] Background Image
+- [ ] Gradient Color Stops
 
 ### Borders 8/15
 
@@ -112,22 +112,22 @@
 - [x] Border Width
 - [x] Border Color
 - [x] Border Style
-- [ ] Divide Width 
-- [ ] Divide Color 
-- [ ] Divide Style 
+- [ ] Divide Width
+- [ ] Divide Color
+- [ ] Divide Style
 - [x] Outline Width
 - [x] Outline Color
 - [x] Outline Style (partial)
 - [x] Outline Offset
-- [ ] Ring Width 
-- [ ] Ring Color 
-- [ ] Ring Offset Width 
-- [ ] Ring Offset Color 
+- [ ] Ring Width
+- [ ] Ring Color
+- [ ] Ring Offset Width
+- [ ] Ring Offset Color
 
 ### Effects 3/5
 
-- [ ] Box Shadow 
-- [ ] Box Shadow Color 
+- [ ] Box Shadow
+- [ ] Box Shadow Color
 - [x] Opacity
 - [x] Mix Blend Mode
 - [x] Background Blend Mode
@@ -137,7 +137,7 @@
 - [x] Blur
 - [x] Brightness
 - [x] Contrast
-- [ ] Drop Shadow 
+- [ ] Drop Shadow
 - [x] Grayscale
 - [x] Hue Rotate
 - [x] Invert
@@ -156,16 +156,16 @@
 ### Tables 2/3
 
 - [x] Border Collapse
-- [ ] Border Spacing 
+- [ ] Border Spacing
 - [x] Table Layout
 
 ### Transitions & Animation 2/5
 
-- [ ] Transition Property 
+- [ ] Transition Property
 - [x] Transition Duration
-- [ ] Transition Timing Function 
+- [ ] Transition Timing Function
 - [x] Transition Delay
-- [ ] Animation 
+- [ ] Animation
 
 ### Transforms 5/5
 
