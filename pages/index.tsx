@@ -126,15 +126,19 @@ const Home: NextPage = () => {
       <div className="w-full h-screen flex-col overflow-hidden dark:bg-gray-800 bg-slate-100">
         <div className="w-screen">
           <div className="flex absolute left-2">
-            <input
-              type="checkbox"
-              className="toggle toggle-md"
-              checked={darkMode}
-              onChange={() => {
-                setDarkMode(!darkMode);
-                localStorage.darkMode = !darkMode;
-              }}
-            />
+            <label htmlFor="darkmode">
+              <input
+                aria-label="darkmode"
+                type="checkbox"
+                id="darkmode"
+                className="toggle toggle-md"
+                checked={darkMode}
+                onChange={() => {
+                  setDarkMode(!darkMode);
+                  localStorage.darkMode = !darkMode;
+                }}
+              />
+            </label>
             {darkMode ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -258,6 +262,7 @@ const Home: NextPage = () => {
               </label>
             </div>
             <a
+              aria-label="github page"
               href="https://github.com/kt474/tailwind-converter"
               target="_blank"
               rel="noreferrer"
@@ -281,6 +286,7 @@ const Home: NextPage = () => {
         <div className="flex h-screen">
           <div className="w-1/2">
             <CodeMirror
+              aria-label="html input"
               className="h-1/2 text-base"
               value={htmlText}
               height="100%"
@@ -292,6 +298,7 @@ const Home: NextPage = () => {
               }}
             />
             <CodeMirror
+              aria-label="css input"
               className="h-1/2 text-base"
               value={cssText}
               height="100%"
@@ -391,6 +398,7 @@ const Home: NextPage = () => {
           </div>
           <div className="w-1/2">
             <CodeMirror
+              aria-label="tailwind html"
               className="h-full text-base"
               value={tailwindText}
               readOnly={true}
