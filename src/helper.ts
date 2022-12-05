@@ -71,11 +71,16 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
   let result = [];
   let style: string;
   for (style in attributes) {
+    let negativeValue: boolean = false;
     let styleValue: any = attributes[style];
-    // TODO Refactor this
+    // TODO Refactor this bc there can be multiple filters
     if (Array.isArray(styleValue)) styleValue = styleValue[0];
     styleValue = styleValue.toLowerCase();
     let styleNumber: number = parseFloat(styleValue.replace(/[^-.\d]/g, ""));
+    if (styleNumber < 0) {
+      styleNumber = Math.abs(styleNumber);
+      negativeValue = true;
+    }
     let tailwindValue: string | number = "";
     let abbreviation: string = "";
     // margin, padding, width, height
@@ -449,6 +454,7 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
       }
     }
     if (tailwindValue !== "") {
+      if (negativeValue) abbreviation = "-" + abbreviation;
       result.push(
         abbreviation ? (abbreviation += "-" + tailwindValue) : tailwindValue
       );
