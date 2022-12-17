@@ -18,3 +18,10 @@ yarn dev
 ```
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## TODO
+
+- Better test coverage - test entire app and prevent crashes from invalid text 
+- Handle multiple css filter classes 
+- Support active states (hover, focus)
+- Support css nesting instead of just top level css classes
