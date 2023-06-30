@@ -228,10 +228,7 @@ const Home: NextPage = () => {
               </label>
               <input type="checkbox" id="my-modal-4" className="modal-toggle" />
               <label htmlFor="my-modal-4" className="modal cursor-pointer">
-                <label
-                  className="modal-box relative bg-white dark:bg-gray-700 text-black dark:text-white"
-                  htmlFor=""
-                >
+                <label className="modal-box relative bg-white dark:bg-gray-700 text-black dark:text-white">
                   <label
                     htmlFor="my-modal-4"
                     className="btn btn-sm btn-circle absolute right-2 top-2 bg-gray-700 dark:bg-gray-800 border-none"
