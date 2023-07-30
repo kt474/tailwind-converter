@@ -232,5 +232,3 @@ export const colorCodes = {
   "sky-800": "#075985",
   "sky-900": "#0c4a6e"
 };
-
-//sky
