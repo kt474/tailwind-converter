@@ -123,9 +123,9 @@ const Home: NextPage = () => {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <div className="w-full h-screen flex-col overflow-hidden dark:bg-gray-800 bg-slate-100">
+      <div className="h-screen w-full flex-col overflow-hidden bg-slate-100 dark:bg-gray-800">
         <div className="w-screen">
-          <div className="flex absolute left-2">
+          <div className="absolute left-2 flex">
             <label htmlFor="darkmode">
               <input
                 aria-label="darkmode"
@@ -142,7 +142,7 @@ const Home: NextPage = () => {
             {darkMode ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 ml-2"
+                className="ml-2 h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="#f0f6f9"
@@ -161,7 +161,7 @@ const Home: NextPage = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={2}
                 stroke="#000"
-                className="w-6 h-6 ml-2"
+                className="ml-2 h-6 w-6"
               >
                 <path
                   strokeLinecap="round"
@@ -171,7 +171,7 @@ const Home: NextPage = () => {
               </svg>
             )}
           </div>
-          <div className="flex mt-2 w-1/2 justify-end mb-1">
+          <div className="mt-2 mb-1 flex w-1/2 justify-end">
             <form
               action="https://codepen.io/pen/define"
               method="POST"
@@ -179,7 +179,7 @@ const Home: NextPage = () => {
             >
               <input type="hidden" name="data" value={codepenOriginal} />
               <button
-                className="btn btn-xs border-none text-xs mb-1 text-white"
+                className="btn btn-xs mb-1 border-none text-xs text-white"
                 type="submit"
                 title="codepen preview"
                 value=""
@@ -188,7 +188,7 @@ const Home: NextPage = () => {
               </button>
             </form>
           </div>
-          <div className="flex right-4 top-2 absolute">
+          <div className="absolute right-4 top-2 flex">
             <form
               action="https://codepen.io/pen/define"
               method="POST"
@@ -196,7 +196,7 @@ const Home: NextPage = () => {
             >
               <input type="hidden" name="data" value={codepenTailwind} />
               <button
-                className="btn btn-xs border-none text-xs mb-1 text-white"
+                className="btn btn-xs mb-1 border-none text-xs text-white"
                 type="submit"
                 title="codepen preview"
                 value=""
@@ -208,7 +208,7 @@ const Home: NextPage = () => {
               <label htmlFor="my-modal-4" className="cursor-pointer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 mx-4"
+                  className="mx-4 h-6 w-6"
                   fill={darkMode ? "#f0f6f9" : "#000"}
                   viewBox="4 4 16 16"
                   stroke={darkMode ? "#282c34" : "#f1f5f9"}
@@ -228,10 +228,10 @@ const Home: NextPage = () => {
               </label>
               <input type="checkbox" id="my-modal-4" className="modal-toggle" />
               <label htmlFor="my-modal-4" className="modal cursor-pointer">
-                <label className="modal-box relative bg-white dark:bg-gray-700 text-black dark:text-white">
+                <label className="modal-box relative bg-white text-black dark:bg-gray-700 dark:text-white">
                   <label
                     htmlFor="my-modal-4"
-                    className="btn btn-sm btn-circle absolute right-2 top-2 bg-gray-700 dark:bg-gray-800 border-none"
+                    className="btn btn-circle btn-sm absolute right-2 top-2 border-none bg-gray-700 dark:bg-gray-800"
                   >
                     ✕
                   </label>
@@ -251,7 +251,7 @@ const Home: NextPage = () => {
                     . Use the codepen buttons in the nav bar to view the HTML
                     output.
                   </p>
-                  <h3 className="text-lg font-bold mt-4">Note:</h3>
+                  <h3 className="mt-4 text-lg font-bold">Note:</h3>
                   <p>
                     This is still a work in progress and not fully functional.
                   </p>
@@ -311,7 +311,7 @@ const Home: NextPage = () => {
               style={resetButtonPosition}
             >
               <button
-                className="btn btn-xs btn-primary bg-sky-500 hover:bg-sky-400 border-none mb-0.5"
+                className="btn btn-primary btn-xs mb-0.5 border-none bg-sky-500 hover:bg-sky-400"
                 onClick={resetButton}
               >
                 <svg
@@ -320,7 +320,7 @@ const Home: NextPage = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="h-4 w-4 mr-1"
+                  className="mr-1 h-4 w-4"
                 >
                   <path
                     strokeLinecap="round"
@@ -334,20 +334,20 @@ const Home: NextPage = () => {
             <div className="absolute bottom-2" style={formatButtonPosition}>
               {tidy ? (
                 <button
-                  className="btn btn-xs btn-primary bg-sky-500 hover:bg-sky-400 border-none mb-0.5"
+                  className="btn btn-primary btn-xs mb-0.5 border-none bg-sky-500 hover:bg-sky-400"
                   style={customFontSize}
                 >
                   Formatted!
                 </button>
               ) : (
                 <button
-                  className="btn btn-xs btn-primary bg-sky-500 hover:bg-sky-400 border-none"
+                  className="btn btn-primary btn-xs border-none bg-sky-500 hover:bg-sky-400"
                   title="format code"
                   onClick={formatCode}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 mr-1"
+                    className="mr-1 h-4 w-4"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -365,18 +365,18 @@ const Home: NextPage = () => {
             </div>
             <div className="absolute bottom-2" style={syncButtonPosition}>
               {synced ? (
-                <button className="btn btn-xs btn-primary bg-sky-500 hover:bg-sky-400 border-none mb-0.5">
+                <button className="btn btn-primary btn-xs mb-0.5 border-none bg-sky-500 hover:bg-sky-400">
                   Synced!
                 </button>
               ) : (
                 <button
-                  className="btn btn-xs btn-primary bg-sky-500 hover:bg-sky-400 border-none"
+                  className="btn btn-primary btn-xs border-none bg-sky-500 hover:bg-sky-400"
                   title="convert code"
                   onClick={syncButton}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 mr-1"
+                    className="mr-1 h-4 w-4"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -403,19 +403,19 @@ const Home: NextPage = () => {
               theme={darkMode ? oneDark : "light"}
               extensions={[html()]}
             />
-            <div className="bottom-2 right-4 absolute">
+            <div className="absolute bottom-2 right-4">
               {copied ? (
-                <button className="btn btn-xs bg-slate-300 text-black hover:bg-slate-400 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600 border-none mb-0.5">
+                <button className="btn btn-xs mb-0.5 border-none bg-slate-300 text-black hover:bg-slate-400 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600">
                   Copied!
                 </button>
               ) : (
                 <button
-                  className="btn btn-xs bg-slate-300 text-black hover:bg-slate-400 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600 border-none "
+                  className="btn btn-xs border-none bg-slate-300 text-black hover:bg-slate-400 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 "
                   onClick={copyToClipboard}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 mr-1"
+                    className="mr-1 h-4 w-4"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

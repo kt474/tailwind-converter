@@ -77,7 +77,13 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
     if (Array.isArray(styleValue)) styleValue = styleValue[0];
     styleValue = styleValue.toLowerCase();
     let styleNumber: number = parseFloat(styleValue.replace(/[^-.\d]/g, ""));
-    if (styleNumber < 0) {
+    if (
+      styleNumber < 0 &&
+      styleValue.includes("hue-rotate") &&
+      styleValue[0] !== "-"
+    ) {
+      styleNumber = Math.abs(styleNumber);
+    } else if (styleNumber < 0) {
       styleNumber = Math.abs(styleNumber);
       negativeValue = true;
     }
@@ -437,7 +443,7 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
         tailwindValue = getClosestValue(contrast, styleNumber * 100);
       } else if (styleValue.includes("hue-rotate")) {
         abbreviation = "hue-rotate";
-        tailwindValue = getClosestValue(hueRotate, styleNumber * -1);
+        tailwindValue = getClosestValue(hueRotate, styleNumber);
       } else if (styleValue.includes("saturate")) {
         abbreviation = "saturate";
         tailwindValue = getClosestValue(saturate, styleNumber * 100);
