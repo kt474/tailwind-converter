@@ -123,7 +123,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <div className="h-screen w-full flex-col overflow-hidden bg-slate-100 dark:bg-gray-800">
+      <div className="h-screen w-full flex-col overflow-hidden bg-slate-200 dark:bg-zinc-800">
         <div className="w-screen">
           <div className="absolute left-2 flex">
             <label htmlFor="darkmode">
@@ -171,7 +171,7 @@ const Home: NextPage = () => {
               </svg>
             )}
           </div>
-          <div className="mt-2 mb-1 flex w-1/2 justify-end">
+          <div className="mb-1 mt-2 flex w-1/2 justify-end">
             <form
               action="https://codepen.io/pen/define"
               method="POST"
@@ -311,7 +311,8 @@ const Home: NextPage = () => {
               style={resetButtonPosition}
             >
               <button
-                className="btn btn-primary btn-xs mb-0.5 border-none bg-sky-500 hover:bg-sky-400"
+                className="btn btn-xs mb-0.5 border-none bg-slate-300 text-black hover:bg-slate-400 
+                dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
                 onClick={resetButton}
               >
                 <svg
@@ -334,14 +335,16 @@ const Home: NextPage = () => {
             <div className="absolute bottom-2" style={formatButtonPosition}>
               {tidy ? (
                 <button
-                  className="btn btn-primary btn-xs mb-0.5 border-none bg-sky-500 hover:bg-sky-400"
+                  className="btn btn-xs mb-0.5 border-none bg-slate-300 text-black hover:bg-slate-400 
+                  dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
                   style={customFontSize}
                 >
                   Formatted!
                 </button>
               ) : (
                 <button
-                  className="btn btn-primary btn-xs border-none bg-sky-500 hover:bg-sky-400"
+                  className="btn btn-xs border-none bg-slate-300 text-black hover:bg-slate-400 
+                  dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
                   title="format code"
                   onClick={formatCode}
                 >
@@ -365,12 +368,16 @@ const Home: NextPage = () => {
             </div>
             <div className="absolute bottom-2" style={syncButtonPosition}>
               {synced ? (
-                <button className="btn btn-primary btn-xs mb-0.5 border-none bg-sky-500 hover:bg-sky-400">
+                <button
+                  className="btn btn-xs mb-0.5 border-none bg-slate-300 text-black hover:bg-slate-400 
+                dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
+                >
                   Synced!
                 </button>
               ) : (
                 <button
-                  className="btn btn-primary btn-xs border-none bg-sky-500 hover:bg-sky-400"
+                  className="btn btn-xs border-none bg-slate-300 text-black hover:bg-slate-400 
+                  dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
                   title="convert code"
                   onClick={syncButton}
                 >
@@ -405,12 +412,13 @@ const Home: NextPage = () => {
             />
             <div className="absolute bottom-2 right-4">
               {copied ? (
-                <button className="btn btn-xs mb-0.5 border-none bg-slate-300 text-black hover:bg-slate-400 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600">
+                <button className="btn btn-xs mb-0.5 border-none bg-slate-300 text-black hover:bg-slate-400 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
                   Copied!
                 </button>
               ) : (
                 <button
-                  className="btn btn-xs border-none bg-slate-300 text-black hover:bg-slate-400 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 "
+                  className="btn btn-xs border-none bg-slate-400 text-black hover:bg-slate-400 
+                  dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500 "
                   onClick={copyToClipboard}
                 >
                   <svg
