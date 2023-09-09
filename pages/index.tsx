@@ -131,7 +131,7 @@ const Home: NextPage = () => {
                 aria-label="darkmode"
                 type="checkbox"
                 id="darkmode"
-                className="toggle toggle-md"
+                className="toggle toggle-md hover:bg-slate-400"
                 checked={darkMode}
                 onChange={() => {
                   setDarkMode(!darkMode);
@@ -185,7 +185,7 @@ const Home: NextPage = () => {
                   strokeWidth={1.5}
                   fill={darkMode ? "#000" : "#f0f6f9"}
                   stroke={darkMode ? "#f0f6f9" : "#000"}
-                  className="h-6 w-6"
+                  className="h-6 w-6 hover:fill-slate-400"
                 >
                   <path
                     strokeLinecap="round"
@@ -210,7 +210,7 @@ const Home: NextPage = () => {
                   strokeWidth={1.5}
                   fill={darkMode ? "#000" : "#f0f6f9"}
                   stroke={darkMode ? "#f0f6f9" : "#000"}
-                  className="mr-3 h-6 w-6"
+                  className="mr-3 h-6 w-6 hover:fill-slate-400"
                 >
                   <path
                     strokeLinecap="round"
@@ -228,7 +228,7 @@ const Home: NextPage = () => {
                   strokeWidth={1.5}
                   fill={darkMode ? "#000" : "#f0f6f9"}
                   stroke={darkMode ? "#f0f6f9" : "#000"}
-                  className="mr-3 h-6 w-6"
+                  className="mr-3 h-6 w-6 hover:fill-slate-400"
                 >
                   <path
                     strokeLinecap="round"
@@ -285,7 +285,7 @@ const Home: NextPage = () => {
                 width="24"
                 height="24"
                 fill={darkMode ? "#f0f6f9" : "#000"}
-                className="bi bi-github -mr-1 mt-0.5"
+                className="bi bi-github -mr-1 mt-0.5 hover:fill-slate-400"
                 strokeWidth={1.5}
                 viewBox="0 0 20 20"
               >
@@ -434,7 +434,7 @@ const Home: NextPage = () => {
                 </button>
               ) : (
                 <button
-                  className="btn btn-xs border-none bg-slate-400 text-black hover:bg-slate-400 
+                  className="btn btn-xs border-none bg-slate-300 text-black hover:bg-slate-400 
                   dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500 "
                   onClick={copyToClipboard}
                 >
