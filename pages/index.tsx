@@ -174,7 +174,7 @@ const Home: NextPage = () => {
           <div className="mb-1 mt-2 flex w-1/2 justify-end">
             <div
               className="tooltip tooltip-bottom z-50 mr-3"
-              data-tip="codepen"
+              data-tip="codepen preview"
             >
               <form
                 action="https://codepen.io/pen/define"
@@ -204,7 +204,7 @@ const Home: NextPage = () => {
           <div className="absolute right-4 top-2 flex">
             <div
               className="tooltip tooltip-bottom z-50 mr-3"
-              data-tip="codepen"
+              data-tip="codepen preview"
             >
               <form
                 action="https://codepen.io/pen/define"
@@ -262,7 +262,10 @@ const Home: NextPage = () => {
                   id="my-modal-4"
                   className="modal-toggle"
                 />
-                <label htmlFor="my-modal-4" className="modal cursor-pointer">
+                <label
+                  htmlFor="my-modal-4"
+                  className="modal cursor-pointer text-left"
+                >
                   <label className="modal-box relative bg-white text-black dark:bg-gray-700 dark:text-white">
                     <label
                       htmlFor="my-modal-4"
