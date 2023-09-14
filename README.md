@@ -4,7 +4,7 @@ The goal of this project is to take plain HTML/CSS and convert it to a
 single HTML file with [Tailwind](https://tailwindcss.com/) classes. Tracking supported
 Tailwind classes [here](SupportedClasses.md).
 
-Note: this is a work in progress and not well tested - most css classes are not yet supported.
+It's important to keep in mind that converting an existing project to use Tailwind CSS often involves more than just replacing classes. It may be best to restructure your HTML and/or adjust your design to fit the utility-first paradigm and match the available utility classes. Manual conversion would provide more control over the process and likely ensure a better end result. 
 
 ## Run Locally
 
@@ -16,7 +16,11 @@ npm run dev
 yarn dev
 ```
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Running [tests](test)
+```bash
+npm test
+```
+
 
 ## TODO
 
