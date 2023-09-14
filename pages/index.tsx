@@ -287,12 +287,17 @@ const Home: NextPage = () => {
                       >
                         here
                       </a>
-                      . Use the codepen buttons in the nav bar to view the HTML
-                      output.
+                      .
                     </p>
-                    <h3 className="mt-4 text-lg font-bold">Note:</h3>
+                    <h3 className="mb-2 mt-4 text-lg font-bold">Note:</h3>
                     <p>
-                      This is still a work in progress and not fully functional.
+                      It&apos;s important to keep in mind that converting an
+                      existing project to use Tailwind CSS often involves more
+                      than just replacing classes. It may be best to restructure
+                      your HTML and/or adjust your design to fit the
+                      utility-first paradigm and match the available utility
+                      classes. Manual conversion would provide more control over
+                      the process and likely ensure a better end result.
                     </p>
                   </label>
                 </label>
