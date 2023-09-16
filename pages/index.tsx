@@ -332,7 +332,7 @@ const Home: NextPage = () => {
           <div className="w-1/2">
             <CodeMirror
               aria-label="html input"
-              className="h-1/2 text-base"
+              className={`h-1/2 text-base ${!darkMode ? 'text-slate-700': ''}`}
               value={htmlText}
               height="100%"
               theme={darkMode ? oneDark : "light"}
@@ -344,7 +344,7 @@ const Home: NextPage = () => {
             />
             <CodeMirror
               aria-label="css input"
-              className="h-1/2 text-base"
+              className={`h-1/2 text-base ${!darkMode ? 'text-slate-700': ''}`}
               value={cssText}
               height="100%"
               style={maxHeight}
@@ -451,7 +451,7 @@ const Home: NextPage = () => {
           <div className="w-1/2">
             <CodeMirror
               aria-label="tailwind html"
-              className="h-full text-base"
+              className={`h-full text-base ${!darkMode ? 'text-slate-700': ''}`}
               value={tailwindText}
               readOnly={true}
               height="100%"
