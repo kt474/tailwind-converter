@@ -23,6 +23,10 @@ const resetButtonPosition = {
   left: "calc(50% - 16rem)"
 };
 
+const resetButtonMobilePosition = {
+  left: "calc(50% - 8rem)"
+}
+
 const maxHeight = {
   maxHeight: "calc(50% - 1.25rem)"
 };
@@ -355,7 +359,7 @@ const Home: NextPage = () => {
               }}
             />
             <div
-              className="absolute bottom-2 -ml-1"
+              className="absolute bottom-2 ml-24 sm:-ml-1"
               style={resetButtonPosition}
             >
               <button
@@ -380,7 +384,7 @@ const Home: NextPage = () => {
                 Reset
               </button>
             </div>
-            <div className="absolute bottom-2" style={formatButtonPosition}>
+            <div className="absolute bottom-2 hidden sm:block" style={formatButtonPosition}>
               {tidy ? (
                 <button
                   className="btn btn-xs mb-0.5 border-none bg-slate-300 text-black hover:bg-slate-400 
