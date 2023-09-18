@@ -491,8 +491,8 @@ export const injectClass = (htmlText: string, attribute: object) => {
   if (key.includes(".") || key.includes("#")) {
     return htmlText.replaceAll(key.slice(1), value);
   } else {
-    let keyString = "<" + key;
-    let replaceString = keyString + " class=" + `"` + value + `"`;
+    let keyString = `<${key}`;
+    let replaceString = `${keyString} class="${value}"`;
     return htmlText.replaceAll(keyString, replaceString);
   }
 };

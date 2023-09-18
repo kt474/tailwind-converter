@@ -359,7 +359,7 @@ const Home: NextPage = () => {
               }}
             />
             <div
-              className="fixed sm:absolute bottom-2 ml-24 sm:-ml-1"
+              className="fixed md:absolute bottom-2 ml-24 sm:-ml-1"
               style={resetButtonPosition}
             >
               <button
@@ -384,7 +384,7 @@ const Home: NextPage = () => {
                 Reset
               </button>
             </div>
-            <div className="absolute bottom-2 hidden sm:block" style={formatButtonPosition}>
+            <div className="fixed md:absolute bottom-2 hidden sm:block" style={formatButtonPosition}>
               {tidy ? (
                 <button
                   className="btn btn-xs mb-0.5 border-none bg-slate-300 text-black hover:bg-slate-400 
@@ -418,7 +418,7 @@ const Home: NextPage = () => {
                 </button>
               )}
             </div>
-            <div className="fixed sm:absolute bottom-2" style={syncButtonPosition}>
+            <div className="fixed md:absolute bottom-2" style={syncButtonPosition}>
               {synced ? (
                 <button
                   className="btn btn-xs mb-0.5 border-none bg-slate-300 text-black hover:bg-slate-400 
@@ -462,7 +462,7 @@ const Home: NextPage = () => {
               theme={darkMode ? oneDark : "light"}
               extensions={[html()]}
             />
-            <div className="fixed sm:absolute bottom-2 right-4">
+            <div className="fixed md:absolute bottom-2 right-4">
               {copied ? (
                 <button className="btn btn-xs mb-0.5 border-none bg-slate-300 text-black hover:bg-slate-400 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
                   Copied!
