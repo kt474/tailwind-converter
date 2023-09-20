@@ -23,10 +23,6 @@ const resetButtonPosition = {
   left: "calc(50% - 16rem)"
 };
 
-const resetButtonMobilePosition = {
-  left: "calc(50% - 8rem)"
-}
-
 const maxHeight = {
   maxHeight: "calc(50% - 1.25rem)"
 };
@@ -127,7 +123,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <div className="h-screen w-full flex-col overflow-hidden bg-slate-200 dark:bg-zinc-800">
+      <div className="relative h-screen w-full flex-col overflow-hidden bg-slate-200 dark:bg-zinc-800">
         <div className="w-screen">
           <div className="absolute left-2 flex">
             <label htmlFor="darkmode">
@@ -336,7 +332,7 @@ const Home: NextPage = () => {
           <div className="w-1/2">
             <CodeMirror
               aria-label="html input"
-              className={`h-1/2 text-base ${!darkMode ? 'text-slate-700': ''}`}
+              className={`h-1/2 text-base ${!darkMode ? "text-slate-700" : ""}`}
               value={htmlText}
               height="100%"
               theme={darkMode ? oneDark : "light"}
@@ -348,7 +344,7 @@ const Home: NextPage = () => {
             />
             <CodeMirror
               aria-label="css input"
-              className={`h-1/2 text-base ${!darkMode ? 'text-slate-700': ''}`}
+              className={`h-1/2 text-base ${!darkMode ? "text-slate-700" : ""}`}
               value={cssText}
               height="100%"
               style={maxHeight}
@@ -359,7 +355,7 @@ const Home: NextPage = () => {
               }}
             />
             <div
-              className="fixed md:absolute bottom-2 ml-24 sm:-ml-1"
+              className="fixed bottom-2 ml-24 sm:-ml-1 md:absolute"
               style={resetButtonPosition}
             >
               <button
@@ -384,7 +380,10 @@ const Home: NextPage = () => {
                 Reset
               </button>
             </div>
-            <div className="fixed md:absolute bottom-2 hidden sm:block" style={formatButtonPosition}>
+            <div
+              className="fixed bottom-2 hidden sm:block md:absolute"
+              style={formatButtonPosition}
+            >
               {tidy ? (
                 <button
                   className="btn btn-xs mb-0.5 border-none bg-slate-300 text-black hover:bg-slate-400 
@@ -418,7 +417,10 @@ const Home: NextPage = () => {
                 </button>
               )}
             </div>
-            <div className="fixed md:absolute bottom-2" style={syncButtonPosition}>
+            <div
+              className="fixed bottom-2 md:absolute"
+              style={syncButtonPosition}
+            >
               {synced ? (
                 <button
                   className="btn btn-xs mb-0.5 border-none bg-slate-300 text-black hover:bg-slate-400 
@@ -455,14 +457,16 @@ const Home: NextPage = () => {
           <div className="w-1/2">
             <CodeMirror
               aria-label="tailwind html"
-              className={`h-full text-base ${!darkMode ? 'text-slate-700': ''}`}
+              className={`h-full text-base ${
+                !darkMode ? "text-slate-700" : ""
+              }`}
               value={tailwindText}
               readOnly={true}
               height="100%"
               theme={darkMode ? oneDark : "light"}
               extensions={[html()]}
             />
-            <div className="fixed md:absolute bottom-2 right-4">
+            <div className="fixed bottom-2 right-4 md:absolute">
               {copied ? (
                 <button className="btn btn-xs mb-0.5 border-none bg-slate-300 text-black hover:bg-slate-400 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
                   Copied!
