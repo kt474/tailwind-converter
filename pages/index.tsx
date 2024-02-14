@@ -219,7 +219,7 @@ const Home: NextPage = () => {
                     strokeWidth={1.5}
                     fill={darkMode ? "#000" : "#f0f6f9"}
                     stroke={darkMode ? "#f0f6f9" : "#000"}
-                    className=" h-6 w-6 hover:fill-slate-400"
+                    className="h-6 w-6 hover:fill-slate-400"
                   >
                     <path
                       strokeLinecap="round"
@@ -266,7 +266,7 @@ const Home: NextPage = () => {
                   htmlFor="my-modal-4"
                   className="modal cursor-pointer text-left"
                 >
-                  <label className="modal-box relative bg-white text-black dark:bg-gray-700 dark:text-white">
+                  <label className="modal-box relative bg-white text-black dark:bg-gray-700 dark:text-gray-200">
                     <label
                       htmlFor="my-modal-4"
                       className="btn btn-circle btn-sm absolute right-2 top-2 border-none bg-gray-700 dark:bg-gray-800"
@@ -290,11 +290,15 @@ const Home: NextPage = () => {
                       .
                     </p>
                     <h3 className="mb-2 mt-4 text-lg font-bold">Note:</h3>
+                    <h4 className="mb-2 font-bold">
+                      *This project is a work in progress. There may be bugs or
+                      incomplete features*
+                    </h4>
                     <p>
-                      It&apos;s important to keep in mind that converting an
-                      existing project to use Tailwind CSS often involves more
-                      than just replacing classes. It may be best to restructure
-                      your HTML and/or adjust your design to fit the
+                      It&apos;s also important to keep in mind that converting
+                      an existing project to use Tailwind CSS often involves
+                      more than just replacing classes. It may be best to
+                      restructure your HTML and/or adjust your design to fit the
                       utility-first paradigm and match the available utility
                       classes. Manual conversion would provide more control over
                       the process and likely ensure a better end result.
@@ -394,8 +398,7 @@ const Home: NextPage = () => {
                 </button>
               ) : (
                 <button
-                  className="btn btn-xs border-none bg-slate-300 text-black hover:bg-slate-400 
-                  dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
+                  className="btn btn-xs border-none bg-slate-300 text-black hover:bg-slate-400 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
                   title="format code"
                   onClick={formatCode}
                 >
@@ -430,8 +433,7 @@ const Home: NextPage = () => {
                 </button>
               ) : (
                 <button
-                  className="btn btn-xs border-none bg-slate-300 text-black hover:bg-slate-400 
-                  dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
+                  className="btn btn-xs border-none bg-slate-300 text-black hover:bg-slate-400 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
                   title="convert code"
                   onClick={syncButton}
                 >
@@ -473,8 +475,7 @@ const Home: NextPage = () => {
                 </button>
               ) : (
                 <button
-                  className="btn btn-xs border-none bg-slate-300 text-black hover:bg-slate-400 
-                  dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500 "
+                  className="btn btn-xs border-none bg-slate-300 text-black hover:bg-slate-400 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500 "
                   onClick={copyToClipboard}
                 >
                   <svg
