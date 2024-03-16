@@ -174,7 +174,7 @@ const Home: NextPage = () => {
           <div className="mb-1 mt-2 flex w-1/2 justify-end">
             <div
               className="tooltip tooltip-bottom z-50 mr-3"
-              data-tip="codepen preview"
+              data-tip="Codepen preview"
             >
               <form
                 action="https://codepen.io/pen/define"
@@ -203,8 +203,8 @@ const Home: NextPage = () => {
           </div>
           <div className="absolute right-4 top-2 flex">
             <div
-              className="tooltip tooltip-bottom z-50 mr-3"
-              data-tip="codepen preview"
+              className="tooltip tooltip-bottom z-50 mr-6"
+              data-tip="Codepen preview"
             >
               <form
                 action="https://codepen.io/pen/define"
@@ -230,10 +230,7 @@ const Home: NextPage = () => {
                 </button>
               </form>
             </div>
-            <div
-              className="tooltip tooltip-bottom z-50 mr-3"
-              data-tip="settings"
-            >
+            <div className="tooltip tooltip-bottom z-50 mr-6" data-tip="About">
               <div>
                 <label htmlFor="my-modal-4" className="cursor-pointer">
                   <svg
@@ -266,22 +263,22 @@ const Home: NextPage = () => {
                   htmlFor="my-modal-4"
                   className="modal cursor-pointer text-left"
                 >
-                  <label className="modal-box relative bg-white text-black dark:bg-gray-700 dark:text-gray-200">
+                  <label className="modal-box relative bg-white text-black dark:bg-gray-800 dark:text-gray-200">
                     <label
                       htmlFor="my-modal-4"
-                      className="btn btn-circle btn-sm absolute right-2 top-2 border-none bg-gray-700 dark:bg-gray-800"
+                      className="btn btn-circle btn-sm absolute right-2 top-2 border-none bg-gray-700 dark:bg-gray-900"
                     >
                       ✕
                     </label>
-                    <h3 className="text-lg font-bold">About & Settings</h3>
-                    <p className="mt-4">
+                    <h3 className="text-lg font-bold">About</h3>
+                    <p className="mt-4 text-gray-900 dark:text-gray-300">
                       This web app takes plain HTML/CSS and converts it into a
-                      single HTML file with tailwind classes. Documentation
-                      regarding the currently supported classes can be
+                      single HTML file with tailwind classes (version 3.4.1).
+                      Documentation regarding currently supported classes can be
                       found&nbsp;
                       <a
                         href="https://github.com/kt474/tailwind-converter/blob/main/SupportedClasses.md"
-                        className="text-blue-500"
+                        className="text-blue-500 dark:text-blue-400"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -294,20 +291,20 @@ const Home: NextPage = () => {
                       *This project is a work in progress. There may be bugs or
                       incomplete features*
                     </h4>
-                    <p>
+                    <p className="text-gray-900 dark:text-gray-300">
                       It&apos;s also important to keep in mind that converting
                       an existing project to use Tailwind CSS often involves
                       more than just replacing classes. It may be best to
-                      restructure your HTML and/or adjust your design to fit the
-                      utility-first paradigm and match the available utility
-                      classes. Manual conversion would provide more control over
-                      the process and likely ensure a better end result.
+                      restructure your HTML and/or adjust your design to match
+                      the available utility classes. Manual conversion would
+                      provide more control over the process and likely ensure a
+                      better end result.
                     </p>
                   </label>
                 </label>
               </div>
             </div>
-            <div className="tooltip tooltip-bottom z-50" data-tip="github">
+            <div className="tooltip tooltip-bottom z-50" data-tip="Github">
               <a
                 aria-label="github page"
                 href="https://github.com/kt474/tailwind-converter"
