@@ -61,7 +61,7 @@ const Home: NextPage = () => {
       html_beautify(htmlText, {
         indent_size: 2,
         extra_liners: [],
-        wrap_line_length: 50,
+        wrap_line_length: 80,
         max_preserve_newlines: 0
       })
     );
@@ -84,9 +84,7 @@ const Home: NextPage = () => {
       localStorage.css ? localStorage.css : initialCSS
     );
     let result = localStorage.html ? localStorage.html : initialHTML;
-    cssAttributes.forEach((attr) => {
-      result = injectClass(result, attr);
-    });
+    result = injectClass(result, cssAttributes);
     setTailwindText(result);
   };
   const syncButton = () => {

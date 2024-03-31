@@ -1,4 +1,4 @@
-import { trim, get } from "lodash";
+import { trim, get, remove } from "lodash";
 //@ts-ignore
 import { toJSON } from "cssjson";
 //@ts-ignore
@@ -482,19 +482,67 @@ export const cssToJson = (plainText: string) => {
   return result;
 };
 
-export const injectClass = (htmlText: string, attribute: object) => {
+export const injectClass = (htmlText: string, attribute: object[]) => {
   htmlText = htmlText.replace(
     "<!-- Edit HTML here -->",
     "<!-- HTML with Tailwind -->"
   );
-  const [key, value] = Object.entries(attribute)[0];
-  if (key.includes(".") || key.includes("#")) {
-    return htmlText.replaceAll(key.slice(1), value);
-  } else {
-    let keyString = `<${key}`;
-    let replaceString = `${keyString} class="${value}"`;
-    return htmlText.replaceAll(keyString, replaceString);
+  attribute.forEach((obj) => {
+    for (const [key, value] of Object.entries(obj)) {
+      if (key.includes(".") || key.includes("#")) {
+        htmlText = htmlText.replaceAll(key.slice(1), value);
+      } else {
+        let keyString = `<${key}`;
+        let replaceString = `${keyString} class="${value}"`;
+        htmlText = htmlText.replaceAll(keyString, replaceString);
+      }
+    }
+  });
+  return removeExtraClasses(htmlText);
+};
+
+const removeExtraClasses = (htmlText: string) => {
+  let result: any[] = [];
+  let splitText = htmlText.split("\n");
+  splitText.forEach((line: string) => {
+    let count = (line.match(/class/g) || []).length;
+    if (count === 2) {
+      result.push(consolidateClasses(line));
+    } else {
+      result.push(line);
+    }
+  });
+  return result.join("\n");
+};
+
+const consolidateClasses = (inputString: string) => {
+  // Regular expression to find all class attributes and their values
+  let classRegex = /class="([^"]*)"/g;
+
+  // Extract all class attribute values
+  let matches: any[] | null = inputString.match(classRegex);
+
+  // Consolidate class names
+  let consolidatedClasses: string[] = [];
+  if (!matches) return inputString;
+  for (let i = 0; i < matches.length; i++) {
+    let classes = matches[i].match(/class="([^"]*)"/)[1].split(" ");
+    consolidatedClasses = consolidatedClasses.concat(classes);
   }
+  // Remove duplicate class names
+  consolidatedClasses = Array.from(new Set(consolidatedClasses));
+
+  // Build the new class attribute
+  let newClassAttribute = 'class="' + consolidatedClasses.join(" ") + '"';
+
+  // Replace existing class attributes with the new one
+  let outputString = inputString.replace(classRegex, "");
+  let classCarrot = outputString.indexOf(">");
+  let result =
+    outputString.slice(0, classCarrot - 1) +
+    newClassAttribute +
+    outputString.slice(classCarrot);
+  return result;
 };
 
 export const validValue = (value: string) => {
