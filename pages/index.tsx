@@ -57,8 +57,9 @@ const Home: NextPage = () => {
     setCssText(
       css_beautify(cssText, { indent_size: 2, max_preserve_newlines: 0 })
     );
+    const html = htmlText.replace(/=(?:')([^']+)'/g, '="$1"');
     setHtmlText(
-      html_beautify(htmlText, {
+      html_beautify(html, {
         indent_size: 2,
         extra_liners: [],
         wrap_line_length: 70,
