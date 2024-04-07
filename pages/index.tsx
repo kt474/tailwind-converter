@@ -61,7 +61,7 @@ const Home: NextPage = () => {
       html_beautify(htmlText, {
         indent_size: 2,
         extra_liners: [],
-        wrap_line_length: 80,
+        wrap_line_length: 70,
         max_preserve_newlines: 0
       })
     );
@@ -85,7 +85,14 @@ const Home: NextPage = () => {
     );
     let result = localStorage.html ? localStorage.html : initialHTML;
     result = injectClass(result, cssAttributes);
-    setTailwindText(result);
+    setTailwindText(
+      html_beautify(result, {
+        indent_size: 2,
+        extra_liners: [],
+        wrap_line_length: 70,
+        max_preserve_newlines: 0
+      })
+    );
   };
   const syncButton = () => {
     setSynced(true);
@@ -124,49 +131,50 @@ const Home: NextPage = () => {
       <div className="relative h-screen w-full flex-col overflow-hidden bg-slate-200 dark:bg-zinc-800">
         <div className="w-screen">
           <div className="absolute left-2 flex">
-            <label htmlFor="darkmode">
-              <input
-                aria-label="darkmode"
-                type="checkbox"
-                id="darkmode"
-                className="toggle toggle-md hover:bg-slate-400"
-                checked={darkMode}
-                onChange={() => {
+            {darkMode ? (
+              <button
+                onClick={() => {
                   setDarkMode(!darkMode);
                   localStorage.darkMode = !darkMode;
                 }}
-              />
-            </label>
-            {darkMode ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="ml-2 h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="#f0f6f9"
-                strokeWidth={1.5}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                />
-              </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="#fff"
+                  className="ml-2 h-6 w-6 hover:stroke-sky-400"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                  />
+                </svg>
+              </button>
             ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="#000"
-                className="ml-2 h-6 w-6"
+              <button
+                onClick={() => {
+                  setDarkMode(!darkMode);
+                  localStorage.darkMode = !darkMode;
+                }}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-                />
-              </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="ml-2 h-6 w-6 hover:stroke-sky-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="#000"
+                  strokeWidth={1.5}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                  />
+                </svg>
+              </button>
             )}
           </div>
           <div className="mb-1 mt-2 flex w-1/2 justify-end">
@@ -187,7 +195,7 @@ const Home: NextPage = () => {
                     strokeWidth={1.5}
                     fill={darkMode ? "#000" : "#f0f6f9"}
                     stroke={darkMode ? "#f0f6f9" : "#000"}
-                    className="h-6 w-6 hover:fill-slate-400"
+                    className="h-6 w-6 hover:stroke-sky-400"
                   >
                     <path
                       strokeLinecap="round"
@@ -217,7 +225,7 @@ const Home: NextPage = () => {
                     strokeWidth={1.5}
                     fill={darkMode ? "#000" : "#f0f6f9"}
                     stroke={darkMode ? "#f0f6f9" : "#000"}
-                    className="h-6 w-6 hover:fill-slate-400"
+                    className="h-6 w-6 hover:stroke-sky-400"
                   >
                     <path
                       strokeLinecap="round"
@@ -237,7 +245,7 @@ const Home: NextPage = () => {
                     strokeWidth={1.5}
                     fill={darkMode ? "#000" : "#f0f6f9"}
                     stroke={darkMode ? "#f0f6f9" : "#000"}
-                    className="h-6 w-6 hover:fill-slate-400"
+                    className="h-6 w-6 hover:stroke-sky-400"
                   >
                     <path
                       strokeLinecap="round"
@@ -314,7 +322,7 @@ const Home: NextPage = () => {
                   width="24"
                   height="24"
                   fill={darkMode ? "#f0f6f9" : "#000"}
-                  className="bi bi-github -mr-1 mt-0.5 hover:fill-slate-400"
+                  className="bi bi-github -mr-1 mt-0.5 hover:fill-sky-400"
                   strokeWidth={1.5}
                   viewBox="0 0 20 20"
                 >
