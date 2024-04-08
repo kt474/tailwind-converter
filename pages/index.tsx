@@ -27,6 +27,19 @@ const maxHeight = {
   maxHeight: "calc(50% - 1.25rem)"
 };
 
+const updateTailwind = () => {
+  const cssAttributes = cssToJson(
+    localStorage.css ? localStorage.css : initialCSS
+  );
+  let result = localStorage.html ? localStorage.html : initialHTML;
+  return html_beautify(injectClass(result, cssAttributes), {
+    indent_size: 2,
+    extra_liners: [],
+    wrap_line_length: 70,
+    max_preserve_newlines: 0
+  });
+};
+
 const Home: NextPage = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [cssText, setCssText] = useState("");
@@ -80,25 +93,10 @@ const Home: NextPage = () => {
       setTidy(false);
     }, 1000);
   };
-  const updateTailwind = () => {
-    const cssAttributes = cssToJson(
-      localStorage.css ? localStorage.css : initialCSS
-    );
-    let result = localStorage.html ? localStorage.html : initialHTML;
-    result = injectClass(result, cssAttributes);
-    setTailwindText(
-      html_beautify(result, {
-        indent_size: 2,
-        extra_liners: [],
-        wrap_line_length: 70,
-        max_preserve_newlines: 0
-      })
-    );
-  };
   const syncButton = () => {
     setSynced(true);
     formatHtmlCss();
-    updateTailwind();
+    setTailwindText(updateTailwind());
     setTimeout(() => {
       setSynced(false);
     }, 1000);
@@ -109,7 +107,7 @@ const Home: NextPage = () => {
   );
   useEffect(() => {
     setHtmlText(localStorage.html ? localStorage.html : initialHTML);
-    updateTailwind();
+    setTailwindText(updateTailwind());
   }, []);
   useEffect(() => {
     if (localStorage.darkMode) {
@@ -270,7 +268,7 @@ const Home: NextPage = () => {
                   htmlFor="my-modal-4"
                   className="modal cursor-pointer text-left"
                 >
-                  <label className="modal-box relative bg-white text-black dark:bg-gray-800 dark:text-gray-200">
+                  <label className="modal-box relative bg-white text-black dark:bg-zinc-800 dark:text-gray-200">
                     <label
                       htmlFor="my-modal-4"
                       className="btn btn-circle btn-sm absolute right-2 top-2 border-none bg-gray-700 dark:bg-gray-900"
