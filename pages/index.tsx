@@ -28,10 +28,8 @@ const maxHeight = {
 };
 
 const updateTailwind = (html: string, css: string) => {
-  const cssAttributes = cssToJson(
-    localStorage.css ? localStorage.css : initialCSS
-  );
-  let result = localStorage.html ? localStorage.html : initialHTML;
+  const cssAttributes = cssToJson(localStorage.css ? localStorage.css : css);
+  let result = localStorage.html ? localStorage.html : html;
   return html_beautify(injectClass(result, cssAttributes), {
     indent_size: 2,
     extra_liners: [],
@@ -105,10 +103,13 @@ const Home: NextPage = () => {
     () => setCssText(localStorage.css ? localStorage.css : initialCSS),
     []
   );
+  useEffect(
+    () => setHtmlText(localStorage.html ? localStorage.html : initialHTML),
+    []
+  );
   useEffect(() => {
-    setHtmlText(localStorage.html ? localStorage.html : initialHTML);
     setTailwindText(updateTailwind(htmlText, cssText));
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (localStorage.darkMode) {
       setDarkMode(JSON.parse(localStorage.darkMode));
