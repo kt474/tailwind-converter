@@ -27,7 +27,7 @@ const maxHeight = {
   maxHeight: "calc(50% - 1.25rem)"
 };
 
-const updateTailwind = () => {
+const updateTailwind = (html: string, css: string) => {
   const cssAttributes = cssToJson(
     localStorage.css ? localStorage.css : initialCSS
   );
@@ -96,7 +96,7 @@ const Home: NextPage = () => {
   const syncButton = () => {
     setSynced(true);
     formatHtmlCss();
-    setTailwindText(updateTailwind());
+    setTailwindText(updateTailwind(htmlText, cssText));
     setTimeout(() => {
       setSynced(false);
     }, 1000);
@@ -107,7 +107,7 @@ const Home: NextPage = () => {
   );
   useEffect(() => {
     setHtmlText(localStorage.html ? localStorage.html : initialHTML);
-    setTailwindText(updateTailwind());
+    setTailwindText(updateTailwind(htmlText, cssText));
   }, []);
   useEffect(() => {
     if (localStorage.darkMode) {
@@ -143,7 +143,7 @@ const Home: NextPage = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="#fff"
-                  className="ml-2 h-6 w-6 hover:stroke-sky-400"
+                  className="ml-2 h-6 w-6 hover:stroke-slate-400"
                 >
                   <path
                     strokeLinecap="round"
@@ -161,7 +161,7 @@ const Home: NextPage = () => {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="ml-2 h-6 w-6 hover:stroke-sky-400"
+                  className="ml-2 h-6 w-6 hover:stroke-slate-400"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="#000"
@@ -194,7 +194,7 @@ const Home: NextPage = () => {
                     strokeWidth={1.5}
                     fill={darkMode ? "#000" : "#f0f6f9"}
                     stroke={darkMode ? "#f0f6f9" : "#000"}
-                    className="h-6 w-6 hover:stroke-sky-400"
+                    className="h-6 w-6 hover:stroke-slate-400"
                   >
                     <path
                       strokeLinecap="round"
@@ -224,7 +224,7 @@ const Home: NextPage = () => {
                     strokeWidth={1.5}
                     fill={darkMode ? "#000" : "#f0f6f9"}
                     stroke={darkMode ? "#f0f6f9" : "#000"}
-                    className="h-6 w-6 hover:stroke-sky-400"
+                    className="h-6 w-6 hover:stroke-slate-400"
                   >
                     <path
                       strokeLinecap="round"
@@ -244,7 +244,7 @@ const Home: NextPage = () => {
                     strokeWidth={1.5}
                     fill={darkMode ? "#000" : "#f0f6f9"}
                     stroke={darkMode ? "#f0f6f9" : "#000"}
-                    className="h-6 w-6 hover:stroke-sky-400"
+                    className="h-6 w-6 hover:stroke-slate-400"
                   >
                     <path
                       strokeLinecap="round"
@@ -321,7 +321,7 @@ const Home: NextPage = () => {
                   width="24"
                   height="24"
                   fill={darkMode ? "#f0f6f9" : "#000"}
-                  className="bi bi-github -mr-1 mt-0.5 hover:fill-sky-400"
+                  className="bi bi-github -mr-1 mt-0.5 hover:fill-slate-400"
                   strokeWidth={1.5}
                   viewBox="0 0 20 20"
                 >
