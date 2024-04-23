@@ -26,7 +26,7 @@ describe("Full path", () => {
     <body>
       <div class="main">
         <h2>Welcome to Tailwind Converter!</h2>
-        <p class="test">Edit/paste HTML here and CSS into
+        <p class="test custom-font">Edit/paste HTML here and CSS into
           the editor below
         </p>
         <p>text</p>
@@ -46,6 +46,10 @@ describe("Full path", () => {
     p {
       background-color: purple;
     }
+
+    .custom-font {
+      font-weight: 600;
+    }
     
     .test {
       font-size: 3rem;
@@ -55,7 +59,7 @@ describe("Full path", () => {
     <body class="m-4 p-4">
       <div class="text-center">
         <h2>Welcome to Tailwind Converter!</h2>
-        <p class="bg-fuchsia-800 text-5xl">Edit/paste HTML here and CSS into
+        <p class="bg-fuchsia-800 text-5xl font-semibold">Edit/paste HTML here and CSS into
           the editor below
         </p>
         <p class="bg-fuchsia-800">text</p>
