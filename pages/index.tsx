@@ -30,12 +30,15 @@ const maxHeight = {
 const updateTailwind = (html: string, css: string) => {
   const cssAttributes = cssToJson(localStorage.css ? localStorage.css : css);
   let result = localStorage.html ? localStorage.html : html;
-  return html_beautify(injectClass(result, cssAttributes), {
-    indent_size: 2,
-    extra_liners: [],
-    wrap_line_length: 70,
-    max_preserve_newlines: 0
-  });
+  return html_beautify(
+    injectClass(result.replace(/=(?:')([^']+)'/g, '="$1"'), cssAttributes),
+    {
+      indent_size: 2,
+      extra_liners: [],
+      wrap_line_length: 70,
+      max_preserve_newlines: 0
+    }
+  );
 };
 
 const Home: NextPage = () => {
@@ -68,9 +71,8 @@ const Home: NextPage = () => {
     setCssText(
       css_beautify(cssText, { indent_size: 2, max_preserve_newlines: 0 })
     );
-    const html = htmlText.replace(/=(?:')([^']+)'/g, '="$1"');
     setHtmlText(
-      html_beautify(html, {
+      html_beautify(htmlText.replace(/=(?:')([^']+)'/g, '="$1"'), {
         indent_size: 2,
         extra_liners: [],
         wrap_line_length: 70,
@@ -269,7 +271,7 @@ const Home: NextPage = () => {
                   htmlFor="my-modal-4"
                   className="modal cursor-pointer text-left"
                 >
-                  <label className="modal-box relative bg-white text-black dark:bg-zinc-800 dark:text-gray-200">
+                  <label className="modal-box relative bg-white text-black dark:bg-zinc-700 dark:text-gray-200">
                     <label
                       htmlFor="my-modal-4"
                       className="btn btn-circle btn-sm absolute right-2 top-2 border-none bg-gray-700 dark:bg-gray-900"
