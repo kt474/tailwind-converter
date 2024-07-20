@@ -1,7 +1,21 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
+import posthog from "posthog-js";
+import { PostHogProvider } from "posthog-js/react";
 import Head from "next/head";
+
+if (typeof window !== "undefined") {
+  //@ts-ignore check that we are client side
+  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+    api_host:
+      process.env.NEXT_PUBLIC_POSTHOG_HOST || "https://us.i.posthog.com",
+    person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
+    loaded: (posthog) => {
+      if (process.env.NODE_ENV === "development") posthog.debug(); // debug mode in development
+    }
+  });
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -15,7 +29,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta name="keywords" content="tailwind, css, html, convert" />
       </Head>
-      <Component {...pageProps} />
+      <PostHogProvider client={posthog}>
+        <Component {...pageProps} />
+      </PostHogProvider>
       <Analytics />
     </div>
   );
