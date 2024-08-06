@@ -489,7 +489,7 @@ export const injectClass = (htmlText: string, attribute: object[]) => {
   );
   attribute.forEach((obj) => {
     for (const [key, value] of Object.entries(obj)) {
-      if (key.includes(".") || key.includes("#")) {
+      if (key.includes(".")) {
         const regex = new RegExp("\\b" + key.slice(1) + "\\b", "g");
         htmlText = htmlText.replaceAll(regex, value);
       } else {
