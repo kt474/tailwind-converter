@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { css } from "@codemirror/lang-css";
 import { html } from "@codemirror/lang-html";
@@ -56,6 +56,7 @@ const Home: NextPage = () => {
       setCopied(false);
     }, 1000);
   };
+  const firstSync = useRef(false);
   const codepenOriginal = JSON.stringify({
     title: "Original HTML/CSS",
     html: htmlText,
@@ -110,8 +111,11 @@ const Home: NextPage = () => {
     []
   );
   useEffect(() => {
-    setTailwindText(updateTailwind(htmlText, cssText));
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    if (!firstSync.current && htmlText && cssText) {
+      setTailwindText(updateTailwind(htmlText, cssText));
+      firstSync.current = true;
+    }
+  }, [htmlText, cssText]);
   useEffect(() => {
     if (localStorage.darkMode) {
       setDarkMode(JSON.parse(localStorage.darkMode));
