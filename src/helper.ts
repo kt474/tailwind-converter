@@ -238,7 +238,7 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
           tailwindValue = NearestColor.from(colorCodes)(styleValue).name;
         }
       } catch (e) {
-        alert(`Invalid Color: ${e}`);
+        console.error(`Invalid color: ${e}`);
       }
     } else if (style === "font-family") {
       abbreviation = "font";
