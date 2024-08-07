@@ -42,6 +42,7 @@ const updateTailwind = (html: string, css: string) => {
 };
 
 const Home: NextPage = () => {
+  const [alert, setAlert] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
   const [cssText, setCssText] = useState("");
   const [htmlText, setHtmlText] = useState("");
@@ -49,6 +50,17 @@ const Home: NextPage = () => {
   const [copied, setCopied] = useState(false);
   const [synced, setSynced] = useState(false);
   const [tidy, setTidy] = useState(false);
+
+  useEffect(() => {
+    if (!localStorage.alert) {
+      setAlert(true);
+      const timer = setTimeout(() => {
+        setAlert(false);
+        localStorage.setItem("alert", "true");
+      }, 3000);
+      return () => clearTimeout(timer); // Cleanup timer on unmount
+    }
+  }, []);
   const copyToClipboard = () => {
     setCopied(true);
     navigator.clipboard.writeText(tailwindText);
@@ -508,6 +520,30 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
+      {alert && (
+        <div
+          role="alert"
+          className="alert alert-warning absolute bottom-0 right-0 mb-3 mr-3 max-w-2xl"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 shrink-0 stroke-current"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+            />
+          </svg>
+          <span>
+            This project is a work in progress. There may be bugs or incomplete
+            features.
+          </span>
+        </div>
+      )}
     </div>
   );
 };

@@ -235,6 +235,8 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
         else if (styleValue === "transparent") tailwindValue = "transparent";
         else if (styleValue === "none") tailwindValue = "none";
         else {
+          //only hex #ff0000 and rgb values rgb(255, 0, 0) are currently supported
+          console.log(styleValue);
           tailwindValue = NearestColor.from(colorCodes)(styleValue).name;
         }
       } catch (e) {
