@@ -20,7 +20,7 @@ export function Header() {
   return (
     <header className="mb-4 border-b">
       <div className="flex items-center justify-between h-16 px-4">
-        <h1 className="text-xl font-semibold">
+        <h1 className="text-lg font-semibold sm:text-xl">
           HTML/CSS to Tailwind Converter
         </h1>
         <div className="flex items-center gap-4">

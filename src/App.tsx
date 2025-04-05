@@ -14,7 +14,7 @@ import { initialHTML, initialCSS } from "./util/helper";
 import { cssToJson } from "./util/helper";
 import { injectClass } from "./util/helper";
 import { Header } from "./components/header";
-import { Copy } from "lucide-react";
+import { Copy, Undo } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { toast } from "sonner";
 import { Toaster } from "sonner";
@@ -32,6 +32,11 @@ function App() {
       duration: 2000
     });
     navigator.clipboard.writeText(tailwindText);
+  };
+
+  const reset = () => {
+    setHtmlText(initialHTML);
+    setCssText(initialCSS);
   };
 
   const codepenOriginal = JSON.stringify({
@@ -107,9 +112,17 @@ function App() {
         >
           <ResizablePanel className="min-w-60">
             <ResizablePanelGroup direction="vertical">
-              <ResizablePanel className="min-h-40">
-                <div className="flex justify-between">
-                  <h2 className="p-4 text-lg font-medium ">HTML</h2>
+              <div className="flex justify-between">
+                <h2 className="p-4 text-lg font-medium">HTML</h2>
+                <div className="flex">
+                  <Button
+                    onClick={() => reset()}
+                    variant="outline"
+                    size="icon"
+                    className="mr-4 mt-3.5 cursor-pointer px-5"
+                  >
+                    <Undo />
+                  </Button>
                   <form
                     action="https://codepen.io/pen/define"
                     method="POST"
@@ -143,6 +156,8 @@ function App() {
                     </Button>
                   </form>
                 </div>
+              </div>
+              <ResizablePanel className="min-h-40">
                 <CodeMirror
                   aria-label="html input"
                   className="relative h-full text-sm dark:hidden"
@@ -166,8 +181,8 @@ function App() {
                 />
               </ResizablePanel>
               <ResizableHandle />
+              <h2 className="p-4 text-lg font-medium">CSS</h2>
               <ResizablePanel className="min-h-40">
-                <h2 className="p-4 text-lg font-medium">CSS</h2>
                 <CodeMirror
                   aria-label="css input"
                   className="relative h-full text-sm dark:hidden"

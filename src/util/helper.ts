@@ -11,8 +11,7 @@ export const initialHTML = `<html lang="en">
 </body>
 </html>`;
 
-export const initialCSS = `
-body {
+export const initialCSS = `body {
   margin: 1rem;
   padding: 1rem;
 }
