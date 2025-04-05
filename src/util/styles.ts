@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const mainDict: any = {
   "aspect-ratio": {
     auto: "aspect-auto",
@@ -487,7 +488,7 @@ export const mainDict: any = {
   }
 };
 
-export const colorDict: any = {
+export const colorDict: { [key: string]: string } = {
   color: "text",
   "background-color": "bg",
   "outline-color": "outline",
@@ -608,7 +609,7 @@ export const fontWeight = {
   900: "black"
 };
 
-export const lineHeight: any = {
+export const lineHeight: { [key: string]: string | number } = {
   0.75: 3,
   1: "none",
   1.25: "tight",
@@ -629,7 +630,7 @@ export const skew = [0, 1, 2, 3, 6, 12];
 
 export const scale = [0, 50, 75, 90, 95, 100, 105, 110, 125, 150];
 
-export const translate: any = {
+export const translate: { [key: number]: string } = {
   25: "1/4",
   33: "1/3",
   50: "1/2",
@@ -640,7 +641,7 @@ export const translate: any = {
 
 export const saturate = [0, 50, 100, 150, 200];
 
-export const blur: any = {
+export const blur: { [key: number]: string } = {
   0: "none",
   4: "sm",
   8: "",
@@ -657,7 +658,7 @@ export const contrast = [0, 50, 75, 100, 125, 150, 200];
 
 export const hueRotate = [0, 15, 30, 60, 90, 180];
 
-export const borderRadius: any = {
+export const borderRadius: { [key: number]: string } = {
   0: "none",
   0.125: "sm",
   0.25: "",
@@ -668,7 +669,7 @@ export const borderRadius: any = {
   1.5: "3xl"
 };
 
-export const maxWidth: any = {
+export const maxWidth: { [key: number]: string } = {
   0: "0",
   20: "xs",
   24: "sm",

@@ -10,18 +10,13 @@ It's also important to keep in mind that converting an existing project to use T
 
 ## Run Locally
 
-Clone the repo, install the dependencies and run:
+Clone the repo, install the dependencies and run in a local environment:
 
 ```bash
+git clone https://github.com/kt474/tailwind-converter.git
+cd tailwind-converter
+npm install
 npm run dev
-# or
-yarn dev
-```
-
-Running [tests](test)
-
-```bash
-npm test
 ```
 
 ## TODO

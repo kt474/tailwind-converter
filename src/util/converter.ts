@@ -1,9 +1,3 @@
-import { trim, get, remove } from "lodash";
-//@ts-ignore
-import { toJSON } from "cssjson";
-//@ts-ignore
-import NearestColor from "nearest-color";
-import { colorCodes } from "./tailwindColors";
 import {
   duration,
   opacity,
@@ -32,58 +26,30 @@ import {
   saturate,
   borderRadius,
   maxWidth
-} from "./tailwindStyles";
+} from "./styles";
 
-export const initialCSS = `/* Edit CSS here */
-body {
-  margin: 1rem;
-  padding: 1rem;
-}
+import { get } from "lodash";
+import { getClosestValue, validValue } from "./helper";
+import { colorCodes } from "./colors";
+// @ts-expect-error no types
+import NearestColor from "nearest-color";
 
-.main {
-  text-align: center;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: blue;
-}`;
-export const initialHTML = `<!-- Edit HTML here -->
-<html lang="en">
-<body>
-  <div class="main">
-    <h2>Welcome to Tailwind Converter!</h2>
-    <p>Edit/paste HTML here and CSS into
-      the editor below
-    </p>
-  </div>
-</body>
-</html>`;
-
-const getClosestValue = (sizes: Array<any>, value: number) => {
-  return sizes.reduce((prev: number, curr: number) =>
-    Math.abs(curr - value) < Math.abs(prev - value) ? curr : prev
-  );
-};
-
-export const convertAttributes = (attributes: { [index: string]: any }) => {
-  let result = [];
+export const convertAttributes = (attributes: { [index: string]: string }) => {
+  const result = [];
   let style: string;
   for (style in attributes) {
     let negativeValue: boolean = false;
-    let styleValue: any = attributes[style];
+    let styleValue: string = attributes[style];
+    let styleNumber: number;
     // TODO Refactor this bc there can be multiple filters
     if (Array.isArray(styleValue)) styleValue = styleValue[0];
-    styleValue = styleValue.toLowerCase();
-    let styleNumber: number = parseFloat(styleValue.replace(/[^-.\d]/g, ""));
-    if (
-      styleNumber < 0 &&
-      styleValue.includes("hue-rotate") &&
-      styleValue[0] !== "-"
-    ) {
-      styleNumber = Math.abs(styleNumber);
-    } else if (styleNumber < 0) {
+    if (typeof styleValue === "string") {
+      styleValue = styleValue.toLowerCase();
+      styleNumber = parseFloat(styleValue.replace(/[^-.\d]/g, ""));
+    } else {
+      styleNumber = styleValue;
+    }
+    if (styleNumber < 0) {
       styleNumber = Math.abs(styleNumber);
       negativeValue = true;
     }
@@ -93,7 +59,7 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
     if (spacing.includes(style)) {
       abbreviation = style.charAt(0);
       if (style.includes("-")) {
-        let direction = style.split("-")[1].charAt(0);
+        const direction = style.split("-")[1].charAt(0);
         abbreviation += direction;
       }
       if (styleValue.includes("px")) {
@@ -105,7 +71,7 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
         if (style === "margin" || style === "padding") {
           continue;
         }
-        let tailwindDecimal = getClosestValue(
+        const tailwindDecimal = getClosestValue(
           Object.keys(percentages),
           styleNumber / 100
         );
@@ -115,7 +81,7 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
       }
     } else if (style === "font-size") {
       abbreviation = "text";
-      let size = "";
+      let size: string | number = "";
       if (styleValue.includes("px")) {
         styleNumber = styleNumber / 16;
         size = getClosestValue(Object.keys(fontSize), styleNumber);
@@ -135,10 +101,12 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
     } else if (style === "z-index") {
       abbreviation = "z";
       tailwindValue =
-        styleValue === "auto" ? "auto" : getClosestValue(zIndex, styleValue);
+        styleValue === "auto"
+          ? "auto"
+          : getClosestValue(zIndex, Number(styleValue));
     } else if (style === "letter-spacing") {
       abbreviation = "tracking";
-      let spacingNumber = getClosestValue(letterSpacing, styleNumber);
+      const spacingNumber = getClosestValue(letterSpacing, styleNumber);
       tailwindValue = spacingValues[letterSpacing.indexOf(spacingNumber)];
     } else if (style === "text-decoration-thickness") {
       abbreviation = "decoration";
@@ -216,7 +184,10 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
     } else if (style === "columns") {
       abbreviation = "columns";
       let size = 0;
-      if ((styleValue <= 12 && styleValue > 0) || styleValue === "auto") {
+      if (
+        (Number(styleValue) <= 12 && Number(styleValue) > 0) ||
+        styleValue === "auto"
+      ) {
         tailwindValue = styleValue;
       } else if (styleValue.includes("px")) {
         styleNumber = styleNumber / 16;
@@ -236,7 +207,6 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
         else if (styleValue === "none") tailwindValue = "none";
         else {
           //only hex #ff0000 and rgb values rgb(255, 0, 0) are currently supported
-          console.log(styleValue);
           tailwindValue = NearestColor.from(colorCodes)(styleValue).name;
         }
       } catch (e) {
@@ -264,7 +234,7 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
       if (styleValue.includes("px")) {
         styleNumber = styleNumber / 16;
       }
-      let height = getClosestValue(Object.keys(lineHeight), styleNumber);
+      const height = getClosestValue(Object.keys(lineHeight), styleNumber);
       tailwindValue = lineHeight[height];
     } else if (
       style.includes("scroll-margin") ||
@@ -304,7 +274,7 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
           tailwindValue = getClosestValue(sizes, styleNumber * 4);
         }
         if (styleValue.includes("%")) {
-          let translateValue = getClosestValue(
+          const translateValue = getClosestValue(
             Object.keys(translate),
             styleNumber
           );
@@ -331,7 +301,7 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
         tailwindValue = "auto";
       }
       if (styleValue.includes("%")) {
-        let tailwindDecimal = getClosestValue(
+        const tailwindDecimal = getClosestValue(
           Object.keys(percentages),
           styleNumber / 100
         );
@@ -354,7 +324,7 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
         tailwindValue = "auto";
       }
       if (styleValue.includes("%")) {
-        let tailwindDecimal = getClosestValue(
+        const tailwindDecimal = getClosestValue(
           Object.keys(percentages),
           styleNumber / 100
         );
@@ -377,7 +347,7 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
         if (styleValue.includes("px")) {
           styleNumber = styleNumber / 16;
         }
-        let size = getClosestValue(Object.keys(borderRadius), styleNumber);
+        const size = getClosestValue(Object.keys(borderRadius), styleNumber);
         tailwindValue = borderRadius[size];
         if (tailwindValue === "") {
           abbreviation = "";
@@ -386,7 +356,7 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
       }
     } else if (style === "max-height") {
       abbreviation = "max-h";
-      const maxHeightValues: { [index: string]: any } = {
+      const maxHeightValues: { [index: string]: string } = {
         "100%": "full",
         "100vh": "screen",
         "min-content": "min",
@@ -405,7 +375,7 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
       }
     } else if (style === "max-width") {
       abbreviation = "max-w";
-      const maxWidthValues: { [index: string]: any } = {
+      const maxWidthValues: { [index: string]: string } = {
         "100%": "full",
         "min-content": "min",
         "max-content": "max",
@@ -416,7 +386,7 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
         if (styleValue.includes("px")) {
           styleNumber = styleNumber / 16;
         }
-        let size = getClosestValue(Object.keys(maxWidth), styleNumber);
+        const size = getClosestValue(Object.keys(maxWidth), styleNumber);
         tailwindValue = maxWidth[size];
       } else if (Object.keys(maxWidthValues).includes(styleValue)) {
         tailwindValue = maxWidthValues[styleValue];
@@ -430,7 +400,7 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
         }
         if (validValue(styleValue)) {
           abbreviation = "blur";
-          let size = getClosestValue(Object.keys(blur), styleNumber);
+          const size = getClosestValue(Object.keys(blur), styleNumber);
           tailwindValue = blur[size];
           if (!tailwindValue) {
             abbreviation = "";
@@ -469,88 +439,4 @@ export const convertAttributes = (attributes: { [index: string]: any }) => {
     }
   }
   return result;
-};
-
-export const cssToJson = (plainText: string) => {
-  const cssJson = toJSON(trim(plainText));
-  let result = [];
-  for (const className in cssJson.children) {
-    let obj: { [index: string]: any } = {};
-    obj[className] = convertAttributes(
-      cssJson.children[className].attributes
-    ).join(" ");
-    result.push(obj);
-  }
-  return result;
-};
-
-export const injectClass = (htmlText: string, attribute: object[]) => {
-  htmlText = htmlText.replace(
-    "<!-- Edit HTML here -->",
-    "<!-- HTML with Tailwind -->"
-  );
-  attribute.forEach((obj) => {
-    for (const [key, value] of Object.entries(obj)) {
-      if (key.includes(".")) {
-        const regex = new RegExp("\\b" + key.slice(1) + "\\b", "g");
-        htmlText = htmlText.replaceAll(regex, value);
-      } else {
-        let keyString = `<${key}`;
-        let replaceString = `${keyString} class="${value}"`;
-        htmlText = htmlText.replaceAll(keyString, replaceString);
-      }
-    }
-  });
-  return removeExtraClasses(htmlText);
-};
-
-const removeExtraClasses = (htmlText: string) => {
-  let result: any[] = [];
-  let splitText = htmlText.split("\n");
-  splitText.forEach((line: string) => {
-    let count = (line.match(/class/g) || []).length;
-    if (count === 2) {
-      result.push(consolidateClasses(line));
-    } else {
-      result.push(line);
-    }
-  });
-  return result.join("\n");
-};
-
-const consolidateClasses = (inputString: string) => {
-  // Regular expression to find all class attributes and their values
-  let classRegex = /class="([^"]*)"/g;
-
-  // Extract all class attribute values
-  let matches: any[] | null = inputString.match(classRegex);
-
-  // Consolidate class names
-  let consolidatedClasses: string[] = [];
-  if (!matches) return inputString;
-  for (let i = 0; i < matches.length; i++) {
-    let classes = matches[i].match(/class="([^"]*)"/)[1].split(" ");
-    consolidatedClasses = consolidatedClasses.concat(classes);
-  }
-  // Remove duplicate class names
-  consolidatedClasses = Array.from(new Set(consolidatedClasses));
-
-  // Build the new class attribute
-  let newClassAttribute = 'class="' + consolidatedClasses.join(" ") + '"';
-
-  // Replace existing class attributes with the new one
-  let outputString = inputString.replace(classRegex, "");
-  let classCarrot = outputString.indexOf(">");
-  let result =
-    outputString.slice(0, classCarrot - 1) +
-    newClassAttribute +
-    outputString.slice(classCarrot);
-  return result;
-};
-
-export const validValue = (value: string) => {
-  if (value.includes("px") || value.includes("rem")) {
-    return true;
-  }
-  return false;
 };
